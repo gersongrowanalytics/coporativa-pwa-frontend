@@ -1,0 +1,114 @@
+#Titulo-Carga-Archivos-Notificaciones{
+    font-family: Segoe UI;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 19px;
+    color: #323233;
+
+    /* background-color: red; */
+    display: flex;
+    /* place-content: center; */
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #C4C4C4;
+
+    align-items: center;
+    margin-left: 20px;
+}
+
+
+#Fila-Carga-Archivos-Notificacion{
+    margin: 20px;
+    padding: 5px;
+    border-bottom: 1px solid #C4C4C4;
+    display: flex;
+}
+
+#Fila-PantallaCompleta-Carga-Archivos-Notificacion{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 50px;
+    margin-right: 50px;
+    padding: 5px;
+    border-bottom: 1px solid #C4C4C4;
+    display: flex;
+}
+
+#PrimeraParte-Fila-Carga-Archivos-Notificacion{
+    /* background-color: red; */
+    width: 80%;
+}
+
+#Titulo-PrimeraParte-Fila-Carga-Archivos-Notificacion{
+    font-family: Segoe UI;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 19px;
+    color: #323233;
+}
+
+.Descripcion-PrimeraParte-Fila-Carga-Archivos-Notificacion{
+    font-family: Segoe UI;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 19px;
+    color: #9C9B9B;
+}
+
+#SegundaParte-Fila-Carga-Archivos-Notificacion{
+    width: 20%;
+    /* height: 100px; */
+    /* background-color: royalblue; */
+    color: red;
+    text-align: right;
+}
+
+#Contenedor-Icono-FlechaIzquierda-Notificacion-Carga-Archivos:hover #Icono-FlechaIzquierda-Notificacion-Carga-Archivos{
+    background: #F0F2F5;
+    border-radius: 100px;
+    
+}
+
+#Icono-FlechaIzquierda-Notificacion-Carga-Archivos{
+    cursor: pointer;
+    width: 30px;
+    margin-right: 1px;
+    padding: 8px;
+}
+
+#Icono-Campana-Notificacion-Carga-Archivos{
+    width: 19px;
+    margin-right: 5px;
+}
+
+#Icono-CerrarNegro-Carga-Archivos-Notificacion{
+    width: 22px;
+    cursor: pointer;
+}
+
+#Icono-MasAzul-Carga-Archivos-Notificacion{
+    width: 22px;
+    cursor: pointer;
+}
+
+
+#Contenedor-Sin-Notificaciones-Carga-Archivos{
+    /* background-color: red; */
+    height: 72vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-family: Segoe UI;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 19px;
+    color: #4D4D4D;
+
+    margin: 10px;
+    padding: 5px;
+}

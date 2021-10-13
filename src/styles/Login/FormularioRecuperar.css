@@ -1,0 +1,95 @@
+#Contenedor-Modal-Recuperar{
+    height: 160px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+#Titulo-Modal-Recuperar{
+    font-family: Segoe UI;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 19px;
+    color: #4D4D4D;
+}
+
+#Contenedor-Btn-Modal-Recuperar{
+    cursor: pointer;
+    width: 90px;
+    height: 28px;
+    background: #1876F2;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+#Texto-Btn-Modal-Recuperar{
+    font-family: Segoe UI;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 19px;
+    color: #FFFFFF;
+}
+
+#Recuperar-Formulario-Btn-Solicitar-Desactivado{
+    margin-top: 20px;
+    width: 299px;
+    height: 47px;
+    background: #A4A3A3;
+    display: flex;
+    align-items: center;
+    place-content: center;
+    font-family: Segoe UI;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 21px;
+    color: #FFFFFF;
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+
+#Recuperar-Formulario-Btn-Solicitar-Activado{
+    margin-top: 20px;
+    width: 299px;
+    height: 47px;
+    background: #1956C5;
+    display: flex;
+    align-items: center;
+    place-content: center;
+    font-family: Segoe UI;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 21px;
+    color: #FFFFFF;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+#SubTitulo-Modal-Recuperar{
+    font-family: Segoe UI;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 11px;
+    line-height: 15px;
+    color: #A4A3A3;
+}
+
+#Link-SubTitulo-Modal-Recuperar{
+    color: #1956C5;
+    font-family: Segoe UI;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 15px;
+    cursor: pointer;
+}

@@ -1,0 +1,69 @@
+#Contenedor-Btn-Eliminar-Administrador{
+    width: 90px;
+    height: 28px;
+    background: #E4E6EB;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+#Texto-Btn-Eliminar-Administrador{
+    font-family: Segoe UI;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    color: #323233;
+}
+
+#Texto-Nombres-Administrador-ControlData{
+    font-family: Segoe UI;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 18px;
+    color: #323233;
+}
+
+#Texto-fecha-Administrador-ControlData{
+    font-family: Segoe UI;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 20px;
+    color: #323233;
+    margin-left: 10px;
+
+    width: 50px;
+}
+
+#Contenedor-Imagenes-Crear-ControlData{
+    height: 52px;
+    background: #E7F3FF;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+}
+
+#Input-Seleccionar-Archivo-Administrador{
+    height: 41px;
+    background: #F0F2F5;
+    border: 1px solid #1876F2;
+    box-sizing: border-box;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    place-items: center;
+
+    font-family: Segoe UI;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 18px;
+    color: #323233;
+
+}

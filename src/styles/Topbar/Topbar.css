@@ -1,0 +1,314 @@
+#Contenedor-Filtros-TopBar{
+    /* background: green; */
+    width: 100%;
+    position: absolute;
+    height: 72px;
+    top: -15px;
+}
+
+#Contenedor-Fondo-Filtro-TopBar{
+    position: absolute;
+    background: #1876F2;
+    /* background: red; */
+    width: 105vw;
+    top: 57px;
+    left: -40%;
+    opacity: 1;
+    padding-bottom: 10px;
+}
+
+#Contenedor-Data-Filtro-TopBar{
+    position: absolute;
+    background: #1876F2;
+    /* background: grey; */
+    width: 60vw;
+    top: 57px;
+    opacity: 1;
+}
+
+#Contenedor-Filtro-TopBar{
+    /* background: #1876F2; */
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-family: Segoe UI;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 19px;
+    text-transform: uppercase;
+    /* color: #1876F2; */
+    color: #323233;
+    /* cursor: pointer; */
+}
+
+.Favoritos-Contenedor-Filtro-TopBar{
+    /* background: #F0F2F5;
+    border-radius: 12px; */
+    color: #1876F2 !important;
+}
+
+.Favoritos-Contenedor-Filtro-TopBar:hover{
+    background: #F0F2F5;
+    border-radius: 12px;
+    color: #1876F2 !important;
+}
+
+.Contenedor-Filtro-TopBar{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-family: Segoe UI;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 19px;
+    text-transform: uppercase;
+    color: #1876F2;
+
+    /* border-bottom: 4px solid #1876F2; */
+}
+
+.Favoritos-Hover-Contenedor-Filtro-TopBar:hover{
+    background: #F0F2F5;
+    border-radius: 12px;
+    color: #1876F2 !important;
+}
+
+
+
+/* #Contenedor-Filtros-TopBar:hover ~ #Contenedor-Data-Filtro-TopBar {
+    opacity: 1;
+}
+
+#Contenedor-Filtro-TopBar:hover ~ #Contenedor-Fondo-Filtro-TopBar {
+    opacity: 1;
+    
+} */
+
+#Texto-SubCategoria-Filtro-TopBar{
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+
+    font-family: Segoe UI;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 19px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
+
+#Texto-SubCategoria-Filtro-Guion-TopBar{
+    /* margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+
+    font-family: Segoe UI;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 19px;
+    text-transform: uppercase;
+    color: #FFFFFF; */
+}
+
+#Texto-SubCategoria-Filtro-Guion-TopBar:hover{
+    border-bottom: 3px solid red;
+}
+
+#Icono-Favoritos-Hueco-TopBar{
+    width: 18px;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+#Icono-Contenedor-Filtro-TopBar{
+    width: 40px;
+    margin-right: 5px;
+}
+
+#Contenedor-Menu-TopBar:hover{
+    background: #F0F2F5;
+    border-radius: 100px;
+    padding: 5px;
+}
+
+#Contenedor-Anadir-Favoritos-Dashboard{
+    margin-top: 60px;
+    width: 316px;
+    height: 160px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+    position: absolute;
+    
+    padding: 20px;
+}
+
+#Titulo-Anadir-Favoritos-Dashboard{
+    font-family: Segoe UI;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 20px;
+    text-transform: capitalize;
+    color: #000000;
+    margin-bottom: 10px;
+}
+
+#Input-Anadir-Favoritos-Dashboard{
+    border: 1px solid #1876F2;
+    box-sizing: border-box;
+    border-radius: 8px;
+
+    font-family: Segoe UI;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 19px;
+    text-transform: capitalize;
+    color: #323233;
+}
+
+#Botones-Anadir-Favoritos-Dashboard{
+    float: right;
+    margin-top: 15px;
+}
+
+#Btn-Cancelar-Anadir-Favoritos-Dashboard{
+    background: #E7F3FF;
+    border-radius: 8px;
+
+    font-family: Segoe UI;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 20px;
+    color: #1876F2;
+}
+
+#Btn-Guardar-Anadir-Favoritos-Dashboard{
+    background: #1876F2;
+    border-radius: 8px;
+
+    font-family: Segoe UI;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 20px;
+    color: #FFFFFF;
+}
+
+#Opcion-Drop-Menu-Top:hover{
+    background: #F0F2F5 !important;
+}
+
+#Icono-Flecha-Pais-TopBar{
+    /* width: 40px;
+    height: 40px; */
+    /* margin-top: 2px; */
+    font-size: 14px;
+}
+
+#Icon-Cerrar-Favoritos-TopNav{
+    position: absolute;
+    width: 35px;
+    right: 10px;
+    top: -5px;
+    cursor: pointer;
+}
+
+#Contenedor-Seleccionar-Favoritos-TopNav{
+    /* background-color: red; */
+    height: 70%;
+    width: 60%;
+    position: absolute;
+    right: 0;
+    cursor: pointer;
+}
+
+#Contenedor-Favoritos-TopBar-Dashboard-TopBar{
+    border-bottom: 4px solid #1876F2;
+    padding-left: 20px;
+    padding-right: 20px;
+    position: absolute;
+    bottom: 0;
+    width: 70%;
+}
+
+#Contenedor-Filtro-Seleccionado-TopBar{
+    /* background: #1876F2; */
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-family: Segoe UI;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 19px;
+    text-transform: uppercase;
+    /* color: #1876F2; */
+    color: #1876F2;
+}
+
+#Contenedor-Filtro-Nombre-Modulo-TopBar{
+    border-radius: 12px;
+    margin: 10px;
+    width: 100%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+#Contenedor-Filtro-Nombre-Modulo-TopBar:hover{
+    background: #F0F2F5;
+    border-radius: 12px;
+    margin: 10px;
+    width: 100%;
+
+    font-family: Segoe UI;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 19px;
+    align-items: center;
+    text-transform: uppercase;
+    color: #1876F2;
+}
+
+
+#Contenedor-Filtro-Nombre-Modulo-Seleccionado-TopBar{
+    border-radius: 12px;
+    place-content: center;
+    width: 100%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+
+    font-family: Segoe UI;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 19px;
+    align-items: center;
+    text-transform: uppercase;
+    color: #1876F2;
+}
+
+#Contenedor-Filtro-Nombre-Modulo-Seleccionado-TopBar:hover{
+    background: #F0F2F5;
+    border-radius: 12px;
+    /* margin: 10px; */
+    width: 100%;
+}

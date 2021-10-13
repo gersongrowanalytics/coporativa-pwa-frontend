@@ -1,0 +1,21 @@
+#Contenedor-Slider-SliderExcelv2{
+    background: 'red';
+    /* padding: 20px; */
+    /* border: 1px solid red; */
+}
+
+.slick-dots-bottom{
+    bottom: -25px !important;
+}
+
+.slick-dots-bottom li button{
+    height: 16px !important;
+    width: 16px !important;
+    border-radius: 100px !important;
+    background: #C4C4C4 !important;
+}
+
+.slick-dots-bottom li.slick-active button{
+    background: #1876F2 !important;
+}
+

@@ -1,0 +1,287 @@
+#Contenedor-Btn-Favoritos-Descargar-Data{
+    width: 103px;
+    height: 23px;
+    background: #1876F2;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 36px;
+    align-items: center;
+    display: flex;
+    place-content: center;
+    cursor: pointer;
+}
+
+#Texto-Btn-Favoritos-Descargar-Data{
+  font-family: Segoe UI;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 19px;
+  color: #FFFFFF;
+}
+
+#Titulo-Menu-Descargar-Data{
+    /* margin-top: 30px; */
+    font-family: Segoe UI;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 14px;
+    line-height: 19px;
+    color: #4D4D4D;
+}
+
+#Contenedor-Menu-Descargar-Data{
+    width: 250px;
+    height: 65vh;
+    background: #FFFFFF;
+    border-radius: 8px;
+    padding: 15px;
+    overflow-y: auto;
+
+    margin-top: 10px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+#Fila-Menu-Descargar-Data{
+    margin-bottom: 7px;
+}
+
+#Icono-Circulo-Descargar-Data{
+    width: 17px;
+    margin-top: -2px;
+    margin-right: 5px;
+}
+
+#Icono-Restart-Descargar-Data{
+    width: 32px;
+    cursor: pointer;
+}
+
+#Icono-Restart-Desactivado-Descargar-Data{
+  width: 32px;
+  cursor: pointer;
+}
+
+#Contenedor-Btn-Descargar-Descargar-Data{
+    width: 90px;
+    height: 28px;
+    background: #1876F2;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 36px;
+    text-align: -webkit-center;
+    margin-right: 8px;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#Contenedor-Btn-Desactivado-Descargar-Descargar-Data{
+  width: 90px;
+  height: 28px;
+  background: #A4A3A3;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 36px;
+  text-align: -webkit-center;
+  margin-right: 8px;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#Texto-Btn-Descargar-Descargar-Data{
+    font-family: Segoe UI;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 19px;
+    color: #FFFFFF;
+}
+
+#Titulo-Descargar-Data{
+    font-family: Segoe UI;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 27px;
+    color: #323233;
+}
+
+#Imagen-Excel-Descargar-Data{
+    width: 100%;
+}
+
+#Icono-Favoritos-Descargar-Data{
+    margin-top: -4px;
+    margin-right: 2px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*  */
+
+
+
+.slider{
+    width: 800px;
+    height: 500px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+  .slides{
+    width: 500%;
+    height: 500px;
+    display: flex;
+  }
+  
+  .slides input{
+    display: none;
+  }
+  
+  .slide{
+    width: 20%;
+    transition: 1s;
+  }
+  
+  .slide img{
+    width: 800px;
+    height: 500px;
+  }
+  
+  /*css for manual slide navigation*/
+  
+  .navigation-manual{
+    /* position: absolute; */
+    /* width: 800px; */
+    /* margin-top: -40px; */
+    display: flex;
+    justify-content: center;
+    /* height: 0px; */
+  }
+  
+  .manual-btn{
+    border: 2px solid #1876F2;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 1s;
+  }
+
+  .manual-btn-Seleccionado{
+    border: 2px solid #1876F2;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 1s;
+    background: #1876F2;
+    margin-right: 40px;
+  }
+  
+  .manual-btn:not(:last-child){
+    margin-right: 40px;
+  }
+  
+  .manual-btn:hover{
+    background: #1876F2;
+  }
+  
+  #radio1:checked ~ .first{
+    margin-left: 0;
+  }
+  
+  #radio2:checked ~ .first{
+    margin-left: -20%;
+  }
+  
+  #radio3:checked ~ .first{
+    margin-left: -40%;
+  }
+  
+  #radio4:checked ~ .first{
+    margin-left: -60%;
+  }
+  
+  /*css for automatic navigation*/
+  
+  .navigation-auto{
+    position: absolute;
+    display: flex;
+    width: 800px;
+    justify-content: center;
+    margin-top: 460px;
+  }
+  
+  .navigation-auto div{
+    border: 2px solid #1876F2;
+    padding: 5px;
+    border-radius: 10px;
+    transition: 1s;
+  }
+  
+  .navigation-auto div:not(:last-child){
+    margin-right: 40px;
+  }
+  
+  
+  
+  #radio4:checked ~ .navigation-auto div{
+    background: #1876F2;
+  }
+
+#Contenedor-Pie-Slider{
+    /* background: red; */
+    width: 100%;
+    height: 50px;
+    position: absolute;
+    display: flex;
+    place-content: center;
+    place-items: center;
+}
+
+#Contenedor-Buscar-Menu-Descargar-Data{
+  height: 34px;
+  background: #F0F2F5;
+  border-radius: 6px;
+  margin-bottom: 30px;
+}
+
+#Input-Buscar-Menu-Descargar-Data{
+  border: 0;
+  background: #F0F2F5;
+  border-radius: 6px;
+  height: 24px;
+  
+  font-family: Segoe UI;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 15px;
+  line-height: 18px;
+  color: #A4A3A3;
+}
+
+#Input-Buscar-Menu-Descargar-Data:focus{
+  border: 0;
+}

@@ -1,0 +1,411 @@
+#Fondo-Uno-Perfil{
+    /* background: red; */
+    /* position: absolute; */
+    width: 100%;
+    /* height: 100%; */
+}
+
+#Fondo-Dos-Perfil{
+    /* background: green; */
+    /* position: absolute; */
+    width: 100%;
+    margin-bottom: 60px;
+    /* height: 100%; */
+}
+
+#Primera-Fondo-Uno-Perfil{
+    height: 102px;
+    background: #1876F2;
+}
+
+#Primera-Fondo-Dos-Perfil{
+    height: 102px;
+    margin-top: -80px;
+    display: flex;
+    place-content: center;    
+}
+
+#Contenedor-Icono-Primera-Fondo-Dos-Perfil{
+    position: relative;
+    width: 164px;
+    height: 164px;
+    text-align: -webkit-center;
+}
+
+#Icono-Primera-Fondo-Dos-Perfil{
+    /* position: absolute; */
+    width: 150px;
+    height: 150px;
+    background: white;
+    /* border: 7px solid #FFFFFF; */
+    box-sizing: border-box;
+    border-radius: 100px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* miomio */
+}
+
+#Icono-Perfil-Default-Primera-Fondo-Dos-Perfil{
+    width: 150px;
+    height: 150px;
+    background: #C4C4C4;
+    border: 5px solid #FFFFFF;
+    border-radius: 50%;
+    vertical-align: middle;
+}
+
+#Icono-Perfil-Primera-Fondo-Dos-Perfil{
+    width: 150px;
+    height: 150px;
+    /* background: #1876F2; */
+    border: 5px solid #FFFFFF;
+    /* box-sizing: border-box; */
+    border-radius: 50%;
+    vertical-align: middle;
+
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+    /* border: 7px solid #FFFFFF; */
+}
+
+#Icono-Camara-Primera-Fondo-Dos-Perfil{
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    bottom: 0;
+    right: 12px;
+    cursor: pointer;
+}
+
+#Titulo-Primera-Fondo-Dos-Perfil{
+    margin-top: 80px;
+    font-family: Segoe UI;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 35px;
+    color: #323233;
+    text-align: center;
+}
+
+#SubTitulo-Primera-Fondo-Dos-Perfil{
+    font-family: Segoe UI;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 23px;
+    text-align: center;
+    color: #323233;
+}
+
+
+#Titulo-Cuerpo-Fondo-Dos-Perfil{
+    font-family: Segoe UI;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 25px;
+    line-height: 29px;
+    color: #323233;
+}
+
+#Contenedor-Cuerpo-Fondo-Dos-Perfil{
+    margin-top: 60px;
+    display: flex;
+    place-content: center;
+}
+
+#Cuerpo-Fondo-Dos-Perfil{
+    width: 830px;
+}
+
+#Card-Cuerpo-Fondo-Dos-Perfil{
+    background: #FFFFFF;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+#Fila-Card-Cuerpo-Fondo-Dos-Perfil{
+    align-items: center;
+    /* margin-bottom: 20px; */
+    border-bottom: 1px solid #C4C4C4;
+    /* height: 60px; */
+    padding-top: 15px;
+    padding-bottom: 15px;
+    position: relative;
+}
+
+#Fila-Card-Cuerpo-Fondo-Dos-Perfil-Ultimo{
+    align-items: center;
+    /* margin-bottom: 20px; */
+    /* border-bottom: 1px solid #C4C4C4; */
+    /* height: 60px; */
+    padding-top: 15px;
+    /* padding-bottom: 15px; */
+}
+
+#Fila-Card-Cuerpo-Fondo-Dos-Perfil:hover{
+    /* background: rgba(231, 133, 133, 0.15); */
+}
+
+#Btn-Cuerpo-Fondo-Dos-Perfil{
+    width: 177px;
+    height: 48px;
+    background: #1876F2;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    place-content: center;
+
+    font-family: Segoe UI;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 23px;
+    color: #FFFFFF;
+
+}
+
+#Texto-Izq-Fila-Card-Cuerpo-Fondo-Dos-Perfil{
+    font-family: Segoe UI;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 23px;
+    color: #323233;
+    margin-bottom: auto;
+}
+
+#Texto-Dercha-Fila-Card-Cuerpo-Fondo-Dos-Perfil{
+    font-family: Segoe UI;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 23px;
+    color: #A4A3A3;
+}
+
+#Texto-CambiarContraseña-Fila-Card-Cuerpo-Fondo-Dos-Perfil{
+    font-family: Segoe UI;
+    font-style: normal;
+    /* font-weight: 500; */
+    font-size: 16px;
+    /* line-height: 23px; */
+    color: #1876F2;
+    cursor: pointer;
+    
+
+    font-weight: normal;
+    line-height: 27px;
+}
+
+#Input-Fila-Card-Cuerpo-Fondo-Dos-Perfil{
+    padding-left: 10px;
+    background: #F0F2F5;
+    /* border: 1px solid #1876F2; */
+    box-sizing: border-box;
+    height: 16px;
+    width: 100%;
+
+    font-family: Segoe UI;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 27px;
+    color: #323233;
+
+}
+
+#Input-Fila-Card-Cuerpo-Fondo-Dos-Perfil:focus{
+    background: #F0F2F5;
+    outline: none;
+    /* border: 1px solid #1876F2; */
+    box-sizing: border-box;
+    height: 17px;
+    width: 100%;
+
+    font-family: Segoe UI;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 17px;
+    line-height: 27px;
+    color: #323233;
+
+
+}
+
+#Icono-Editar-Perfil{
+    opacity: 0;
+    cursor: pointer;
+    background: #E4E6EB;
+    border-radius: 50px;
+    padding: 5px;
+}
+
+#Icono-Cerrar-Editar-Perfil{
+    width: 36px;
+    height: 36px;
+    cursor: pointer;
+    position: absolute;
+    top: -155px;
+}
+
+#Fila-Card-Cuerpo-Fondo-Dos-Perfil:hover #Icono-Editar-Perfil{
+    opacity: 1;
+}
+
+#Fila-Card-Cuerpo-Fondo-Dos-Perfil-Ultimo:hover #Icono-Editar-Perfil{
+    opacity: 1;
+}
+
+#Contenedor-Modal-Perfil{
+    text-align: center;
+    text-align: -webkit-center;
+    position: relative
+}
+
+#Titulo-Modal-Perfil{
+    font-family: Segoe UI;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 25px;
+    line-height: 33px;
+    color: #323233;
+}
+
+#Icono-Camara-Modal-Perfil{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    width: 152px;
+    height: 152px;
+}
+
+#Contenedor-Btn-Modal-Perfil{
+    width: 177px;
+    height: 48px;
+    background: #E7F3FF;
+    border-radius: 8px;
+    display: flex;
+    place-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+#Texto-Btn-Modal-Perfil{
+    font-family: Segoe UI;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 27px;
+    color: #1876F2;
+}
+
+#Icono-Cerrar-Modal-Perfil{
+    width: 50px;
+    height: 50px;
+}
+
+#Contenedor-Btn-Cancelar-Modal-Perfil{
+    width: 177px;
+    height: 48px;
+    background: #E7F3FF;
+    border-radius: 8px;
+    display: flex;
+    place-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+#Texto-Btn-Cancelar-Modal-Perfil{
+    font-family: Segoe UI;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 27px;
+    color: #1876F2;
+}
+
+#Contenedor-Btn-Guardar-Modal-Perfil{
+    width: 177px;
+    height: 48px;
+    background: #1876F2;
+    border-radius: 8px;
+    display: flex;
+    place-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+#Texto-Btn-Guardar-Modal-Perfil{
+    font-family: Segoe UI;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 20px;
+    color: #FFFFFF;
+}
+
+#Titulo-Cambio-Contrasenia-Perfil{
+    font-family: Segoe UI;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 27px;
+    color: #323233;
+}
+
+#Btn-Cancelar-Edicion-Perfil{
+    width: 104px;
+    height: 38px;
+    background: #E7F3FF;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-family: Segoe UI;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 27px;
+    color: #1876F2;
+
+}
+
+#Btn-Guardar-Edicion-Perfil{
+    width: 104px;
+    height: 38px;
+    background: #1876F2;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-family: Segoe UI;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 27px;
+    color: #FFFFFF;
+
+    margin-left: 20px;
+}
+
+#Input-Texto-Fila-Card-Cuerpo-Fondo-Dos-Perfil{
+    height: 35px;
+    font-family: Segoe UI;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 27px;
+    color: #323233;
+}
+
+#Input-PhoneInputInput-Perfil{
+    width: 50px;
+    margin-right: 10px;
+}

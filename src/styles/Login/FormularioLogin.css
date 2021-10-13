@@ -1,0 +1,159 @@
+#Login-Contenedor-Formulario{
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    background: rgba(23, 61, 129, 0.46);
+    display: flex;
+    place-content: center;
+}
+
+#Login-Formulario-Fondo{
+    width: 100%;
+    height: 100vh;
+}
+
+#Login-Formulario-Capa{
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background: rgba(23, 61, 129, 0.46);
+}
+
+#Login-Formulario{
+    margin:0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    place-content: center;
+
+    position: absolute;
+    /* background-color: red; */
+    width: 40%;
+    height: 100vh;
+}
+
+#Login-Formulario-Titulo{
+    font-family: Segoe UI;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 42px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+#Login-Formulario-Texto{
+    font-family: Segoe UI;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 21px;
+
+    color: #FFFFFF;
+}
+
+#Login-Formulario-Input{
+    width: 299px;
+    height: 47px;
+    background: #FFFFFF;
+    border: 0;
+    padding-left: 10px;
+
+    font-family: Segoe UI;
+    font-style: normal;
+    font-size: 18px;
+    line-height: 21px;
+}
+
+#Login-Formulario-Input:focus{
+    border: none;
+    outline: none;
+}
+
+#Login-Formulario-Input-Password{
+    width: 271px;
+    height: 30px;
+    background: #FFFFFF;
+    border: 0;
+    /* padding-left: 10px; */
+
+    font-family: Segoe UI;
+    font-style: normal;
+    font-size: 18px;
+    line-height: 21px;
+}
+
+#Login-Formulario-Btn-Iniciar{
+    margin-top: 20px;
+    width: 299px;
+    height: 47px;
+    background: #1956C5;
+    display: flex;
+    align-items: center;
+    place-content: center;
+    font-family: Segoe UI;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 21px;
+    color: #FFFFFF;
+    /* cursor: pointer; */
+    border: none;
+    outline: none;
+}
+
+#Login-Formulario-Btn-Desactivado-Iniciar{
+    margin-top: 20px;
+    width: 299px;
+    height: 47px;
+    background: #A4A3A3;
+    display: flex;
+    align-items: center;
+    place-content: center;
+    font-family: Segoe UI;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 21px;
+    color: #FFFFFF;
+    /* cursor: pointer; */
+    border: none;
+    outline: none;
+}
+
+#Login-Formulario-Btn-Iniciar:focus{
+    border: none;
+    outline: none;
+}
+
+#Subtitulo-Formulario-Titulo{
+    font-family: Segoe UI;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 21px;
+    color: #FFFFFF;
+    margin-top: -20px;
+    margin-bottom: 40px;
+}
+
+#Contenedor-Logos-Paises{
+    position: absolute;
+    top: 50px;
+    right: 40px;
+}
+
+#Bandera-Pais-Login{
+    width: 40px;
+    margin-right: 10px;
+}
+
+#Contenedor-Logo-Grow-Login{
+    position: absolute;
+    top: 50px;
+    left: 40px;
+}
+
+#Logo-Grow-Blanco-Negro-Login{
+    width: 150px;
+}

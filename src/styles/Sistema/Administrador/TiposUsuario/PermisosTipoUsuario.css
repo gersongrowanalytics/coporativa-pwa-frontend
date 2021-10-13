@@ -1,0 +1,67 @@
+#Icono-Editar-Permisos-TiposUsuarios{
+    width: 25px;
+}
+
+#Contenedor-Fila-Permisos-TiposUsuarios{
+    margin-top: 5px;
+    background: #FFFFFF;
+    border-radius: 8px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 20px;
+}
+
+#Texto-Fecha-Permisos-TiposUsuarios{
+    font-family: Segoe UI;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 20px;
+    color: #323233;
+    padding-left: 10px;
+}
+
+#Btn-Crear-Permisos-TiposUsuarios{
+    width: 90px;
+    height: 28px;
+
+    background: #1876F2;
+    border-radius: 8px;
+
+    display: flex;
+    justify-content: center;
+    place-items: center;
+
+    font-family: Segoe UI;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    color: #FFFFFF;
+
+    margin-right: 20px;
+
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+
+#Btn-Desactivado-Permisos-TiposUsuarios{
+    width: 90px;
+    height: 28px;
+
+    background: #E4E6EB;
+    border-radius: 8px;
+
+    display: flex;
+    justify-content: center;
+    place-items: center;
+
+    font-family: Segoe UI;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    color: #323233;
+
+    margin-right: 20px;
+}

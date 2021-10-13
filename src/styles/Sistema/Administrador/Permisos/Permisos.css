@@ -1,0 +1,57 @@
+#Contenedor-Crear-Permiso-Administrador{
+    display: flex;
+    justify-content: center;
+}
+
+#Texto-Crear-Permiso-Administrador{
+    font-family: Segoe UI;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 16px;
+    color: #1876F2;
+    margin-bottom: 10px;
+    margin-top: 30px;
+}
+
+#Input-Crear-Permiso-Administrador{
+    width: 100%;
+    background: #F0F2F5;
+    border: 1px solid #1876F2;
+    box-sizing: border-box;
+    width: 328px;
+    height: 41px;
+    padding-left: 10px;
+
+    font-family: Segoe UI;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+}
+
+#Input-Crear-Permiso-Administrador:focus{
+    outline: none;
+    border: 1px solid #1876F2;
+}
+
+#Contenedor-Btn-Crear-Permiso-Administrador{
+    width: 90px;
+    height: 28px;
+    background: #1876F2;
+    border-radius: 8px;
+    display: flex;
+    place-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    cursor: pointer;
+}
+
+#Texto-Btn-Crear-Permiso-Administrador{
+    font-family: Segoe UI;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    color: #FFFFFF;
+}

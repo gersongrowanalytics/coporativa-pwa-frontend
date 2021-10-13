@@ -1,0 +1,161 @@
+#Contenedor-TarjetaCargaArchivo{
+    /* margin: 20px; */
+    margin-top: 60px;
+    width: 100%;
+}
+
+#Contenedor-Tarjeta-TarjetaCargaArchivo{
+    /* margin-bottom: 200px; */
+    padding-top: 20px;
+    width: 100%;
+    height: 330px;
+    /* background: red; */
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 17px;
+}
+
+#PrimeraParte-Contenedor-Tarjeta-TarjetaCargaArchivo{
+    height: 50%;
+    text-align: -webkit-center;
+    display: flex;
+    place-content: center;
+    /* background: blue; */
+}
+
+#SegundaParte-Contenedor-Tarjeta-TarjetaCargaArchivo{
+    height: 50%;
+    /* background: green; */
+    padding-top: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    position: relative;
+}
+
+#Imagen-Titulo-Tarjeta-CargaArchivos{
+    width: 35px;
+    cursor: pointer;
+    margin-left: 10px;
+    margin-right: 5px;
+}
+
+#Texto-Titulo-Tarjeta-CargaArchivos{
+    font-family: Segoe UI;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 19px;
+    color: #4D4D4D;
+}
+
+#Contenedor-Btn-Tarjeta-CargaArchivos{
+    display: flex;
+    place-content: center;
+}
+
+#Btn-Tarjeta-CargaArchivos{
+    margin-bottom: 15px;
+    bottom: 0px;
+    position: absolute;
+    width: 90px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    place-content: center;
+    background: #C4C4C4;
+    border-radius: 20px;
+    font-weight: 900;
+    font-size: 12px;
+    line-height: 18px;
+    display: flex;
+    align-items: center;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+#Btn-Seleccionado-Tarjeta-CargaArchivos{
+    margin-bottom: 16px;
+    bottom: 0px;
+    position: absolute;
+    width: 90px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    place-content: center;
+    background: #1876F2;
+    border-radius: 20px;
+    font-weight: 900;
+    font-size: 12px;
+    line-height: 18px;
+    display: flex;
+    align-items: center;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+#Gif-PrimeraParte-TarjetaCargaArchivo{
+    border-radius: 100px;
+    width: 119px;
+    height: 125px;
+}
+
+#Texto-Nombre-Archivo-TarjetaCargaArchivo{
+    font-family: Segoe UI;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 16px;
+    color: #1876F2;
+    margin-top: 10px;
+
+    text-align: -webkit-center;
+}
+
+#Contenedor-Error-Tarjeta-CargaArchivos{
+    text-align: -webkit-center;
+}
+
+#Titulo-Error-Tarjeta-CargaArchivos{
+    font-family: Segoe UI;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 19px;
+    color: #323233;
+}
+
+#Descripcion-Error-Tarjeta-CargaArchivos{
+    font-family: Segoe UI;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 16px;
+    color: #323233;
+}
+
+#Contenedor-Cargando-Tarjeta-CargaArchivos{
+    text-align: -webkit-center;
+    width: 100%;
+}
+
+#Titulo-Cargando-Tarjeta-CargaArchivos{
+    font-family: Segoe UI;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 16px;
+    color: #4D4D4D;
+}
+
+#Descripcion-Cargando-Tarjeta-CargaArchivos{
+    font-family: Segoe UI;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 11px;
+    line-height: 15px;
+    color: #000000;
+}
+
+#Imagen-Equis-Azul-CargarArchivo{
+    width: 20px;
+    margin-top: 10px;
+    cursor: pointer;
+}

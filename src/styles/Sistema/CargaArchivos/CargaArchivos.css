@@ -1,0 +1,37 @@
+#Contenedor-Notificaciones-Carga-Archivos{
+    position: absolute;
+    right: 0;
+
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    /* height: 83vh;    */
+
+    overflow-y: auto;
+
+}
+
+#Contenedor-Animacion-Notificaciones-Carga-Archivos{
+    position: absolute;
+    right: 0;
+
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    height: 83vh;   
+
+    overflow-y: auto;
+
+    animation: animacionNotificacionPantallaCompleta;
+    animation-duration: 1s;
+
+    width: 100vmax;
+}
+
+@keyframes animacionNotificacionPantallaCompleta {
+    from {
+        width: 100%;
+    }
+    
+    to {
+        width: 100vmax;
+    }
+  }

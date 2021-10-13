@@ -1,0 +1,221 @@
+#Titulo-Control-Archivo{
+    font-family: Segoe UI;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 27px;
+    color: #4D4D4D;
+    margin-bottom: 20px;
+    width: 250px;
+
+    padding-top: 15px;
+    /* background-color: brown;
+    height: 100%; */
+}
+
+#Fila-Control-Archivo{
+    background: #FFFFFF;
+    border-radius: 8px;
+    padding-top: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+#Icono-Archivo-Fila-Control-Archivo{
+    margin-right: 20px;
+}
+
+#Texto-Fila-Control-Archivo{
+    font-family: Segoe UI;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 20px;
+    color: #323233;
+}
+
+#Iconos-Acciones-Fila-Control-Archivo{
+    opacity: 0;
+}
+
+#Fila-Control-Archivo:hover #Iconos-Acciones-Fila-Control-Archivo{
+    opacity: 1;
+}
+
+#Contenedor-Modal-Eliminar-Control-Archivo{
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    text-align: -webkit-center;
+}
+
+#Titulo-Modal-Eliminar-Control-Archivo{
+    font-family: Segoe UI;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    color: #4D4D4D;
+}
+
+#Contenedor-Btn-Eliminar-Control-Archivo{
+    margin-top: 20px;
+    width: 90px;
+    height: 28px;
+    background: #1876F2;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#Texto-Btn-Eliminar-Control-Archivo{
+    font-family: Segoe UI;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    color: #FFFFFF;
+}
+
+#Contenedor-Primera-Fila-Control-Archivos{
+    display: flex;
+    margin-bottom: 20px;
+    /* background-color: red; */
+}
+
+#Contenedor-Buscador-Control-Archivos{
+    width: 100%;
+    background: #FFFFFF;
+    border-radius: 8px;
+    text-align: center;
+}
+
+#Input-Buscador-Control-Archivos{
+    border: 0;
+    width: 95%;
+    height: 70%;
+    margin-top: 7px;
+    padding-left: 10px;
+    padding-right: 10px;
+
+    font-family: Segoe UI;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 18px;
+    color: #A4A3A3;
+}
+
+#Input-Buscador-Control-Archivos:focus{
+    border: 0;
+    outline: none;
+}
+
+#Icono-Actualizar-Control-Archivo{
+    padding-top: 15px;
+    cursor: pointer;
+}
+
+#Contenedor-Filtro-Control-Archivo{
+    width: 100%;
+    height: 60px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+    margin-bottom: 20px;
+
+    border: 0.1px solid #E2E2E2;
+    padding-left: 20px;
+}
+
+#Contenedor-Filtro-Fecha-Control-Archivo{
+    width: 100%;
+    height: 30px;
+}
+
+#Derecha-Filtro-Fecha-Control-Archivo{
+    height: 30px;
+    background: #FFFFFF; 
+    border: 1px solid #E5E5E5;
+    box-sizing: border-box;
+    border-radius: 8px 0px 0px 8px;
+
+    display: flex;
+    align-items: center;
+    place-content: center;
+}
+
+#Izquierda-Filtro-Fecha-Control-Archivo{
+    height: 30px;
+    background: #F0F2F5;
+    border: 1px solid #E5E5E5;
+    box-sizing: border-box;
+    border-radius: 0px 8px 8px 0px;
+
+    display: flex;
+    align-items: center;
+    place-content: center;
+
+    cursor: pointer;
+}
+
+#Texto-Filtro-Fecha-Control-Archivo{
+    font-family: Segoe UI;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 16px;
+    text-transform: capitalize;
+    color: #4D4D4D;
+}
+
+#Texto-Paginate-Control-Archivos{
+    font-family: Segoe UI;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+    color: #4D4D4D;
+
+}
+
+#Contenedor-Calendario-Control-Archivo{
+    width: 100%;
+    height: 325px;
+    position: absolute;
+    z-index: 100;
+    display: flex;
+    place-content: center;
+}
+
+#Card-Calendario-Control-Archivo{
+    width: 90%;
+    height: 100%;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+    margin-right: 15px;
+    margin-top: 10px;
+    padding: 10px
+}
+
+.react-calendar{
+    border: none !important;
+}
+
+#Icono-Lupa-Control-Archivos{
+    width: 40px;
+}
+
+#Icono-Tabla-Control-Archivos{
+    width: 40px;
+}
+
+#Texto-Archivo-Tabla-Control-Archivos{
+    text-decoration-line: underline;
+    color: #1876F2;
+    margin-left: 10px;
+}

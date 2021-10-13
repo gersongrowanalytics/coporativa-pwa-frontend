@@ -1,0 +1,265 @@
+#Titulo-Modulo-Administrador{
+    font-family: Segoe UI;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 23px;
+    color: #4D4D4D;
+
+    padding-left: 20px;
+}
+
+#Contenedor-Segunda-Parte-Administrador{
+    margin-top: 20px;
+}
+
+#Contenedor-Btn-Crear-Administrador{
+    width: 90px;
+    height: 28px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin-bottom: 20px;
+
+    background: #1876F2;
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+}
+
+#Texto-Btn-Crear-Administrador{
+    font-family: Segoe UI;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 19px;
+    color: #FFFFFF;
+}
+
+
+#Tabla-Usuario-Administrador{
+    width: 1900px;
+    /* table-layout: fixed;
+    text-align: center;
+    border-radius: 30px; */
+    border-collapse: separate;
+    border-spacing: 0 5px;
+
+    padding: 10px;
+
+    transform:rotateX(180deg);
+
+    /* height: 200px; */
+}
+
+
+#Fila-Cabecera-Tabla-Usuario-Administrador{
+    background: #FFFFFF;
+    padding: 20px;
+    border-left: none;
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+}
+
+#Texto-Cabecera-Tabla-Usuario-Administrador{
+    padding: 10px;
+    /* width: 400px !important; */
+
+    font-family: Segoe UI;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 20px;
+    color: #323233;
+}
+
+table #Texto-Cabecera-Tabla-Usuario-Administrador:first-child{
+    border-left: 1px solid white;
+}
+
+table tr:first-child #Texto-Cabecera-Tabla-Usuario-Administrador:first-child {
+    border-radius: 8px 0 0 8px;
+}
+  
+table tr:first-child #Texto-Cabecera-Tabla-Usuario-Administrador:last-child {
+    border-radius: 0 8px 8px 0;
+}
+
+/*  */
+#Fila-Cuerpo-Tabla-Usuario-Administrador{
+    background: transparent;
+    /* padding: 10px; */
+    /* border-left: none;
+    border-right: none; */
+
+    /* border-radius: 50px; */
+    
+}
+
+#Fila-Cuerpo-Tabla-Usuario-Administrador:hover{
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+}
+
+#Fila-Cuerpo-Tabla-Usuario-Administrador:hover #Texto-Cuerpo-Tabla-Usuario-Administrador{
+    /* box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25); */
+    /* box-shadow: 0px 1px 4px rgba(43, 34, 175, 0.789); */
+    font-size: 16px;
+    /* border-radius: 8px; */
+}
+
+.Texto-Cuerpo-Tabla-Usuario-Administrador{
+    /* box-shadow: 0px 1px 4px rgba(43, 34, 175, 0.412) !important; */
+}
+
+#Texto-Cuerpo-Tabla-Usuario-Administrador{
+    padding: 10px;
+    font-family: Segoe UI;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 20px;
+    color: #323233;
+
+    background-color: white;
+
+    /* width: 400px; */
+}
+
+table #Texto-Cuerpo-Tabla-Usuario-Administrador:first-child{
+    border: 1px solid white;
+    border-radius: 8px 0px 0px 8px;
+}
+
+table tr:first-child #Texto-Cuerpo-Tabla-Usuario-Administrador:first-child {
+    border: 1px solid white;
+    border-radius: 8px 0px 0px 8px;
+}
+
+table #Texto-Cuerpo-Tabla-Usuario-Administrador:last-child{
+    border: 1px solid white;
+    border-radius: 0px 8px 8px 0px;
+}
+  
+table tr:first-child #Texto-Cuerpo-Tabla-Usuario-Administrador:last-child {
+    border: 1px solid white;
+    border-radius: 0px 8px 8px 0px;
+}
+
+#Contenedor-Tabla-Usuario-Administrador{
+    /* background: red; */
+    /* overflow-x: auto;
+    overflow-y: auto; */
+    overflow: auto;
+    /* height: 500px; */
+    transform:rotateX(180deg);
+
+    /* height: 600px; */
+}
+
+/* css de modal crear usuario */
+
+#Contenedor-Modal-Crear-Usuario-Administrador{
+
+}
+
+#SegundaFila-Modal-Crear-Usuario-Administrador{
+    display: flex;
+}
+
+#Texto-Crear-Usuario-Administrador{
+    font-family: Segoe UI;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 16px;
+    color: #1876F2;
+    margin-bottom: 10px;
+    margin-top: 30px;
+}
+
+#Input-Crear-Usuario-Administrador{
+    width: 100%;
+    background: #F0F2F5;
+    border: 1px solid #1876F2;
+    box-sizing: border-box;
+    width: 328px;
+    height: 41px;
+    padding-left: 10px;
+
+    font-family: Segoe UI;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+}
+
+#Contenedor-Buscador-Administrador-Usuarios{
+    width: 100%;
+    background: #FFFFFF;
+    border-radius: 8px;
+    height: 60px;
+    padding-left: 20px;
+
+    box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.25);
+    
+}
+
+#Contenedor-Btn-Desplegable-Usuario-Administrador{
+    margin-left: 20px;
+    width: 153px;
+    height: 28px;
+
+
+
+    background: #FFFFFF;
+    border: 1px solid #C4E1FF;
+    box-sizing: border-box;
+    border-radius: 8px;
+
+    padding-right: 20px;
+
+    font-family: Segoe UI;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 20px;
+    color: #323233;
+}
+
+
+#Option-Btn-Desplegable-Usuario-Administrador{
+    font-family: Segoe UI;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 19px;
+    color: #4D4D4D;
+}
+
+select:focus{ outline: none;}
+
+
+  
+.Pais-Texto-Cuerpo-Tabla-Usuario-Administrador:hover #Contenedor-Lista-Pais-Fila-Tabla-Usuario-Administrador{
+
+    display: inline;
+}
+
+#Contenedor-Lista-Pais-Fila-Tabla-Usuario-Administrador{
+
+    display: none;
+
+    /* width: 70px; */
+    /* height: 50px; */
+    background-color: white;
+    position: absolute;
+    margin-top: -0px;
+    margin-left: 40px;
+
+    border-radius: 10px;
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+
+    /* border: 1px solid black; */
+
+    padding: 5px;
+}

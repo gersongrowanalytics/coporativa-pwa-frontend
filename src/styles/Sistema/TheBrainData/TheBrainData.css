@@ -1,0 +1,48 @@
+div.contenedorBloque {
+    display: flex;
+    align-items: center; 
+    background: #3946AB;
+    /* width: 159px; */
+    height: 92px;
+    display: flex;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+div.contenedorBloque a {
+    margin: 0;
+    font-family: Segoe UI;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 12px;
+    line-height: 14px;
+    color: #FFFFFF;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+div.contenedorBloquePlomo {
+    display: flex;
+    align-items: center; 
+    background: #C4C4C4;
+    /* width: 159px; */
+    height: 92px;
+    display: flex;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+div.contenedorBloquePlomo a {
+    margin: 0;
+    font-family: Segoe UI;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 12px;
+    line-height: 14px;
+    color: #FFFFFF;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}

@@ -1,0 +1,63 @@
+#Contenedor-Lista-Administrador{
+    position: absolute;
+    left: 0;
+    margin-left: -20px;
+    width: 220px;
+}
+
+#Fila-Lista-Administrador{
+    margin-bottom: 5px;
+    margin-right: 30px;
+    margin-left: -20px;
+    padding-left: 30px;
+    cursor: pointer;
+}
+
+#Fila-Lista-Administrador:hover{
+    margin-bottom: 5px;
+    margin-right: 30px;
+    margin-left: -20px;
+    cursor: pointer;
+
+    background: #FFFFFF;
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 0px 8px 8px 0px;
+}
+
+#Fila-Lista-Administrador-Seleccionado{
+    margin-bottom: 5px;
+    background: white;
+    margin-right: 30px;
+    margin-left: -20px;
+    padding-left: 30px;
+    cursor: pointer;
+
+    
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 0px 8px 8px 0px;
+}
+
+#Icono-Lista-Administrador{
+    width: 30px;
+    height: 30px;
+    color: #323233;
+    margin-right: 10px;
+}
+
+#Fila-Lista-Administrador #Texto-Lista-Administrador{
+    font-family: Segoe UI;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+    color: #323233;
+}
+
+#Fila-Lista-Administrador-Seleccionado #Texto-Lista-Administrador{
+    font-family: Segoe UI;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 19px;
+    color: #1876F2;
+}

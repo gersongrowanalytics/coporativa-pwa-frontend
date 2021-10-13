@@ -1,0 +1,499 @@
+#Btn-Seleccionado-SubCategoria-Dashboard{
+    /* width: 10px; */
+    height: 48px;
+    background: #1876F2;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-left: 28px;
+}
+
+#Row-Btn-Seleccionado-SubCategoria-Dashboard{
+    display: flex;
+    text-align-last: center;
+    height: 100%;
+    align-items: center;
+    font-family: Segoe UI;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 23px;
+    color: #FFFFFF ;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+#Btn-SubCategoria-Dashboard{
+    /* width: 100%; */
+    height: 48px;
+    background: #FFFFFF;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+#Row-Btn-SubCategoria-Dashboard{
+    display: flex;
+    text-align-last: center;
+    height: 100%;
+    align-items: center;
+    font-family: Segoe UI;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 23px;
+    color: #1876F2;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+#Contenedor-SubCategorias-Dashboard{
+    margin-top: 50px;
+    padding-top: 10px;
+    /* margin-left: 30px !important;
+    margin-right: 45px !important; */
+    width: 100%;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #C4C4C4;
+
+    position: absolute;
+    top: 0;
+
+    background: #F0F2F5;
+    box-shadow: 0px 10px 11px rgba(0, 0, 0, 0.25);
+
+    transition: all 500ms ease;
+    opacity: 0;
+    visibility: hidden;
+}
+
+#Contenedor-Favoritos-Dashboard{
+    /* height: 200px; */
+    /* background: red; */
+    /* position: relative; */
+    /* width: 300px; */
+    /* position: absolute;
+    width: 100%;
+    height: 100vh; */
+    
+}
+
+#Btn-Favoritos-Dashboard{
+    margin-left: 45px;
+    height: 23px;
+    width: 103px;
+    background: #1876F2;
+    border-radius: 36px;
+
+    font-family: Segoe UI;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    color: #FFFFFF;
+
+    display: flex;
+    place-content: center;
+    align-items: center;
+
+    margin-top: 16px;
+    cursor: pointer;
+}
+
+#Btn-EliminarFavoritos-Dashboard{
+    margin-left: 45px;
+    height: 23px;
+    width: 130px;
+    background: #FFFFFF;
+    border-radius: 36px;
+
+    font-family: Segoe UI;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    color: #1876F2;
+
+    display: flex;
+    place-content: center;
+    align-items: center;
+
+    margin-top: 16px;
+    cursor: pointer;
+}
+
+#Btn-ActivarFavoritos-Dashboard{
+    margin-left: 45px;
+    height: 23px;
+    /* width: 103px; */
+    background: #1876F2;
+    border-radius: 36px;
+
+    font-family: Segoe UI;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    color: #FFFFFF;
+
+    display: flex;
+    place-content: center;
+    align-items: center;
+
+    margin-top: 16px;
+    cursor: pointer;
+
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+#Btn-DesactivadoFavoritos-Dashboard{
+    margin-left: 45px;
+    height: 23px;
+    /* width: 130px; */
+    background: #E4E6EB;
+    border-radius: 36px;
+
+    font-family: Segoe UI;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    color: #4D4D4D;
+
+    display: flex;
+    place-content: center;
+    align-items: center;
+
+    margin-top: 16px;
+    cursor: pointer;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+
+#Contenido-Favoritos-Dashboard{
+    margin-left: 45px;
+    position: absolute;
+    margin-top: 10px;
+    width: 200px;
+    background: #FFFFFF;
+    box-shadow: 1px 4px 10px rgba(0, 0, 0, 0.11);
+    border-radius: 8px;
+    padding: 20px;
+
+    font-family: Segoe UI;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    color: #4D4D4D;
+
+    transform: scale(0);
+    animation-name: ContenidoFavoritosDashboardAnimacion;
+    animation-delay: 0s;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+}
+
+
+@keyframes ContenidoFavoritosDashboardAnimacion{
+    from{ 
+        transform: scale(0);
+    }
+    to { 
+        transform: scale(1);
+    }
+}
+
+#Ocultar-Contenido-Favoritos-Dashboard{
+    margin-left: 45px;
+    position: absolute;
+    margin-top: 10px;
+    width: 200px;
+    background: #FFFFFF;
+    box-shadow: 1px 4px 10px rgba(0, 0, 0, 0.11);
+    border-radius: 8px;
+    padding: 20px;
+
+    font-family: Segoe UI;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    color: #4D4D4D;
+
+    transform: scale(0);
+    animation-name: OcultarContenidoFavoritosDashboardAnimacion;
+    animation-delay: 0s;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+}
+
+
+@keyframes OcultarContenidoFavoritosDashboardAnimacion{
+    from{ 
+        transform: scale(1);
+    }
+    to { 
+        transform: scale(0);
+    }
+}
+
+
+#Circulo-Seleccionar-Favoritos-Dashboard{
+    border: 1px solid #4D4D4D;
+    box-sizing: border-box;
+    border-radius: 50px;
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+}
+
+#Texto-Fila-Contenido-Favoritos-Dashboard{
+    font-family: Segoe UI;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 19px;
+    color: #4D4D4D;
+}
+
+
+#Fila-Contenido-Favoritos-Dashboard{
+    /* background: red; */
+    margin-bottom: 7px;
+    font-family: Segoe UI;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    color: #4D4D4D;
+    align-items: center;
+}
+
+#Btn-Guardar-Favoritos-Dashboard{
+    height: 28px;
+    width: 90px;
+    background: #1876F2;
+    border-radius: 8px;
+    font-family: Segoe UI;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin-top: 13px;
+}
+
+#Titulo-Modal-Favoritos-Dashboard{
+    font-family: Segoe UI;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    color: #4D4D4D;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+#Icono-Estrella-Nombre-Favoritos-Dashboard{
+    margin-right: 5px;
+}
+
+#Btn-Guardar-Modal-Favoritos-Dashboard{
+    margin-top: 20px;
+    background: #1876F2;
+    border-radius: 8px;
+    width: 90px;
+    height: 28px;
+
+    font-family: Segoe UI;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    color: #FFFFFF;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+}
+
+#Contenedor-Btn-Desplegable-SubCategorias-Dashboard{
+    background: #1876F2;
+    border-radius: 36px;
+    height: 21px;
+    padding-left: 20px;
+    padding-right: 20px;
+    display: flex;
+    place-items: center;
+
+    font-family: Segoe UI;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 19px;
+    color: #FFFFFF;
+
+    cursor: pointer;
+
+    margin-left: 45px;
+    margin-top: 20px;
+    /* margin-bottom: 10px; */
+}
+
+#Icono-Flecha-Abajo-Dashboard{
+    width: 10px;
+    color: #FFFFFF;
+    margin-right: 8px;
+    margin-top: -3px;
+}
+
+#Btn-Checked-Dashboard{
+    display: none;
+}
+
+#Btn-Checked-Dashboard:checked ~ #Contenedor-SubCategorias-Dashboard{
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0%);
+}
+
+/* #btn-menu:checked ~ #Contenedor-SubCategorias-Dashboard .cont-menu{
+    transform: translateX(0%);
+} */
+
+#Icono-Restart-Dashboard{
+    top: 14px;
+    position: absolute;
+    right: 40px;
+    cursor: pointer;
+}
+
+#Contenedor-SubMenus-Youtube-Dashboard{
+    height: 60px;
+    width: 100%;
+    display: flex;
+    place-items: center;
+    /* margin-left: 10px; */
+}
+
+#Tarjeta-SubMenu-Youtube-Dashboard{
+    width: 430px;
+    background: #323233;
+    border-radius: 8px;
+    display: flex;
+    height: 40px;
+    align-items: center;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    cursor: pointer;
+    font-family: Segoe UI;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 19px;
+    text-transform: capitalize;
+    color: #FFFFFF;
+    place-content: center;
+}
+
+#Tarjeta-Favorito-SubMenu-Youtube-Dashboard{
+    width: 430px;
+
+    background: #E7F3FF;
+    border: 1px solid #1876F2;
+    box-sizing: border-box;
+    
+    border-radius: 8px;
+    display: flex;
+    height: 40px;
+    align-items: center;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    cursor: pointer;
+
+    font-family: Segoe UI;
+    font-style: normal;
+    
+    color: #1876F2;
+    place-content: center;
+    
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 19px;
+    text-transform: capitalize;
+}
+
+#Tarjeta-Favorito-SubMenu-SinSeleccionar-Youtube-Dashboard{
+    width: 430px;
+    background: #FFFFFF;
+    
+    border: 1px solid #1876F2;
+    box-sizing: border-box;
+    border-radius: 8px;
+
+    display: flex;
+    height: 40px;
+    align-items: center;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    cursor: pointer;
+    
+    font-family: Segoe UI;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 19px;
+    text-transform: capitalize;
+
+    color: #1876F2;
+
+    place-content: center;
+}
+
+#Tarjeta-SubMenu-SinSeleccionar-Youtube-Dashboard{
+    width: 430px;
+    background: #E5E5E5;
+    border-radius: 8px;
+    display: flex;
+    height: 40px;
+    align-items: center;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    cursor: pointer;
+    font-family: Segoe UI;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 19px;
+    text-transform: capitalize;
+    color: #323233;
+    place-content: center;
+}
+
+#Icono-Estrella-Favoritos-Dashboard{
+    width: 30px;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+#Contenedor-Favoritos-TopBar-Dashboard{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 30px;
+    padding-left: 30px;
+}

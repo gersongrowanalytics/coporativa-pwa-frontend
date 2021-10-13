@@ -1,0 +1,14 @@
+/* .Logo-Preload-Main{
+    animation-name: girar;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes girar {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  } */
