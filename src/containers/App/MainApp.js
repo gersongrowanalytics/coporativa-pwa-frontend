@@ -133,7 +133,7 @@ const MainApp = () => {
         <Layout className="gx-app-layout" style={{position:'relative'}}>
             {getSidebar(navStyle, width)}
             {
-                false == true
+                mostrarLogo == true
                 ?<div
                     className="Contenedor-Main-Logo"
                     style={{
