@@ -1,9 +1,9 @@
 {
-  "short_name": "Spider App",
-  "name": "Spider App | Grow Analytics",
+  "short_name": "Grow Place",
+  "name": "Grow Place",
   "icons": [
     {
-      "src": "logo-w.ico",
+      "src": "g-logo-w.ico",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     },
