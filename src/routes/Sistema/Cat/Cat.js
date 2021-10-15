@@ -123,7 +123,7 @@ const Cat = () => {
             catcolorhover   : "0, 0, 0, 0.4",
             catcolor        : "#FF3D00",
             // nombreUrl       : "/Sistema/dashboards/canal-moderno/ytd-si-so"
-            nombreUrl       : "/Sistema/dashboards/canal-moderno/ytd-si-so"
+            nombreUrl       : "/Sistema/dashboards/canal-moderno/smart-hub"
         },
         {
             catnombre       : "Canal Tradicional",
@@ -134,7 +134,7 @@ const Cat = () => {
             catcolorhover   : "0, 0, 0, 0.4",
             catcolor        : "#213DA7",
             // nombreUrl       : "/Sistema/dashboards/canal-tradicional/ytd-radiography-store-so"
-            nombreUrl       : "/Sistema/dashboards/canal-tradicional/ytd-radiography-store-so"
+            nombreUrl       : "/Sistema/dashboards/canal-tradicional/smart-hub"
         },
         {
             catnombre       : "Convenience Store",
@@ -164,7 +164,7 @@ const Cat = () => {
             caticonohover   : icoCatTradeMarketing,
             catcolorhover   : "0, 0, 0, 0.4",
             catcolor        : "#D21044",
-            nombreUrl       : "tradeMarketing"
+            nombreUrl       : "/Sistema/dashboards/trade-marketing/incentivos-driver-peru-gerenciales"
         },
         {
             catnombre       : "Marketing",
@@ -188,7 +188,7 @@ const Cat = () => {
             caticonohover   : icoCatFarmacia,
             catcolorhover   : "0, 0, 0, 0.4",
             catcolor        : "#D21044",
-            nombreUrl       : "/Sistema/dashboards/farmacias"
+            nombreUrl       : "/Sistema/dashboards/peru-farmacias"
         },
         {
             catnombre       : "Control del PDV",
