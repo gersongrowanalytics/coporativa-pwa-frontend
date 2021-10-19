@@ -1,7 +1,11 @@
 #Contenedor-Principal-Margen{
     margin: 40px;
 }
-
+@media screen and (max-width: 375px) {
+    #Contenedor-Principal-Margen{
+        margin: 25px;
+    }
+}
 #Icono-Fila-Aceptar-Editar-Administrador{
     width: 20px;
     cursor: pointer;

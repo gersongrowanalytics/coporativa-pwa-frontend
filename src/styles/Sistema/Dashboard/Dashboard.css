@@ -384,7 +384,7 @@
 }
 
 #Tarjeta-SubMenu-Youtube-Dashboard{
-    width: 430px;
+    width: 395px;
     background: #323233;
     border-radius: 8px;
     display: flex;
@@ -404,9 +404,14 @@
     color: #FFFFFF;
     place-content: center;
 }
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    #Tarjeta-SubMenu-Youtube-Dashboard{
+        width: 187px;
+    }
+}
 
 #Tarjeta-Favorito-SubMenu-Youtube-Dashboard{
-    width: 430px;
+    width: 360px;
 
     background: #E7F3FF;
     border: 1px solid #1876F2;
@@ -464,7 +469,7 @@
 }
 
 #Tarjeta-SubMenu-SinSeleccionar-Youtube-Dashboard{
-    width: 430px;
+    width: 395px;
     background: #E5E5E5;
     border-radius: 8px;
     display: flex;
@@ -485,6 +490,11 @@
     place-content: center;
 }
 
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    #Tarjeta-SubMenu-SinSeleccionar-Youtube-Dashboard{
+        width: 187px;
+    }
+}
 #Icono-Estrella-Favoritos-Dashboard{
     width: 30px;
     margin-right: 5px;

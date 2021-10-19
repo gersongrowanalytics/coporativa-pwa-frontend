@@ -18,9 +18,9 @@ class BannerLogin extends React.Component {
     }
 
     componentDidMount(){
-        setTimeout(() => {
-            this.animacionVideo()
-        }, 20000);
+        // setTimeout(() => {
+        //     this.animacionVideo()
+        // }, 20000);
     }
 
     render(){

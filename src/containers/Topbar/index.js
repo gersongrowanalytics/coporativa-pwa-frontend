@@ -83,7 +83,7 @@ const Topbar = () => {
     // <Header style={{boxShadow:' 0 0 0px 0px'}}>
     <Header style={{boxShadow: "0px 4px 4px #E4E3E3" }}>
       <Row style={{width:"100%"}}>
-        <Col xl={4} md={4} sm={4} xs={0}>
+        <Col xl={4} md={5} sm={5} xs={0}>
           <div className="gx-linebar gx-mr-3">
             <div 
               onClick={() => {
@@ -147,7 +147,7 @@ const Topbar = () => {
           </div> 
         </Col>
 
-        <Col xl={14} >
+        <Col xl={14} md={12} sm={0} xs={0}>
           {
             seleccionoModulo == true
               ?moduloSeleccionado.modtienesubmodulos == true
@@ -165,7 +165,7 @@ const Topbar = () => {
           }
         </Col>
 
-        <Col xl={6} md={12} sm={12} xs={0}>
+        <Col xl={6} md={7} sm={19} xs={0}>
         {/* <button
           onClick={() => Disponibles()}
         >

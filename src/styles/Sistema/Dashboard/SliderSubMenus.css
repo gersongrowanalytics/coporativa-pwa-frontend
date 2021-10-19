@@ -10,6 +10,8 @@
     margin-right: 70px;
     max-width: 100vw;
     overflow: hidden;
+    justify-content: center;
+
 }
 
 .slick-track{

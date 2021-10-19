@@ -36,7 +36,7 @@ class FiltrosTopbar extends React.Component {
                     id="Contenedor-Filtros-TopBar"
                 >
                     <Row style={{height: "100%"}}>
-                        <Col xl={8} style={{height: "100%"}} 
+                        <Col xl={8} md={10} sm={8} style={{height: "100%"}} 
                             onMouseEnter={
                                 () => this.setState({mostrarFiltros : true, numeroSeleccion : 1})
                             }
@@ -53,7 +53,7 @@ class FiltrosTopbar extends React.Component {
                         {/*  */}
 
                         <Col 
-                            xl={8} 
+                            xl={8} md={10} sm={8}
                             onMouseEnter={
                                 () => this.setState({mostrarFiltros : true, numeroSeleccion : 2})
                             }
@@ -114,7 +114,7 @@ class FiltrosTopbar extends React.Component {
 
                         {/*  */}
 
-                        <Col xl={8} style={{height: "100%"}} 
+                        <Col xl={8} md={0} sm={0} style={{height: "100%"}} 
                         >
                             
                         </Col>
