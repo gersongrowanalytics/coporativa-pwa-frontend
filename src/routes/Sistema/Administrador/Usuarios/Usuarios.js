@@ -62,9 +62,9 @@ class TiposUsuarios extends React.Component {
                         {/* 1- 4 de 6 */}
                     {/* </Col> */}
 
-                    <Col xl={24} id="Contenedor-Segunda-Parte-Administrador">
+                    <Col xl={24} lg={24} md={24} sm={24} xs={24} id="Contenedor-Segunda-Parte-Administrador">
                         <Row>
-                            <Col xl={4} md={4}>
+                            <Col xl={4} lg={4} md={24} sm={24} xs={24} id="Contenedor-Posicion-Lista-Administrador">
                                 <div id="Contenedor-Lista-Administrador">
                                     <div id="Titulo-Modulo-Administrador">Administrador</div><br/>
                                     <ListaAdministrador
@@ -74,9 +74,9 @@ class TiposUsuarios extends React.Component {
                                     />
                                 </div>
                             </Col>
-                            <Col xl={20}>
+                            <Col xl={20} lg={20} md={24} sm={24} xs={24}>
                                 <Row>
-                                    <Col xl={24} id="Contenedor-Primera-Fila-Control-Archivos" style={{paddingLeft:'10px', paddingRight:'10px'}}>
+                                    <Col xl={24} lg={24} md={24} sm={24} xs={24} id="Contenedor-Primera-Fila-Control-Archivos" style={{paddingLeft:'10px', paddingRight:'10px'}}>
                                         <BuscarUsuario 
                                             cambiarTxtBuscar = {(e) => this.cambiarTxtBuscar(e)}
                                             tpuidseleccionado = {this.state.tpuidseleccionado}
@@ -92,7 +92,7 @@ class TiposUsuarios extends React.Component {
                                             </Tooltip>
                                         </div>
                                     </Col>
-                                    <Col xl={24} style={{display:'flex', padding:'10px'}}>
+                                    <Col xl={24} lg={24} md={24} sm={24} xs={24} style={{display:'flex', padding:'10px'}}>
                                         <div id="Contenedor-Btn-Crear-Administrador" onClick={() => this.abrirModalCrearUsuario()}>
                                             <div id="Texto-Btn-Crear-Administrador">
                                                 + Crear
@@ -105,7 +105,7 @@ class TiposUsuarios extends React.Component {
                                             cambiarTpuidSeleccionado = {this.cambiarTpuidSeleccionado}
                                         />
                                     </Col>
-                                    <Col xl={24}>
+                                    <Col xl={24} lg={24} md={24} sm={24} xs={24}>
                                     
                                         <TablaUsuarios 
                                             

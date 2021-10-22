@@ -1,10 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import ImagenPeru from '../../assets/images/Login/banderaPeru.png'
 import ImagenChile from '../../assets/images/Login/banderaChile.png'
-import ImagenMexico from '../../assets/images/Login/banderaMexico.png'
 import ImagenBolivia from '../../assets/images/Login/banderaBolivia.png'
-import ImagenEeuu from '../../assets/images/Login/banderaEeuu.png'
-import ImagenArgentina from '../../assets/images/Login/banderaArgentina.png'
 import ImagenAndes from '../../assets/images/Login/banderaAndes.png'
 import VideoIniciarSesion from '../../assets/Videos/Login/videologin.mp4';
 import {Form, Input, Select, Button } from "antd";
@@ -52,8 +49,8 @@ const FormularioLogin = (props) => {
             <div style={{position:'absolute', width:'100%'}}>
                 {
                     props.mostrarVideoLogin == true
-                    ?<video width="100%" height="100%" autoPlay loop >
-                        <source src={VideoIniciarSesion} type="video/mp4"/>
+                    ?<video autoPlay loop id="FullScreen-Video" >
+                        <source src={VideoIniciarSesion}  type="video/mp4"/>
                         Your browser does not support the video tag.
                     </video>
                     :null

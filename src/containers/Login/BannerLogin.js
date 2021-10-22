@@ -38,7 +38,7 @@ class BannerLogin extends React.Component {
                 <div style={{position:'absolute', width:'100%'}}>
                     {
                         this.props.mostrarVideoPreload == true
-                        ?<video width="100%" height="100%" autoPlay loop >
+                        ?<video  autoPlay loop id="FullScreen-Video" >
                             <source src={VideoPreload} type="video/mp4"/>
                             Your browser does not support the video tag.
                         </video>

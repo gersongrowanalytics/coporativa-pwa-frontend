@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import {Row, Col, Modal, Form, Button, Select } from 'antd'
+import '../../../../styles/Sistema/Administrador/Usuarios/Usuario.css'
 import iconoCerrarModal from '../../../../assets/images/iconos/Perfil/cerrarModal.png';
 import {useDispatch, useSelector} from "react-redux";
 import {CrearUsuarioReducer, ObtenerListaUsuariosReducer} from "../../../../appRedux/actions/ControlAcceso/Usuarios/Usuarios";
@@ -47,6 +48,7 @@ const ModalCrearUsuario = (props) => {
             footer={null} 
             centered
             width={"800px"}
+            style={{marginTop:'10px'}}
         >
             
             <div id="Contenedor-Modal-Crear-Usuario-Administrador">
@@ -54,9 +56,10 @@ const ModalCrearUsuario = (props) => {
                     form    = {form}
                     onFinish= {enviarFormulario}
                     name    = "formNuevoRebate"   
+                    style = {{marginLeft:'0px'}}
                 > 
                     <Row>
-                        <Col xl={12} md={12} sm={12} xs={12} id="PrimeraFila-Modal-Crear-Usuario-Administrador">
+                        <Col xl={12} md={12} sm={24} xs={24} id="PrimeraFila-Modal-Crear-Usuario-Administrador">
                             <div>
                                 <div id="Texto-Crear-Usuario-Administrador">Nombre</div>
                                 <Form.Item label="" name="pernombre">
@@ -72,7 +75,7 @@ const ModalCrearUsuario = (props) => {
                                 <Form.Item label="" name="tpuid">
                                     <Select 
                                         id="Input-Crear-Usuario-Administrador" 
-                                        style={{ width: "328px", height: "41px"}} 
+                                        className="Select-Crear-Usuario-Administrador"
                                         onChange={(e) => setTpuidSeleccionado(e)}
                                     >
                                         {
@@ -96,7 +99,7 @@ const ModalCrearUsuario = (props) => {
                                     <Select 
                                         mode="multiple"
                                         // id="Input-Crear-Usuario-Administrador" 
-                                        style={{ width: "328px", height: "41px"}} 
+                                        className="Select-Crear-Usuario-Administrador"
                                         onChange={(e) => setPaiidSeleccionado(e)}
                                         autoComplete={"off"}
                                         allowClear
@@ -113,7 +116,7 @@ const ModalCrearUsuario = (props) => {
                                 {/* </Form.Item> */}
                             </div>
                         </Col>
-                        <Col xl={12} md={12} sm={12} xs={12} id="SegundaFila-Modal-Crear-Usuario-Administrador">
+                        <Col xl={12} md={12} sm={24} xs={24} id="SegundaFila-Modal-Crear-Usuario-Administrador">
                             <div>
                                 <div id="Texto-Crear-Usuario-Administrador">Usuario</div>
                                 <Form.Item label="" name="usuusuario">

@@ -71,7 +71,7 @@ const DescargarData = () => {
     return (
         <div id="Contenedor-Principal-Margen">
             <Row>
-                <Col xl={5}>
+                <Col xl={5} lg={3} md={3} sm={24} xs={24}>
 
 
                     <div id="Titulo-Menu-Descargar-Data">Data</div><br/>
@@ -114,7 +114,7 @@ const DescargarData = () => {
                         } */}
                     </div>
                 </Col>
-                <Col xl={16}>
+                <Col xl={16} lg={17} md={16} sm={24} xs={24}>
                     {
                         dataSeleccionada.imagenes
                         ?<div style={{display: "flex", justifyContent: "center", textAlign: "-webkit-center"}}>
@@ -136,7 +136,7 @@ const DescargarData = () => {
                         :null
                     }
                 </Col>
-                <Col xl={3}>
+                <Col xl={3} lg={4} md={5} sm={24} xs={24} style={{paddingTop:'10px'}}>
                     {/* <button onClick={() => console.log(dataSeleccionada)}>cli</button> */}
                     {
                         dataSeleccionada.archivo

@@ -13,6 +13,12 @@
     justify-content: center;
 
 }
+@media screen and (max-width: 425px) {
+    .slick-list{
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+}
 
 .slick-track{
     position: relative;
@@ -21,6 +27,14 @@
     display: flex;
     /* justify-content: center; */
     transition: .1s ease-in-out;
+}
+@media screen and (max-width: 767px) {
+    .slick-track{
+        overflow-x: scroll;
+    }
+    .slick-track::-webkit-scrollbar{
+        display: none;
+      }
 }
 
 .slick{
@@ -130,4 +144,9 @@
     width: 100%;
     position: relative;
     background: red;
+}
+@media screen and (max-width:768px) {
+    #Ocultar-Flecha{
+        display: none;
+    }
 }

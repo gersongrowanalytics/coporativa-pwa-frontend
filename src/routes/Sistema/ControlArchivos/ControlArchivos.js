@@ -93,7 +93,7 @@ const ControlArchivos = () => {
     return (
         <div id="Contenedor-Principal-Margen">
             <Row>
-                <Col xl={24} id="Contenedor-Primera-Fila-Control-Archivos">
+                <Col xl={24} lg={24} md={24} sm={24} xs={24} id="Contenedor-Primera-Fila-Control-Archivos">
                     <div id="Titulo-Control-Archivo">Archivos Cargados</div>
 
                     <div id="Contenedor-Buscador-Control-Archivos">
@@ -123,25 +123,25 @@ const ControlArchivos = () => {
                         </div>
                 </Col>
 
-                <Col xl={24} id="Contenedor-Filtro-Control-Archivo">
+                <Col xl={24} lg={24} md={24} sm={24} xs={24} id="Contenedor-Filtro-Control-Archivo">
                     <Row style={{height:"100%"}}>
-                        <Col xl={12}>
+                        <Col xl={12} lg={19} md={24} sm={24} xs={24}>
                             <Row 
                                 style={{
                                     height:"100%",
                                     alignContent: "center"
                                 }}
                             >
-                                <Col xl={12} style={{paddingRight:'15px'}}>
+                                <Col xl={12} lg={12} md={12} sm={12} xs={24} style={{paddingRight:'15px', margin:'3px 0px'}}>
                                     <div id="Contenedor-Filtro-Fecha-Control-Archivo">
                                         <Row>
-                                            <Col xl={12} id="Derecha-Filtro-Fecha-Control-Archivo">
+                                            <Col xl={12} lg={12} md={12} sm={12} xs={12} id="Derecha-Filtro-Fecha-Control-Archivo">
                                                 <div id="Texto-Filtro-Fecha-Control-Archivo">
                                                     Fecha de inicio
                                                 </div>
                                             </Col>
                                             <Col 
-                                                xl={12} 
+                                                xl={12} lg={12} md={12} sm={12} xs={12} 
                                                 id="Izquierda-Filtro-Fecha-Control-Archivo"
                                                 onClick={() => setMostrarFechaInicio(!mostrarFechaInicio)}
                                             >
@@ -165,16 +165,16 @@ const ControlArchivos = () => {
                                     }
                                 </Col>
 
-                                <Col xl={12} style={{paddingLeft:'15px'}}>
+                                <Col xl={12} lg={12} md={12} sm={12} xs={24} style={{paddingLeft:'15px'}}>
                                     <div id="Contenedor-Filtro-Fecha-Control-Archivo">
                                         <Row>
-                                            <Col xl={12} id="Derecha-Filtro-Fecha-Control-Archivo">
+                                            <Col xl={12} lg={12} md={12} sm={12} xs={12} id="Derecha-Filtro-Fecha-Control-Archivo">
                                                 <div id="Texto-Filtro-Fecha-Control-Archivo">
                                                     Fecha de Fin
                                                 </div>
                                             </Col>
                                             <Col 
-                                                xl={12} id="Izquierda-Filtro-Fecha-Control-Archivo"
+                                                xl={12} lg={12} md={12} sm={12} xs={12} id="Izquierda-Filtro-Fecha-Control-Archivo"
                                                 onClick={() => setMostrarFechaFinal(!mostrarFechaFinal)}
                                             >
                                                 <div id="Texto-Filtro-Fecha-Control-Archivo">
@@ -199,7 +199,7 @@ const ControlArchivos = () => {
                                 </Col>
                             </Row>
                         </Col>
-                        <Col xl={12} style={{ textAlignLast: "right", alignSelf: "center", paddingRight:'30px'}}>
+                        <Col xl={12} lg={5} md={0} sm={0} xs={0} style={{ textAlignLast: "right", alignSelf: "center", paddingRight:'30px'}}>
                             <div id="Texto-Paginate-Control-Archivos">
                                 {/* 1- 4 de 6 */}
                             </div>

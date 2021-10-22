@@ -1,9 +1,9 @@
 #Contenedor-Principal-Margen{
     margin: 40px;
 }
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 768px) {
     #Contenedor-Principal-Margen{
-        margin: 25px;
+        margin: 10px;
     }
 }
 #Icono-Fila-Aceptar-Editar-Administrador{

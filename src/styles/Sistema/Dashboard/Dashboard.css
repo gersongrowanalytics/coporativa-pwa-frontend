@@ -384,7 +384,7 @@
 }
 
 #Tarjeta-SubMenu-Youtube-Dashboard{
-    width: 395px;
+    width: 380px;
     background: #323233;
     border-radius: 8px;
     display: flex;
@@ -406,7 +406,17 @@
 }
 @media screen and (min-width: 768px) and (max-width: 1023px) {
     #Tarjeta-SubMenu-Youtube-Dashboard{
-        width: 187px;
+        width: 185px;
+    }
+}
+@media screen and (min-width: 425px) and (max-width: 767px) {
+    #Tarjeta-SubMenu-Youtube-Dashboard{
+        width: 280px;
+    }
+}
+@media screen and (max-width: 424px) {
+    #Tarjeta-SubMenu-Youtube-Dashboard{
+        width: 178px;
     }
 }
 
@@ -469,7 +479,7 @@
 }
 
 #Tarjeta-SubMenu-SinSeleccionar-Youtube-Dashboard{
-    width: 395px;
+    width: 380px;
     background: #E5E5E5;
     border-radius: 8px;
     display: flex;
@@ -492,12 +502,22 @@
 
 @media screen and (min-width: 768px) and (max-width: 1023px) {
     #Tarjeta-SubMenu-SinSeleccionar-Youtube-Dashboard{
-        width: 187px;
+        width: 185px;
+    }
+}
+@media screen and (min-width: 425px) and (max-width: 767px) {
+    #Tarjeta-SubMenu-SinSeleccionar-Youtube-Dashboard{
+        width: 280px;
+    }
+}
+@media screen and (max-width: 424px) {
+    #Tarjeta-SubMenu-SinSeleccionar-Youtube-Dashboard{
+        width: 178px;
     }
 }
 #Icono-Estrella-Favoritos-Dashboard{
     width: 30px;
-    margin-right: 5px;
+    /* margin-right: 5px; */
     cursor: pointer;
 }
 

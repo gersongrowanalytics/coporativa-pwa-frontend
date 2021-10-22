@@ -83,13 +83,13 @@ const CargaArchivos = () => {
                         url    = {'modulo/cargaArchivos/clientes'}
                     />
                 </Col>
-                <Col xl={4} md={6} sm={12} xs={24}>
+                <Col xl={4} md={0} sm={0} xs={0}>
                     {/* <TarjetaCargaArchivo
                         titulo = {'Fechas'}
                         url    = {'modulo/cargaArchivos/fechas'}
                     /> */}
                 </Col>
-                <Col xl={4} style={{position:'relative'}}>
+                <Col xl={4} md={6} sm={24} xs={24} >
                     <div 
                         id={
                             mostrarNotificacionesPantallaCompleta == true 

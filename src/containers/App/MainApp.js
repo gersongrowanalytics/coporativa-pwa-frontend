@@ -159,7 +159,7 @@ const MainApp = () => {
                 {/* <Content className={`gx-layout-content ${getContainerClass(navStyle)} `}> */}
                 <Content className='gx-layout-content'>
                     <App match={match}/>
-                    <Footer style={{borderTop: 'solid 0px', background: 'white'}}>
+                    <Footer style={{borderTop: 'solid 0px', background: 'white', position: 'relative'}}>
                         <Row style={{ display: "flex", textAlign: "-webkit-center" }}>
                             <Col 
                                 xl={8} md={8} sm={8} xs={8} 

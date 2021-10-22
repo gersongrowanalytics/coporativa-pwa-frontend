@@ -14973,8 +14973,10 @@ textarea.ant-input-number {
   /* fix firefox can't set height smaller than content on flex item */
   min-height: 0;
 }
-.ant-layout-content::-webkit-scrollbar{
-  display: none;
+@media screen and (max-width: 1024px) {
+  .ant-layout-content::-webkit-scrollbar{
+    display: none;
+  }
 }
 .ant-layout-sider {
   position: relative;
@@ -16663,6 +16665,11 @@ textarea.ant-mentions {
   overflow: auto;
   outline: 0;
   -webkit-overflow-scrolling: touch;
+}
+@media screen and (max-width: 1024px) {
+  .ant-modal-wrap::-webkit-scrollbar {
+    display: none;
+  }
 }
 .ant-modal-wrap {
   z-index: 1000;

@@ -155,6 +155,11 @@ table tr:first-child #Texto-Cuerpo-Tabla-Usuario-Administrador:last-child {
 
     /* height: 600px; */
 }
+@media screen and (max-width: 1024px){
+    #Contenedor-Tabla-Usuario-Administrador::-webkit-scrollbar{
+        display: none;
+    }
+}
 
 /* css de modal crear usuario */
 
@@ -191,6 +196,16 @@ table tr:first-child #Texto-Cuerpo-Tabla-Usuario-Administrador:last-child {
     font-weight: 400;
     font-size: 14px;
     line-height: 16px;
+}
+@media screen and (max-width: 320px) {
+    #Input-Crear-Usuario-Administrador{
+        width: 235px;
+    }
+}
+@media screen and (min-width: 321px) and (max-width: 375px) {
+    #Input-Crear-Usuario-Administrador{
+        width: 275px;
+    }
 }
 
 #Contenedor-Buscador-Administrador-Usuarios{
@@ -262,4 +277,20 @@ select:focus{ outline: none;}
     /* border: 1px solid black; */
 
     padding: 5px;
+}
+
+.Select-Crear-Usuario-Administrador{
+    width: 335px !important;
+    height: 47px
+}
+
+@media screen and (max-width: 320px) {
+    .Select-Crear-Usuario-Administrador{
+        width: 235px !important;
+    }
+}
+@media screen and (min-width: 321px) and (max-width: 375px) {
+    .Select-Crear-Usuario-Administrador{
+        width: 275px !important;
+    }
 }

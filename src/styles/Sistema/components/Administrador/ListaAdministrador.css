@@ -4,6 +4,18 @@
     margin-left: -20px;
     width: 220px;
 }
+@media screen and (max-width:1024px) {
+    #Contenedor-Lista-Administrador{
+        position: relative;
+        margin-bottom: 10px;
+        margin-left: 0px;
+    }
+    #Contenedor-Posicion-Lista-Administrador{
+        display: flex;
+        justify-content: center;
+    }
+}
+
 
 #Fila-Lista-Administrador{
     margin-bottom: 5px;
