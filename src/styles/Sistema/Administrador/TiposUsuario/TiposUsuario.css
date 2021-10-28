@@ -56,3 +56,32 @@
     color: #1876F2;
     cursor: pointer;
 }
+@media screen and (max-width:1024px) {
+    #Contenedor-Lista-Tipos-Usuario{
+        display: flex;
+        justify-content: center;
+    }
+}
+@media screen and (max-width:425px){
+    #Contenedor-Responsive{
+        padding: 0px;
+    }
+    #Contenedor-Segunda-Parte-Administrador{
+        padding: 0px;
+    }
+}
+@media screen and (min-width:376px) and (max-width:425px){
+    #Input-Crear-Permiso-Administrador{
+        width: 280px !important;
+    }
+}
+@media screen and (min-width:321px) and (max-width:375px){
+    #Input-Crear-Permiso-Administrador{
+        width: 260px !important;
+    }
+}
+@media screen and (max-width:320px){
+    #Input-Crear-Permiso-Administrador{
+        width: 210px !important;
+    }
+}

@@ -240,35 +240,6 @@
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*  */
 
 .Imagen-Fila-Cuerpo-Sidebar-Principal{
@@ -293,6 +264,7 @@
 
 nav{
     width: 300px;
+    height: 100%;
     position: absolute;
     top: 0;
     /* bottom: 0; */
@@ -318,7 +290,6 @@ nav ul li{
     border-radius: 15px;
     margin-right: 30px;
     transition: .5s ease;
-
     /* background-color: red; */
     width: 100%;
 
@@ -342,6 +313,17 @@ nav ul .dropdown:hover{
 }
 .dropdown_principal:hover{
     filter: drop-shadow(-6px 6px 10px rgba(0, 0, 0, 0.25));
+}
+
+@media screen and (max-width:620px){
+    .dropdown_principal{
+        display: none;
+    }
+}
+@media screen and (min-width:621px){
+    .dropdown_principal_mobile{
+        display: none;
+    }
 }
 
 
@@ -392,6 +374,14 @@ nav ul ul{
     /* box-shadow: 2px 2px 10px rgba(0, 0, 0, 1); */
 }
 
+@media screen and (max-width:620px) {
+    nav ul ul{
+        left: 50px;
+        top: 62px;
+        z-index: 2;
+    }
+}
+
 nav ul span{
     position: absolute;
     right: 20px;
@@ -406,6 +396,11 @@ nav ul .dropdown:hover > ul{
     display: initial;
     background-color: white;
     padding-left: 30px;
+}
+@media screen and (max-width:620px) {
+    nav ul .dropdown:hover > ul{
+        padding-left: 0px;
+    }
 }
 
 nav ul .dropdown > ul{
@@ -454,9 +449,75 @@ nav ul ul li:hover{
     border-radius: 6px;
 }
 
+.IconoFlecha{
+    position: absolute;
+    left: 257px;
+    top: 23px;
+    z-index: 1;
+}
 
+.IconoFlechaDerecha{
+    z-index: 1;
+    left: 7px;
+    position: absolute;
+    top: 22px;
+}
 
-
-
-
+@media screen and (max-width:620px) {
+    .IconoFlecha{
+        transform: rotate(90deg);
+        left: 250px;
+    }
+    .IconoFlechaDerecha{
+        transform: rotate(90deg);
+        display: none;
+    }
+    nav{
+        width: 370px;
+    }
+    #Cabecera-Sidebar-Principal{
+        width: 335px;
+    }
+    nav ul li ul li{
+        background: #a1a1b610;
+        width: 95%;
+        margin-bottom: 10px;
+        height: 27px ;   
+    }
+    nav ul li ul li:hover{
+        color: rgb(24, 118, 242);
+        font-weight: bold;
+        background: #E7F3FF;
+    }
+    nav ul li ul li:active{
+        color: rgb(24, 118, 242);
+        font-weight: bold;
+        background: #E7F3FF;
+    }
+    nav ul li{
+        width: 92%;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .Lista-separador{
+        width: 92%;
+        height: 1px;
+        background: #d4d4db;
+        position: relative;
+        top: 15px;
+    }
+    nav ul li ul .SubMenu-Contenedor-Sidebar:nth-last-child(1) li .Lista-separador{
+        display: none;
+    }
+}
+@media screen and (max-width:320px) {
+    nav ul li{
+        width: 83% !important;
+    }
+}
+@media screen and (min-width:621px) {
+    .Lista-separador{
+        display: none;
+    }
+}
 

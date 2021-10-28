@@ -133,9 +133,9 @@ class ControlData extends React.Component {
         return (
             <div id="Contenedor-Principal-Margen">
                 <Row>
-                    <Col xl={24} id="Contenedor-Segunda-Parte-Administrador">
+                    <Col xl={24} md={4} md={24} sm={24} xs={24} id="Contenedor-Segunda-Parte-Administrador">
                         <Row>
-                            <Col xl={4} md={4}>
+                            <Col xl={4} md={4} md={24} sm={24} xs={24} id="Contenedor-Lista-Tipos-Usuario">
                                 <div id="Contenedor-Lista-Administrador">
                                     <div id="Titulo-Modulo-Administrador">Administrador</div><br/>
                                     <ListaAdministrador

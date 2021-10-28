@@ -79,9 +79,9 @@ const Permisos = () => {
     return (
         <div id="Contenedor-Principal-Margen">
             <Row>
-                <Col xl={24} id="Contenedor-Segunda-Parte-Administrador">
+                <Col xl={24} lg={4} md={24} sm={24} xs={24} id="Contenedor-Segunda-Parte-Administrador">
                     <Row>
-                        <Col xl={4} md={4}>
+                        <Col xl={4} lg={4} md={24} sm={24} xs={24} id="Contenedor-Lista-Tipos-Usuario">
                             <div id="Contenedor-Lista-Administrador">
                                 <div id="Titulo-Modulo-Administrador">Administrador</div><br/>
                                 <ListaAdministrador
@@ -91,16 +91,16 @@ const Permisos = () => {
                                 />
                             </div>
                         </Col>
-                        <Col xl={20}>
+                        <Col xl={20} lg={20} md={24} sm={24} xs={24}>
                             <Row>
-                                <Col xl={24}>
+                                <Col xl={24} lg={24} md={24} sm={24} xs={24}>
                                     <div id="Contenedor-Btn-Crear-Administrador" onClick={abrirModalCrearPermiso}>
                                         <div id="Texto-Btn-Crear-Administrador">
                                             + Crear
                                         </div>
                                     </div>
                                 </Col>
-                                <Col xl={24}>
+                                <Col xl={24} lg={24} md={24} sm={24} xs={24}>
                                    
                                     <div id="Contenedor-Tabla-Usuario-Administrador">
                                         <table 

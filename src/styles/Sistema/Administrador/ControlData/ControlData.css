@@ -67,3 +67,10 @@
     color: #323233;
 
 }
+
+@media screen and (max-width:1024px){
+    #Contenedor-Lista-Tipos-Usuario {
+        display: flex;
+        justify-content: center;
+    }
+}

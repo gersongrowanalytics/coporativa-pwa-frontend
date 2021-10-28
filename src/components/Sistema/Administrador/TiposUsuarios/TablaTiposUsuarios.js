@@ -14,6 +14,7 @@ import IconoAdministradorTipoUsuario from '../../../../assets/images/iconos/Admi
 import {Link} from "react-router-dom"
 import {ObtenerPermisosTipoUsuarioReducer} from '../../../../appRedux/actions/ControlAcceso/TiposUsuarios/PermisosTipoUsuario'
 import Moment from 'moment'
+import '../../../../styles/Sistema/Administrador/TiposUsuario/TiposUsuario.css'
 
 const TablaTiposUsuarios = () => {
     Moment.locale('en');
@@ -30,12 +31,12 @@ const TablaTiposUsuarios = () => {
     }, [])
 
     return (
-        <Col xl={24}>
+        <Col xl={24} lg={24} md={24} sm={24} xs={24} id="Contenedor-Responsive">
             {
                 listaTiposUsuarios.map((dato, posicion) => {
                     return (
                         <Row id="Fila-Tabla-Administrador">
-                            <Col xl={6}>
+                            <Col xl={6} lg={6} md={6} sm={11} xs={18}>
                                 <div>
                                     <img src={IconoAdministradorTipoUsuario} id="Icono-Lista-Administrador" /> 
                                     {
@@ -47,17 +48,17 @@ const TablaTiposUsuarios = () => {
                                     
                                 </div>
                             </Col>
-                            <Col xl={6} style={{ alignSelf: "center"}}>
+                            <Col xl={6} lg={6} md={6} sm={6} xs={6} style={{ alignSelf: "center"}}>
                                 <Link to={"/Sistema/administrador/tipos-usuario/permisos"} onClick={() => dispatch(ObtenerPermisosTipoUsuarioReducer(dato.tpuid))}>
                                     <div id="Texto-Tabla-Tipos-Usuarios-Administrador">Permisos</div>
                                 </Link>
                             </Col>
                             
-                            <Col xl={4} style={{display:'flex', alignItems: "center"}}>
+                            <Col xl={4} lg={4} md={4} sm={7} xs={7} style={{display:'flex', alignItems: "center"}}>
                                 {Moment(dato.created_at).format('D MMM')}
                             </Col>
                             
-                            <Col xl={4} style={{display:'flex', alignItems: "center"}}>
+                            <Col xl={4} lg={4} md={4} sm={12} xs={7} style={{display:'flex', alignItems: "center"}}>
                                 <Switch 
                                     size="small"
                                     disabled={
@@ -83,7 +84,7 @@ const TablaTiposUsuarios = () => {
                             </Col>
                             
 
-                            <Col xl={4} style={{textAlignLast: "right"}}>
+                            <Col xl={4} lg={4} md={4} sm={12} xs={10} style={{textAlignLast: "right"}}>
                                 {
                                     dato.editando == true
                                     ?<div>

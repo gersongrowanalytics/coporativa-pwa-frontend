@@ -55,3 +55,9 @@
     line-height: 16px;
     color: #FFFFFF;
 }
+@media screen and (max-width:1024px){
+    #Contenedor-Lista-Tipos-Usuario {
+        display: flex;
+        justify-content: center;
+    }
+}

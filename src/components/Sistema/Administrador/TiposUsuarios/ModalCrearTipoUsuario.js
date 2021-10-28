@@ -3,6 +3,7 @@ import {Modal, Form, Button} from 'antd'
 import iconoCerrarModal from '../../../../assets/images/iconos/Perfil/cerrarModal.png';
 import {useDispatch, useSelector} from "react-redux";
 import {CrearTipoUsuarioReducer} from "../../../../appRedux/actions/ControlAcceso/TiposUsuarios/TiposUsuarios";
+import '../../../../styles/Sistema/Administrador/TiposUsuario/TiposUsuario.css';
 
 const ModalCrearTipoUsuario = (props) => {
 
