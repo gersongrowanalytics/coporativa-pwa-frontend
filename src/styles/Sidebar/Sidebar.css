@@ -1,3 +1,4 @@
+
 .ant-drawer-content-wrapper{
     
 }
@@ -279,7 +280,6 @@ nav ul{
     padding-left: 20px;
 }
 
-
 nav ul li{
     height: 60px;
     padding-left: 20px;
@@ -292,7 +292,20 @@ nav ul li{
     transition: .5s ease;
     /* background-color: red; */
     width: 100%;
+}
 
+nav ul .dropdown{
+    height: 60px;
+    padding-left: 20px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 15px;
+    margin-right: 30px;
+    transition: .5s ease;
+    /* background-color: red; */
+    width: 100%;
 }
 
 nav ul .dropdown-sinsubmenu:hover{
@@ -306,7 +319,6 @@ nav ul .dropdown:hover{
     /* margin-right: 50px; */
     width: auto;
 }
-
 
 .dropdown-sinsubmenu:hover{
     filter: drop-shadow(-6px 6px 10px rgba(0, 0, 0, 0.25));
@@ -325,8 +337,6 @@ nav ul .dropdown:hover{
         display: none;
     }
 }
-
-
 
 nav ul li:hover .Imagen-Fila-Cuerpo-Sidebar-Principal{
     border-radius: 100px;
@@ -354,6 +364,7 @@ nav ul li a{
     font-size: 14px;
     line-height: 19px;
 }
+
 
 nav ul li a:hover{
     /* background: rgba(0, 0, 0, 0.7); */
@@ -397,6 +408,7 @@ nav ul .dropdown:hover > ul{
     background-color: white;
     padding-left: 30px;
 }
+
 @media screen and (max-width:620px) {
     nav ul .dropdown:hover > ul{
         padding-left: 0px;
@@ -474,9 +486,23 @@ nav ul ul li:hover{
     }
     nav{
         width: 370px;
+        height: auto;
     }
     #Cabecera-Sidebar-Principal{
         width: 335px;
+    }
+    nav ul .dropdown{
+        height: auto;
+    }
+    nav ul ul{
+        left: 0px;
+        top: 0;
+    }
+    nav ul li ul {
+        position: relative;
+        padding-top: 0px !important;
+        padding-bottom: 0px !important;
+        padding-right: 0px !important;
     }
     nav ul li ul li{
         background: #a1a1b610;
@@ -499,6 +525,7 @@ nav ul ul li:hover{
         flex-direction: column;
         justify-content: center;
     }
+
     .Lista-separador{
         width: 92%;
         height: 1px;
@@ -509,6 +536,26 @@ nav ul ul li:hover{
     nav ul li ul .SubMenu-Contenedor-Sidebar:nth-last-child(1) li .Lista-separador{
         display: none;
     }
+    /* .dropdown_principal_mobile:hover{
+        padding: 4px;
+        border-radius: 10px;
+        background: #E7F3FF;
+        margin-right: 15px;
+    } */
+    nav ul .dropdown:hover{
+        background: white !important;
+    }
+    nav ul .dropdown ul{
+        transition: all 5s ease-out;
+    }
+    nav ul .dropdown:hover ul{
+        transform: translateY(100%);
+    }
+    nav ul .dropdown:hover > ul{
+        display: initial;
+    }
+    
+
 }
 @media screen and (max-width:320px) {
     nav ul li{
