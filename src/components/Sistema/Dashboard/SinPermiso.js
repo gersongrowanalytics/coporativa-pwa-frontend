@@ -3,7 +3,45 @@ import {Link} from "react-router-dom";
 
 const SinPermiso = () => {
     return (
-        <div className="gx-page-error-container" style={{paddingBottom:"60px", paddingTop:'20px'}}>
+        <div
+            style={{
+                width:'100%',
+                height:'90vh',
+                background:'white'
+            }}
+        >
+            <div
+                style={{ textAlign: "-webkit-center" }}
+            >
+                <video 
+                    playsInline="" 
+                    autoPlay="autoplay" 
+                    muted="muted" 
+                    loop="loop" 
+                    poster="https://assets3.lottiefiles.com/render/kc3j5x2o.png" 
+                    style={{
+                        width: "400px"
+                    }}
+                >
+                    <source type="video/mp4" src="https://assets10.lottiefiles.com/render/kc3j5x2o.mp4" />
+                </video>
+                <div className="Titulo-Plataforma-Contruccion">
+                    ¡Estamos en construcción! 
+                </div>
+                <div className="Descripcion-Plataforma-Contruccion">
+                    Spider se encuentra construyendo nuevos móudulos para brindarte el mejor servicio.<br/>
+                    Si deseas contactarte con alguien, envía un correo a:<br/>
+                    <a href="mailto:soporte@grow-analytics.com.pe" id="Correo-Soporte-Contruccion">soporte@grow-analytics.com.pe</a>
+                </div>
+            </div>
+        </div>
+    )
+}
+
+export default SinPermiso
+
+
+{/* <div className="gx-page-error-container" style={{paddingBottom:"60px", paddingTop:'20px'}}>
             <div className="gx-page-error-content">
             <div className="gx-error-code gx-mb-4">404</div>
             <h2 className="gx-text-center">
@@ -23,8 +61,4 @@ const SinPermiso = () => {
                 <Link className="gx-btn gx-btn-primary" to="/sistema/categorias">Regresar</Link>
             </p>
             </div>
-        </div>
-    )
-}
-
-export default SinPermiso
+        </div> */}

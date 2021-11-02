@@ -67,6 +67,7 @@ const DescargarData = () => {
         document.body.removeChild(link);
     }
 
+    const { paisSeleccionado } = useSelector(({auth}) => auth);
 
     return (
         <div id="Contenedor-Principal-Margen">
@@ -93,7 +94,9 @@ const DescargarData = () => {
                         {
                             dataArchivos.map((archivo, posicion) => {
                                 return ( 
-                                    mostrarMostrarFavoritos == false
+                                    paisSeleccionado
+                                    ?paisSeleccionado.paiid == archivo.paiid
+                                    ?mostrarMostrarFavoritos == false
 
                                     ?<div id="Fila-Menu-Descargar-Data">
                                         <Checkbox 
@@ -102,6 +105,8 @@ const DescargarData = () => {
                                                 ObtenerDataSeleccionadaReducer(archivo, posicion))}>{archivo.nombreArchivo}</Checkbox>
                                     </div>
                                     :<div id="Fila-Menu-Descargar-Data">{archivo.nombreArchivo}</div>
+                                    :null
+                                    :null
                                 )
                             })
                         }
@@ -116,7 +121,8 @@ const DescargarData = () => {
                 </Col>
                 <Col xl={16} lg={17} md={16} sm={24} xs={24}>
                     {
-                        dataSeleccionada.imagenes
+                        dataArchivos.length > 0
+                        ?dataSeleccionada.imagenes
                         ?<div style={{display: "flex", justifyContent: "center", textAlign: "-webkit-center"}}>
                             <div style={{ width:'100%'}}>
                                 <div id="Titulo-Descargar-Data">{dataSeleccionada.nombreArchivo}</div><br/>
@@ -133,6 +139,7 @@ const DescargarData = () => {
 
                             </div>
                         </div>
+                        :null
                         :null
                     }
                 </Col>
@@ -195,5 +202,9 @@ const DescargarData = () => {
         </div>
     )
 }
+
+
+
+
 
 export default DescargarData

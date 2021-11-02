@@ -527,3 +527,28 @@
     padding-right: 30px;
     padding-left: 30px;
 }
+
+.Titulo-Plataforma-Contruccion{
+    font-family: Segoe UI;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 35px;
+    line-height: 47px;
+    text-align: center;
+    color: #000000;
+}
+
+.Descripcion-Plataforma-Contruccion{
+    margin-top: 20px;
+    font-family: Segoe UI;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 20px;
+    text-align: center;
+    color: #000000;
+}
+
+#Correo-Soporte-Contruccion{
+    color: #2F84F3;
+}

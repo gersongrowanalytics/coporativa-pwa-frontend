@@ -59,7 +59,7 @@
 }
 
 
-@keyframes AntesCapaCardServicioCategoriaAnimacion{
+/* @keyframes AntesCapaCardServicioCategoriaAnimacion{
     from{ 
         height: 100%;
         background: rgba(24, 118, 242, 0.45);
@@ -68,7 +68,7 @@
         height: 1%;
         background: #1876F2;
     }
-}
+} */
 
 #Capa-Card-Servicio-Categorias:hover #Animacion-Capa-Card-Servicio-Categorias{
     position: absolute;
@@ -169,4 +169,14 @@
     width: 100%;
     max-width: 220px;
     /* margin: auto; */
+}
+
+#Txt-No-Tiene-Acceso-Servicios-Destacados{
+    font-family: Segoe UI;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 27px;
+    color: #FFFFFF;
+    text-align-last: center;
 }

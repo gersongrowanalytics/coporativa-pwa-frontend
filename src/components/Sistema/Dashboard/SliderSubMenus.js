@@ -176,7 +176,6 @@ class SliderSubMenus extends Component {
                             onClick={(e) => this.seleccionarBoton(e)}
                         >
                             <svg 
-                                id="Ocultar-Flecha"
                                 aria-hidden="true" 
                                 focusable="false" 
                                 data-prefix="fas" 
@@ -248,7 +247,6 @@ class SliderSubMenus extends Component {
                                     ref={this.seleccSiguientePagina}
                                 >
                                     <svg 
-                                        id="Ocultar-Flecha"
                                         aria-hidden="true" 
                                         focusable="false" 
                                         data-prefix="fas" 

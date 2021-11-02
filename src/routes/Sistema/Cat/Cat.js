@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import {Row, Col} from 'antd'
 import {Link} from "react-router-dom"
 import CatCanalModerno from '../../../assets/images/categorias/Moderno.png';
@@ -10,7 +10,7 @@ import CatFarmacia from '../../../assets/images/categorias/Farmacia.png';
 import CatMarketing from '../../../assets/images/categorias/Marketing.png';
 import CatClienteDirecto from '../../../assets/images/categorias/ClienteDirecto.png';
 import CatControlPdv from '../../../assets/images/categorias/Pdv.png';
-
+import {useDispatch, useSelector} from "react-redux";
 import icoCatCanalModerno from '../../../assets/images/categorias/iconos/iconoCanalModerno.png';
 import icoCatCanalTradicional from '../../../assets/images/categorias/iconos/iconoCanalTradicional.png';
 import icoCatConvenience from '../../../assets/images/categorias/iconos/iconoConvenience.png';
@@ -20,6 +20,7 @@ import icoCatClientesDirectos from '../../../assets/images/categorias/iconos/ico
 import icoCatMarketing from '../../../assets/images/categorias/iconos/iconoMarketing.png';
 import icoCatFarmacia from '../../../assets/images/categorias/iconos/iconoFarmacia.png';
 import icoCatControlPdv from '../../../assets/images/categorias/iconos/iconoControlPdv.png';
+import icoNoAcceso from '../../../assets/images/categorias/notieneacceso.png';
 
 import '../../../styles/Sistema/Cat/Cat.css'
 
@@ -115,17 +116,6 @@ const Cat = () => {
 
     const categoriasPromociones  = [
         {
-            catnombre       : "Canal Moderno",
-            // catimagenfondo  : "https://backend-spider-kimberly.grow-corporate.com/Spider/img/Categorias/CanalModerno.png",
-            catimagenfondo  : CatCanalModerno,
-            // caticonohover   : "https://backend-spider-kimberly.grow-corporate.com/Spider/img/Categorias/Iconos/CanalModerno.png",
-            caticonohover   : icoCatCanalModerno,
-            catcolorhover   : "0, 0, 0, 0.4",
-            catcolor        : "#FF3D00",
-            // nombreUrl       : "/Sistema/dashboards/canal-moderno/ytd-si-so"
-            nombreUrl       : "/Sistema/dashboards/canal-moderno/smart-hub"
-        },
-        {
             catnombre       : "Canal Tradicional",
             // catimagenfondo  : "https://backend-spider-kimberly.grow-corporate.com/Spider/img/Categorias/CanalTradicional.png",
             catimagenfondo  : catCanalTradicional,
@@ -134,8 +124,45 @@ const Cat = () => {
             catcolorhover   : "0, 0, 0, 0.4",
             catcolor        : "#213DA7",
             // nombreUrl       : "/Sistema/dashboards/canal-tradicional/ytd-radiography-store-so"
-            nombreUrl       : "/Sistema/dashboards/canal-tradicional/smart-hub"
+            nombreUrl       : "/Sistema/dashboards/canal-tradicional/smart-hub",
+            slug : "canaltradicional"
         },
+
+        {
+            catnombre       : "Canal Moderno",
+            // catimagenfondo  : "https://backend-spider-kimberly.grow-corporate.com/Spider/img/Categorias/CanalModerno.png",
+            catimagenfondo  : CatCanalModerno,
+            // caticonohover   : "https://backend-spider-kimberly.grow-corporate.com/Spider/img/Categorias/Iconos/CanalModerno.png",
+            caticonohover   : icoCatCanalModerno,
+            catcolorhover   : "0, 0, 0, 0.4",
+            catcolor        : "#FF3D00",
+            // nombreUrl       : "/Sistema/dashboards/canal-moderno/ytd-si-so"
+            nombreUrl       : "/Sistema/dashboards/canal-moderno/smart-hub",
+            slug : "canalmoderno"
+        },
+
+        {
+            catnombre       : "Farmacia Tradicional",
+            catimagenfondo  : CatFarmacia,
+            caticonohover   : icoCatFarmacia,
+            catcolorhover   : "0, 0, 0, 0.4",
+            catcolor        : "#D21044",
+            nombreUrl       : "/Sistema/dashboards/peru-farmacias",
+            slug: "farmacia"
+        },
+        
+        {
+            catnombre       : "Trade Marketing",
+            // catimagenfondo  : "https://backend-spider-kimberly.grow-corporate.com/Spider/img/Categorias/TradeMarketing.png",
+            catimagenfondo  : CatTradeMarketing,
+            // caticonohover   : "https://backend-spider-kimberly.grow-corporate.com/Spider/img/Categorias/Iconos/TradeMarketing.png",
+            caticonohover   : icoCatTradeMarketing,
+            catcolorhover   : "0, 0, 0, 0.4",
+            catcolor        : "#D21044",
+            nombreUrl       : "/Sistema/dashboards/trade-marketing/incentivos-driver-peru-gerenciales",
+            slug : "trademarketing"
+        },
+
         {
             catnombre       : "Convenience Store",
             // catimagenfondo  : "https://backend-spider-kimberly.grow-corporate.com/Spider/img/Categorias/Conveni.png",
@@ -144,7 +171,9 @@ const Cat = () => {
             caticonohover   : icoCatConvenience,
             catcolorhover   : "0, 0, 0, 0.4",
             catcolor        : "#00BE7A",
-            nombreUrl       : "convenienceStore"
+            nombreUrl       : "convenienceStore",
+            tienePermiso    : false,
+            slug : "convenience"
         },
         {
             catnombre       : "Ecommerce",
@@ -154,57 +183,59 @@ const Cat = () => {
             caticonohover   : icoCatEcommerce,
             catcolorhover   : "0, 0, 0, 0.4",
             catcolor        : "#41394E",
-            nombreUrl       : "ecommerce"
+            nombreUrl       : "ecommerce",
+            tienePermiso    : false,
+            slug : "ecommerce"
         },
-        {
-            catnombre       : "Trade Marketing",
-            // catimagenfondo  : "https://backend-spider-kimberly.grow-corporate.com/Spider/img/Categorias/TradeMarketing.png",
-            catimagenfondo  : CatTradeMarketing,
-            // caticonohover   : "https://backend-spider-kimberly.grow-corporate.com/Spider/img/Categorias/Iconos/TradeMarketing.png",
-            caticonohover   : icoCatTradeMarketing,
-            catcolorhover   : "0, 0, 0, 0.4",
-            catcolor        : "#D21044",
-            nombreUrl       : "/Sistema/dashboards/trade-marketing/incentivos-driver-peru-gerenciales"
-        },
-        {
-            catnombre       : "Marketing",
-            catimagenfondo  : CatMarketing,
-            caticonohover   : icoCatMarketing,
-            catcolorhover   : "0, 0, 0, 0.4",
-            catcolor        : "#D21044",
-            nombreUrl       : "/Sistema/dashboards/marketing"
-        },
+        
         {
             catnombre       : "Clientes Directos",
             catimagenfondo  : CatClienteDirecto,
             caticonohover   : icoCatClientesDirectos,
             catcolorhover   : "0, 0, 0, 0.4",
             catcolor        : "#D21044",
-            nombreUrl       : "/Sistema/dashboards/clientes-directos"
+            nombreUrl       : "/Sistema/dashboards/clientes-directos",
+            tienePermiso    : false,
+            slug : "clientedirecto"
         },
+
         {
-            catnombre       : "Farmacias",
-            catimagenfondo  : CatFarmacia,
-            caticonohover   : icoCatFarmacia,
+            catnombre       : "Marketing",
+            catimagenfondo  : CatMarketing,
+            caticonohover   : icoCatMarketing,
             catcolorhover   : "0, 0, 0, 0.4",
             catcolor        : "#D21044",
-            nombreUrl       : "/Sistema/dashboards/peru-farmacias"
+            nombreUrl       : "/Sistema/dashboards/marketing",
+            tienePermiso    : false,
+            slug : "marketing"
         },
+        
         {
             catnombre       : "Control del PDV",
             catimagenfondo  : CatControlPdv,
             caticonohover   : icoCatControlPdv,
             catcolorhover   : "0, 0, 0, 0.4",
             catcolor        : "#D21044",
-            nombreUrl       : "/Sistema/dashboards/control-pdv"
+            nombreUrl       : "/Sistema/dashboards/control-pdv",
+            tienePermiso    : false,
+            slug : "controlpdv"
         }
     ]
+
+    // const [mostrarTxtSinPermiso, setMostrarTxtSinPermiso ] = useState(false)
+    const { paisSeleccionado, permisos } = useSelector(({auth}) => auth);
 
     return (
         <div id="Contenedor-Principal-Margen">
             
             <Row>
-                <Col xl={24} style={{paddingLeft:'20px'}} onClick={() => console.log(tamanioHeight)} >
+                <Col 
+                    xl={24} style={{paddingLeft:'20px'}} 
+                    onClick={() => {
+                        console.log(paisSeleccionado)
+                        console.log(tamanioHeight)
+                    }} 
+                >
                     <span id="Titulo-Servicio-Categorias">PLATAFORMA Y PRODUCTOS</span>
                     {/* <span id="Titulo-Servicio-Categorias">SERVICIOS DESTACADOS {tamanioHeight}</span> */}
                 </Col>
@@ -215,83 +246,23 @@ const Cat = () => {
                     categoriasPromociones.map((categoria) => {
                         return (
                             
-                            <Col xl={8} md={8} sm={12}  xs={24} >
-                                <Link to={categoria.nombreUrl} >
-                                <div className="contenedorImgHover-ServiciosDescatados" >
-                                    <figure 
-                                        style={{height:(tamanioCard + (tamanioCard*20)/100)+"px",  width:'100%'}}>
-                                        <span className="gx-link gx-grid-thumb-cover">
-                                            <div style={{ 
-                                                backgroundImage: "url("+categoria.catimagenfondo+")", 
-                                                backgroundSize: '100% 100%', 
-                                                backgroundRepeat:'no-repeat',
-                                                height:tamanioCard+'px'
-                                            }} >
-                                                <Row style={{ alignContent: 'flex-end', height:'100%', paddingBottom:'44px' }}>
-                                                    <Col xl={24} md={24} sm={24} xs={24}>
-                                                        <div className="gx-text-center" >
-                                                            
-                                                        </div>
-                                                    </Col>
-                                                </Row>
-                                            </div>
-                                        </span>
-                                        <div
-                                            style={{
-                                                width: '100%',
-                                                height:((tamanioCard*20)/100)+'px',
-                                                bottom: "0px",
-                                                position: "absolute",
-                                                background:'white',
-                                                display: "flex",
-                                                alignItems: "center",
-                                                placeContent: "center"
-                                            }}
-                                        >
-                                            <div style={{position:'relative', width:'100%', height:'100%', display: "flex", placeContent: "center", alignItems: "center"}}>
-                                                <div
-                                                    style={{
-                                                        fontFamily: "Segoe UI",
-                                                        fontStyle: "normal",
-                                                        fontWeight: "bold",
-                                                        fontSize: "20px",
-                                                        lineHeight: "23px",
-                                                        display: "flex",
-                                                        alignItems: "center",
-                                                        color: "#323233",
-                                                        position: "absolute",
-                                                        marginTop: "30px"
-                                                    }}
-                                                >
-                                                    {categoria.catnombre}
-                                                </div>
-                                                <div
-                                                    style={{
-                                                        width: '100%',
-                                                        position: "absolute",
-                                                        display: "flex",
-                                                        top:'-50px',
-                                                        alignItems: "center",
-                                                        placeContent: "center",
-                                                    }}
-                                                >
-                                                    <div>
-                                                        <img 
-                                                            alt="" 
-                                                            src={categoria.caticonohover} 
-                                                            width= {tamanioIcono+"px" }
-                                                            height={tamanioIcono+"px" }
-                                                        />
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div id="Capa-Card-Servicio-Categorias">
-                                            <div id="Animacion-Capa-Card-Servicio-Categorias"></div>
-                                        </div>
-                                    </figure>
-                                </div>
-                                </Link>
+                            <Col 
+                                xl={8} md={8} sm={12}  xs={24} 
+                            >
+                                {/* <Link to={categoria.nombreUrl} > */}
+                                    <ContenedorTarjeta 
+                                        tamanioCard = {tamanioCard}
+                                        categoria = {categoria}
+                                        tamanioIcono = {tamanioIcono}
+                                        modulos = {
+                                            paisSeleccionado
+                                            ?paisSeleccionado.modulos.length > 0
+                                                ?paisSeleccionado.modulos
+                                                :[]
+                                            :[]
+                                        }
+                                    />
+                                {/* </Link> */}
                             </Col>
                         )
                     })
@@ -300,5 +271,144 @@ const Cat = () => {
         </div>
     )
 }
+
+
+
+
+
+
+const ContenedorTarjeta = (props) => {
+
+    const [mostrarTxtSinPermiso, setMostrarTxtSinPermiso ] = useState(false)
+
+    const tamanioCard = props.tamanioCard
+    const categoria = props.categoria
+    const tamanioIcono = props.tamanioIcono
+
+    useEffect(() => {
+
+        props.modulos.map((modulo) => {
+            if(modulo.modslug == categoria.slug){
+                setLink(modulo.modruta)
+            }
+        })
+
+        console.log('cambio')
+    },[props.modulos])
+
+    const [urlselec, setLink] = useState("")
+
+    return (
+        <Link to={urlselec} >
+            <div 
+                className="contenedorImgHover-ServiciosDescatados" 
+                onMouseEnter={() => setMostrarTxtSinPermiso(true)}
+                onMouseLeave={() => {
+                    setMostrarTxtSinPermiso(false)
+                    console.log(mostrarTxtSinPermiso)
+                }}
+            >
+                <figure 
+                    style={{height:(tamanioCard + (tamanioCard*20)/100)+"px",  width:'100%'}}>
+                    <span className="gx-link gx-grid-thumb-cover">
+                        <div style={{ 
+                            backgroundImage: "url("+categoria.catimagenfondo+")", 
+                            backgroundSize: '100% 100%', 
+                            backgroundRepeat:'no-repeat',
+                            height:tamanioCard+'px'
+                        }} >
+                            <Row style={{ alignContent: 'flex-end', height:'100%', paddingBottom:'44px' }}>
+                                <Col xl={24} md={24} sm={24} xs={24}>
+                                    <div className="gx-text-center" >
+                                        
+                                    </div>
+                                </Col>
+                            </Row>
+                        </div>
+                    </span>
+                    <div
+                        style={{
+                            width: '100%',
+                            height:((tamanioCard*20)/100)+'px',
+                            bottom: "0px",
+                            position: "absolute",
+                            background:'white',
+                            display: "flex",
+                            alignItems: "center",
+                            placeContent: "center"
+                        }}
+                    >
+                        <div style={{position:'relative', width:'100%', height:'100%', display: "flex", placeContent: "center", alignItems: "center"}}>
+                            <div
+                                style={{
+                                    fontFamily: "Segoe UI",
+                                    fontStyle: "normal",
+                                    fontWeight: "bold",
+                                    fontSize: "20px",
+                                    lineHeight: "23px",
+                                    display: "flex",
+                                    alignItems: "center",
+                                    color: "#323233",
+                                    position: "absolute",
+                                    marginTop: "30px"
+                                }}
+                            >
+                                {categoria.catnombre}
+                            </div>
+                            <div
+                                style={{
+                                    width: '100%',
+                                    position: "absolute",
+                                    display: "flex",
+                                    top:'-50px',
+                                    alignItems: "center",
+                                    placeContent: "center",
+                                }}
+                            >
+                                <div>
+                                    <img 
+                                        alt="" 
+                                        src={categoria.caticonohover} 
+                                        width= {tamanioIcono+"px" }
+                                        height={tamanioIcono+"px" }
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="Capa-Card-Servicio-Categorias">
+                        <div 
+                            id="Animacion-Capa-Card-Servicio-Categorias"
+                            style={{
+                                display: "flex",
+                                alignItems: "center",
+                                placeContent: "center"
+                            }}
+                        >
+                            {
+                                categoria.tienePermiso == false
+                                    ?mostrarTxtSinPermiso == true
+                                        ?<div>
+                                            <div style={{textAlignLast: "center"}}>
+                                                <img src={icoNoAcceso} width={"55px"} />
+                                            </div>
+                                            <div id="Txt-No-Tiene-Acceso-Servicios-Destacados" >
+                                                Aún no tienes acceso<br/>a este servicio
+                                            </div>
+                                        </div>
+                                        :null
+                                    :null
+                            }
+                            
+                        </div>
+                    </div>
+                </figure>
+            </div>
+        </Link>
+    )
+}
+
+
+
 
 export default Cat

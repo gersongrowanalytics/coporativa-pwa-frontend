@@ -8,6 +8,11 @@ import config from '../../../../config'
 import {message} from "antd"
 import { estadoRequestReducer } from "../../../../appRedux/actions/EstadoRequest"
 import axios from 'axios'
+import {ObtenerDataSeleccionadaReducer} from '../../DescargarData/DescargarData'
+import {
+    OBTENER_DATA_SELECCIONADO_DESCARGAR_DATA,
+    OBTENER_ARCHIVOS_DESCARGAR_DESCARGAR_DATA
+} from "../../../../constants/DescargarData/DescargarDataTypes";
 
 export const CrearDataReducer = (formData) => async (dispatch, getState) => {
 
@@ -50,6 +55,11 @@ export const ObtenerDataReducer = () => async (dispatch, getState) => {
         payload: true
     })
 
+    dispatch({
+        type: OBTENER_DATA_SELECCIONADO_DESCARGAR_DATA,
+        payload : {}
+    })
+
 	await fetch(config.api+'administrador/controlData/mostrarArchivoData',
 		{
 			mode:'cors',
@@ -75,10 +85,23 @@ export const ObtenerDataReducer = () => async (dispatch, getState) => {
 		const estadoRequest = getState().estadoRequest.init_request
 		if(estadoRequest == true){
             if(data.respuesta == true){
+
+                const paisSeleccionado = getState().auth.paisSeleccionado
                 dispatch({
                     type: OBTENER_DATA_ARCHIVO_DATA_CONTROL_DATA,
                     payload: data.datos
                 })
+
+                let encontro = false
+                data.datos.map((archivo, posicion) => {
+                    if(encontro == false){
+                        if(archivo.paiid == paisSeleccionado.paiid){
+                            dispatch(ObtenerDataSeleccionadaReducer(archivo, posicion))
+                            encontro = true
+                        } 
+                    }
+                })
+
             }else{
                 message.error(data.mensaje)
                 dispatch({
@@ -248,3 +271,4 @@ export const SeleccionarArchivoDescargarDataReducer = (nuevaposicion) => async (
 
     return true
 }
+
