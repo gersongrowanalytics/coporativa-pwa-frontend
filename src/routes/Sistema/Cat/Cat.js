@@ -256,9 +256,11 @@ const Cat = () => {
                                         tamanioIcono = {tamanioIcono}
                                         modulos = {
                                             paisSeleccionado
+                                            ?paisSeleccionado.modulos
                                             ?paisSeleccionado.modulos.length > 0
                                                 ?paisSeleccionado.modulos
                                                 :[]
+                                            :[]
                                             :[]
                                         }
                                     />
