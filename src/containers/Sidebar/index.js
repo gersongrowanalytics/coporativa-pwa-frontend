@@ -268,12 +268,17 @@ const Sidebar = () => {
                                                         ?{
                                                             color: "#1876F2",
                                                             fontWeight: "bold",
+                                                            padding: "4px",
+                                                            borderRadius: "10px",
+                                                            background: "#E7F3FF",
+                                                            marginRight: "15px",
                                                         }
                                                         :{
                                                             color: "#323233"
                                                         }
                                                     }
                                                 >
+                                                    
                                                     <img 
                                                         className="Imagen-Fila-Cuerpo-Sidebar-Principal" 
                                                         src={menu.modicono}
@@ -347,7 +352,7 @@ const Sidebar = () => {
                                                                     style={{
                                                                         width:'100%'
                                                                     }}
-                                                                    // className="SubMenu-Contenedor-Sidebar"
+                                                                    className="SubMenu-Contenedor-Sidebar"
                                                                 >
                                                                     
                                                                     <li
