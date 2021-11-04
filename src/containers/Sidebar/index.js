@@ -2,7 +2,10 @@ import React from "react";
 import {
     PERMISO_VER_SMARTVIEW_PERU, PERMISO_VER_SMARTVIEW_CHILE, PERMISO_VER_SMARTVIEW_MEXICO, PERMISO_VER_SMARTVIEW_ARGENTINA, PERMISO_VER_SMARTVIEW_BOLIVIA,PERMISO_VER_SMARTVIEW_EEUU
 } from '../../constants/PermisosTypes'
-import {funPermisosObtenidos} from '../../funciones/funPermiso.js'
+import {
+    funPermisosObtenidos,
+    funPermisosObtenidosEstado
+} from '../../funciones/funPermiso.js'
 import {useDispatch, useSelector} from "react-redux";
 import {Drawer, Layout} from "antd";
 import IconoAdministrador from '../../assets/images/iconos/Sidebar/NoSeleccionado/administrador.png'
@@ -144,6 +147,22 @@ const Sidebar = () => {
                                 paisSeleccionado
                                 ?paisSeleccionado.modulos
                                     ?paisSeleccionado.modulos.map((menu, posicion) => {
+
+                                        let encontro = false
+                                        let link = menu.modruta
+
+                                        menu.smos.map((submodulo, posicionsmo) => {
+                                            if(encontro == false){
+                                                if(funPermisosObtenidosEstado(
+                                                    permisos,
+                                                    submodulo.pemslug
+                                                ) == true){
+                                                    encontro = true
+                                                    link = submodulo.smoruta
+                                                }
+                                            }
+                                        })
+
                                         return(
                                             menu.modtienesubmodulos == false
                                             ?<li
@@ -213,7 +232,8 @@ const Sidebar = () => {
                                             >
                                                 <Link
                                                     className="dropdown_principal"
-                                                    to={menu.modruta} 
+                                                    // to={menu.modruta} 
+                                                    to={link} 
                                                     onClick={() => SeleccionarMenu(posicion)} 
                                                     style={
                                                         menu.seleccionado

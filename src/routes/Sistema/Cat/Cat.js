@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import {Row, Col} from 'antd'
 import {Link} from "react-router-dom"
+import {funPermisosObtenidosEstado} from '../../../funciones/funPermiso'
 import CatCanalModerno from '../../../assets/images/categorias/Moderno.png';
 import catCanalTradicional from '../../../assets/images/categorias/CanalTradicional.png';
 import CatConvenienceStore from '../../../assets/images/categorias/Convenience.png';
@@ -10,6 +11,9 @@ import CatFarmacia from '../../../assets/images/categorias/Farmacia.png';
 import CatMarketing from '../../../assets/images/categorias/Marketing.png';
 import CatClienteDirecto from '../../../assets/images/categorias/ClienteDirecto.png';
 import CatControlPdv from '../../../assets/images/categorias/Pdv.png';
+
+import CatDashboardsComerciales from '../../../assets/images/categorias/Dashboardscomerciales.png';
+import CatIcentivos from '../../../assets/images/categorias/Incentivos.png';
 import {useDispatch, useSelector} from "react-redux";
 import icoCatCanalModerno from '../../../assets/images/categorias/iconos/iconoCanalModerno.png';
 import icoCatCanalTradicional from '../../../assets/images/categorias/iconos/iconoCanalTradicional.png';
@@ -21,6 +25,8 @@ import icoCatMarketing from '../../../assets/images/categorias/iconos/iconoMarke
 import icoCatFarmacia from '../../../assets/images/categorias/iconos/iconoFarmacia.png';
 import icoCatControlPdv from '../../../assets/images/categorias/iconos/iconoControlPdv.png';
 import icoNoAcceso from '../../../assets/images/categorias/notieneacceso.png';
+import icoDashboardsComerciales from '../../../assets/images/categorias/iconos/iconoDashboardsComerciales.png';
+import icoIcentivos from '../../../assets/images/categorias/iconos/iconoIcentivos.png';
 
 import '../../../styles/Sistema/Cat/Cat.css'
 
@@ -115,6 +121,17 @@ const Cat = () => {
     }
 
     const categoriasPromociones  = [
+
+        {
+            catnombre       : "Dashboards Comerciales",
+            catimagenfondo  : CatDashboardsComerciales,
+            caticonohover   : icoDashboardsComerciales,
+            catcolorhover   : "0, 0, 0, 0.4",
+            catcolor        : "#D21044",
+            nombreUrl       : "/Sistema/dashboards/trade-marketing/incentivos-driver-peru-gerenciales",
+            slug : "dashboardscomerciales"
+        },
+
         {
             catnombre       : "Canal Tradicional",
             // catimagenfondo  : "https://backend-spider-kimberly.grow-corporate.com/Spider/img/Categorias/CanalTradicional.png",
@@ -126,6 +143,16 @@ const Cat = () => {
             // nombreUrl       : "/Sistema/dashboards/canal-tradicional/ytd-radiography-store-so"
             nombreUrl       : "/Sistema/dashboards/canal-tradicional/smart-hub",
             slug : "canaltradicional"
+        },
+
+        {
+            catnombre       : "Farmacia Tradicional",
+            catimagenfondo  : CatFarmacia,
+            caticonohover   : icoCatFarmacia,
+            catcolorhover   : "0, 0, 0, 0.4",
+            catcolor        : "#D21044",
+            nombreUrl       : "/Sistema/dashboards/peru-farmacias",
+            slug: "farmacia"
         },
 
         {
@@ -142,13 +169,13 @@ const Cat = () => {
         },
 
         {
-            catnombre       : "Farmacia Tradicional",
-            catimagenfondo  : CatFarmacia,
-            caticonohover   : icoCatFarmacia,
+            catnombre       : "Icentivos Comerciales",
+            catimagenfondo  : CatIcentivos,
+            caticonohover   : icoIcentivos,
             catcolorhover   : "0, 0, 0, 0.4",
-            catcolor        : "#D21044",
-            nombreUrl       : "/Sistema/dashboards/peru-farmacias",
-            slug: "farmacia"
+            catcolor        : "#FF3D00",
+            nombreUrl       : "/Sistema/dashboards/canal-moderno/smart-hub",
+            slug : "icentivos"
         },
         
         {
@@ -163,63 +190,64 @@ const Cat = () => {
             slug : "trademarketing"
         },
 
-        {
-            catnombre       : "Convenience Store",
-            // catimagenfondo  : "https://backend-spider-kimberly.grow-corporate.com/Spider/img/Categorias/Conveni.png",
-            catimagenfondo  : CatConvenienceStore,
-            // caticonohover   : "https://backend-spider-kimberly.grow-corporate.com/Spider/img/Categorias/Iconos/Convenience.png",
-            caticonohover   : icoCatConvenience,
-            catcolorhover   : "0, 0, 0, 0.4",
-            catcolor        : "#00BE7A",
-            nombreUrl       : "convenienceStore",
-            tienePermiso    : false,
-            slug : "convenience"
-        },
-        {
-            catnombre       : "Ecommerce",
-            // catimagenfondo  : "https://backend-spider-kimberly.grow-corporate.com/Spider/img/Categorias/Ecommerce.png",
-            catimagenfondo  : CatEcommerce,
-            // caticonohover   : "https://backend-spider-kimberly.grow-corporate.com/Spider/img/Categorias/Iconos/Ecommerce.png",
-            caticonohover   : icoCatEcommerce,
-            catcolorhover   : "0, 0, 0, 0.4",
-            catcolor        : "#41394E",
-            nombreUrl       : "ecommerce",
-            tienePermiso    : false,
-            slug : "ecommerce"
-        },
-        
-        {
-            catnombre       : "Clientes Directos",
-            catimagenfondo  : CatClienteDirecto,
-            caticonohover   : icoCatClientesDirectos,
-            catcolorhover   : "0, 0, 0, 0.4",
-            catcolor        : "#D21044",
-            nombreUrl       : "/Sistema/dashboards/clientes-directos",
-            tienePermiso    : false,
-            slug : "clientedirecto"
-        },
 
-        {
-            catnombre       : "Marketing",
-            catimagenfondo  : CatMarketing,
-            caticonohover   : icoCatMarketing,
-            catcolorhover   : "0, 0, 0, 0.4",
-            catcolor        : "#D21044",
-            nombreUrl       : "/Sistema/dashboards/marketing",
-            tienePermiso    : false,
-            slug : "marketing"
-        },
+        // {
+        //     catnombre       : "Convenience Store",
+        //     // catimagenfondo  : "https://backend-spider-kimberly.grow-corporate.com/Spider/img/Categorias/Conveni.png",
+        //     catimagenfondo  : CatConvenienceStore,
+        //     // caticonohover   : "https://backend-spider-kimberly.grow-corporate.com/Spider/img/Categorias/Iconos/Convenience.png",
+        //     caticonohover   : icoCatConvenience,
+        //     catcolorhover   : "0, 0, 0, 0.4",
+        //     catcolor        : "#00BE7A",
+        //     nombreUrl       : "convenienceStore",
+        //     tienePermiso    : false,
+        //     slug : "convenience"
+        // },
+        // {
+        //     catnombre       : "Ecommerce",
+        //     // catimagenfondo  : "https://backend-spider-kimberly.grow-corporate.com/Spider/img/Categorias/Ecommerce.png",
+        //     catimagenfondo  : CatEcommerce,
+        //     // caticonohover   : "https://backend-spider-kimberly.grow-corporate.com/Spider/img/Categorias/Iconos/Ecommerce.png",
+        //     caticonohover   : icoCatEcommerce,
+        //     catcolorhover   : "0, 0, 0, 0.4",
+        //     catcolor        : "#41394E",
+        //     nombreUrl       : "ecommerce",
+        //     tienePermiso    : false,
+        //     slug : "ecommerce"
+        // },
         
-        {
-            catnombre       : "Control del PDV",
-            catimagenfondo  : CatControlPdv,
-            caticonohover   : icoCatControlPdv,
-            catcolorhover   : "0, 0, 0, 0.4",
-            catcolor        : "#D21044",
-            nombreUrl       : "/Sistema/dashboards/control-pdv",
-            tienePermiso    : false,
-            slug : "controlpdv"
-        }
+        // {
+        //     catnombre       : "Clientes Directos",
+        //     catimagenfondo  : CatClienteDirecto,
+        //     caticonohover   : icoCatClientesDirectos,
+        //     catcolorhover   : "0, 0, 0, 0.4",
+        //     catcolor        : "#D21044",
+        //     nombreUrl       : "/Sistema/dashboards/clientes-directos",
+        //     tienePermiso    : false,
+        //     slug : "clientedirecto"
+        // },
+
+        // {
+        //     catnombre       : "Marketing",
+        //     catimagenfondo  : CatMarketing,
+        //     caticonohover   : icoCatMarketing,
+        //     catcolorhover   : "0, 0, 0, 0.4",
+        //     catcolor        : "#D21044",
+        //     nombreUrl       : "/Sistema/dashboards/marketing",
+        //     tienePermiso    : false,
+        //     slug : "marketing"
+        // },
+        
+        // {
+        //     catnombre       : "Control del PDV",
+        //     catimagenfondo  : CatControlPdv,
+        //     caticonohover   : icoCatControlPdv,
+        //     catcolorhover   : "0, 0, 0, 0.4",
+        //     catcolor        : "#D21044",
+        //     nombreUrl       : "/Sistema/dashboards/control-pdv",
+        //     tienePermiso    : false,
+        //     slug : "controlpdv"
+        // }
     ]
 
     // const [mostrarTxtSinPermiso, setMostrarTxtSinPermiso ] = useState(false)
@@ -251,6 +279,7 @@ const Cat = () => {
                             >
                                 {/* <Link to={categoria.nombreUrl} > */}
                                     <ContenedorTarjeta 
+                                        permisos = {permisos}
                                         tamanioCard = {tamanioCard}
                                         categoria = {categoria}
                                         tamanioIcono = {tamanioIcono}
@@ -291,7 +320,19 @@ const ContenedorTarjeta = (props) => {
 
         props.modulos.map((modulo) => {
             if(modulo.modslug == categoria.slug){
-                setLink(modulo.modruta)
+                let encontro = false
+
+                modulo.smos.map((submodulo, posicionsmo) => {
+                    if(encontro == false){
+                        if(funPermisosObtenidosEstado(
+                            props.permisos,
+                            submodulo.pemslug
+                        ) == true){
+                            encontro = true
+                            setLink(submodulo.smoruta)
+                        }
+                    }
+                })
             }
         })
 

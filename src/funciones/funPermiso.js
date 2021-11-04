@@ -65,3 +65,24 @@ export function funPermisosObtenidosIf(permisos, permiso, componente, componente
         return componenteElse
     }
 }
+
+export function funPermisosObtenidosEstado(permisos, permiso)
+{
+    if(localStorage.getItem('tpuprivilegio') == "todo"){
+        return true
+    }
+
+    let tienePermiso = false
+
+    permisos.map((pem) => {
+        if(permiso == pem.pemslug){
+            tienePermiso = true
+        }
+    })
+
+    if(tienePermiso){
+        return true
+    }else{
+        return false
+    }
+}
