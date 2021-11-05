@@ -340,9 +340,10 @@ export const HabilitarEditarTipoUsuarioReducer = (posicion) => async (dispatch, 
     let listaTiposUsuarios = getState().controlesAccesosTiposUsuarios.listaTiposUsuarios
 
     listaTiposUsuarios[posicion]['editando'] = !listaTiposUsuarios[posicion]['editando']
-
+    console.log('DISPATCH DE EDITAR')
     dispatch({
         type: CONTROLES_ACCESOS_TIPOS_USUARIOS_OBTENER_TIPOS_USUARIOS,
+        // payload: JSON.parse(JSON.stringify(listaTiposUsuarios))
         payload: listaTiposUsuarios
     })
 }

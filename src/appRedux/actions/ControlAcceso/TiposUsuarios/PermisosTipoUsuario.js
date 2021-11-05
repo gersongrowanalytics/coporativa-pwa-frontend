@@ -8,7 +8,7 @@ import {message} from "antd"
 import { estadoRequestReducer } from "../../../../appRedux/actions/EstadoRequest"
 
 export const ObtenerPermisosTipoUsuarioReducer = (tpuid) => async (dispatch, getState) => {
-
+   
     dispatch({
         type: CARGANDO_PERMISOS_TIPO_USUARIO_CONTROL_ACCESO,
         payload: true
