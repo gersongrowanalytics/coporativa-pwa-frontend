@@ -18,9 +18,9 @@ class BannerLogin extends React.Component {
     }
 
     componentDidMount(){
-        // setTimeout(() => {
-        //     this.animacionVideo()
-        // }, 20000);
+        setTimeout(() => {
+            this.animacionVideo()
+        }, 20000);
     }
 
     render(){
@@ -35,10 +35,10 @@ class BannerLogin extends React.Component {
                 }}
             >
                 {this.props.mostrarVideoPreload}
-                <div style={{position:'absolute', width:'100%'}}>
+                <div style={{position:'absolute', width:'100%'}} className="Full-Video-Preload">
                     {
                         this.props.mostrarVideoPreload == true
-                        ?<video  autoPlay loop id="FullScreen-Video" >
+                        ?<video autoPlay loop >
                             <source src={VideoPreload} type="video/mp4"/>
                             Your browser does not support the video tag.
                         </video>

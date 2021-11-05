@@ -3,6 +3,9 @@ import ImagenPeru from '../../assets/images/Login/banderaPeru.png'
 import ImagenChile from '../../assets/images/Login/banderaChile.png'
 import ImagenBolivia from '../../assets/images/Login/banderaBolivia.png'
 import ImagenAndes from '../../assets/images/Login/banderaAndes.png'
+import ImagenMexico from '../../assets/images/Login/banderaMexico.png'
+import ImagenArgentina from '../../assets/images/Login/banderaArgentina.png'
+import ImagenEeuu from '../../assets/images/Login/banderaEeuu.png'
 import VideoIniciarSesion from '../../assets/Videos/Login/videologin.mp4';
 import {Form, Input, Select, Button } from "antd";
 import {Link} from "react-router-dom";
@@ -162,12 +165,24 @@ const FormularioLogin = (props) => {
                 <img
                     id="Bandera-Pais-Login" 
                     src={ImagenChile} />
+
+                <img
+                    id="Bandera-Pais-Login" 
+                    src={ImagenMexico} />
+
+                <img
+                    id="Bandera-Pais-Login" 
+                    src={ImagenArgentina} />
                 <img
                     id="Bandera-Pais-Login" 
                     src={ImagenBolivia} />
+
                 <img
                     id="Bandera-Pais-Login" 
-                    src={ImagenAndes} />
+                    src={ImagenEeuu} />
+                {/* <img
+                    id="Bandera-Pais-Login" 
+                    src={ImagenAndes} /> */}
             </div>
 
             <div id="Contenedor-Logo-Grow-Login">

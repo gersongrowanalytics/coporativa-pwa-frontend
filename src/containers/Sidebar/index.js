@@ -36,7 +36,7 @@ import {
 } from '../../appRedux/actions/Dashboard/Dashboard'
 import IconoCerrarMenu from '../../assets/images/iconos/Sidebar/menucerrar.png'
 import {SeleccionarMenuReducer} from '../../appRedux/actions/Usuarios/Usuarios'
-import LogoSidebar from '../../assets/images/logos/isotipo.png'
+import LogoSidebar from '../../assets/images/logos/w-logo.png'
 const {Sider} = Layout;
 
 // import { Menu } from 'antd';
@@ -110,9 +110,9 @@ const Sidebar = () => {
                                     style   = {{
                                         cursor:'pointer', 
                                         position:'absolute', 
-                                        top: "-6px",
-                                        left: "19px",
-                                        width: "117px"
+                                        top: "25px",
+                                        left: "45px",
+                                        width: "60px"
                                     }}
                                     alt     = '' src={LogoSidebar} 
                                 />
@@ -410,146 +410,7 @@ const Sidebar = () => {
                                                             )
                                                         })
                                                     }
-                                                    {
-                                                        menu.modnombre == "Trade Marketing"
-                                                        ?
-                                                        paisSeleccionado
-                                                        ?paisSeleccionado.paiid == 1
-                                                            ?funPermisosObtenidos(
-                                                                permisos,
-                                                                PERMISO_VER_SMARTVIEW_PERU,
-                                                                <a 
-                                                                    id="txtSidebarItem" 
-                                                                    href="https://leadsmartview.com" 
-                                                                    target="_blank"
-                                                                    className="SubMenu-Contenedor-Sidebar"
-                                                                >
-
-                                                                    <li
-                                                                        style={{
-                                                                            height:'40px',
-                                                                            display: "flex",
-                                                                            alignItems: "center"
-                                                                        }}
-                                                                    >
-                                                                        Creciendo Juntos
-                                                                    </li>
-                                                                </a>   
-                                                            )
-                                                            :paisSeleccionado.paiid == 2
-                                                                ?funPermisosObtenidos(
-                                                                    permisos,
-                                                                    PERMISO_VER_SMARTVIEW_CHILE,
-                                                                    <a 
-                                                                        id="txtSidebarItem" 
-                                                                        href="https://leadsmartview.com" 
-                                                                        target="_blank"
-                                                                        className="SubMenu-Contenedor-Sidebar"
-                                                                    >
-    
-                                                                        <li
-                                                                            style={{
-                                                                                height:'40px',
-                                                                                display: "flex",
-                                                                                alignItems: "center"
-                                                                            }}
-                                                                        >
-                                                                            Creciendo Juntos
-                                                                        </li>
-                                                                    </a>   
-                                                                )
-                                                                :paisSeleccionado.paiid == 3
-                                                                    ?funPermisosObtenidos(
-                                                                        permisos,
-                                                                        PERMISO_VER_SMARTVIEW_MEXICO,
-                                                                        <a 
-                                                                            id="txtSidebarItem" 
-                                                                            href="https://leadsmartview.com" 
-                                                                            target="_blank"
-                                                                            className="SubMenu-Contenedor-Sidebar"
-                                                                        >
-        
-                                                                            <li
-                                                                                style={{
-                                                                                    height:'40px',
-                                                                                    display: "flex",
-                                                                                    alignItems: "center"
-                                                                                }}
-                                                                            >
-                                                                                Creciendo Juntos
-                                                                            </li>
-                                                                        </a>   
-                                                                    )
-                                                                    :paisSeleccionado.paiid == 4
-                                                                        ?funPermisosObtenidos(
-                                                                            permisos,
-                                                                            PERMISO_VER_SMARTVIEW_ARGENTINA,
-                                                                            <a 
-                                                                                id="txtSidebarItem" 
-                                                                                href="https://leadsmartview.com" 
-                                                                                target="_blank"
-                                                                                className="SubMenu-Contenedor-Sidebar"
-                                                                            >
-            
-                                                                                <li
-                                                                                    style={{
-                                                                                        height:'40px',
-                                                                                        display: "flex",
-                                                                                        alignItems: "center"
-                                                                                    }}
-                                                                                >
-                                                                                    Creciendo Juntos
-                                                                                </li>
-                                                                            </a>   
-                                                                        )
-                                                                        :paisSeleccionado.paiid == 5
-                                                                            ?funPermisosObtenidos(
-                                                                                permisos,
-                                                                                PERMISO_VER_SMARTVIEW_BOLIVIA,
-                                                                                <a 
-                                                                                    id="txtSidebarItem" 
-                                                                                    href="https://leadsmartview.com" 
-                                                                                    target="_blank"
-                                                                                    className="SubMenu-Contenedor-Sidebar"
-                                                                                >
-                
-                                                                                    <li
-                                                                                        style={{
-                                                                                            height:'40px',
-                                                                                            display: "flex",
-                                                                                            alignItems: "center"
-                                                                                        }}
-                                                                                    >
-                                                                                        Creciendo Juntos
-                                                                                    </li>
-                                                                                </a>   
-                                                                            )
-                                                                            :paisSeleccionado.paiid == 6
-                                                                                ?funPermisosObtenidos(
-                                                                                    permisos,
-                                                                                    PERMISO_VER_SMARTVIEW_EEUU,
-                                                                                    <a 
-                                                                                        id="txtSidebarItem" 
-                                                                                        href="https://leadsmartview.com" 
-                                                                                        target="_blank"
-                                                                                        className="SubMenu-Contenedor-Sidebar"
-                                                                                    >
-                    
-                                                                                        <li
-                                                                                            style={{
-                                                                                                height:'40px',
-                                                                                                display: "flex",
-                                                                                                alignItems: "center"
-                                                                                            }}
-                                                                                        >
-                                                                                            Creciendo Juntos
-                                                                                        </li>
-                                                                                    </a>   
-                                                                                )
-                                                                                :null
-                                                        :null
-                                                        :null
-                                                    }
+                                                    
                                                 </ul>
                                             </li>
                                         )
