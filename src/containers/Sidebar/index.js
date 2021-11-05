@@ -107,6 +107,7 @@ const Sidebar = () => {
                         <div id="Cabecera-Sidebar-Principal" style={{position:'relative'}}>
                             <Link to="/sistema/categorias">
                                 <img 
+                                    className="Logo-Sidebar-Giratorio"
                                     style   = {{
                                         cursor:'pointer', 
                                         position:'absolute', 

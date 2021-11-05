@@ -568,3 +568,18 @@ nav ul ul li:hover{
     }
 }
 
+.Logo-Sidebar-Giratorio{
+    animation-name: girar;
+    animation-duration: 4s;
+    /* animation-delay: 5s; */
+    animation-iteration-count: infinite;
+}
+  
+@keyframes girar {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+}

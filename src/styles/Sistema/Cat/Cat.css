@@ -2,10 +2,26 @@
     font-family: Segoe UI;
     font-style: normal;
     font-weight: bold;
-    font-size: 30px;
+    font-size: 25px;
+    line-height: 35px;
+    color: rgb(24, 118, 242);
+    padding-bottom: 0px;
+    margin-top: -25px;
+    width: 145px;
+    border-top: 5px solid rgb(113, 167, 238);
+    border-bottom: 5px solid rgb(113, 167, 238);
+}
+
+#SubTitulo-Servicio-Categorias{
+    font-family: Segoe UI;
+    font-style: normal;
+    font-weight: w600;
+    font-size: 15px;
     line-height: 35px;
     color: #000000;
-    padding-bottom: 20px;
+    /* padding-bottom: 20px; */
+    margin-top: 5px;
+    margin-bottom: -10px;
 }
 
 #Card-Servicio-Categorias{
@@ -179,4 +195,18 @@
     line-height: 27px;
     color: #FFFFFF;
     text-align-last: center;
+}
+
+.Txt-Resaltado-Categorias{
+    background-color: #E7F3FF;
+    /* font-weight: bold; */
+    padding-left: 10px;
+    padding-right: 10px;
+
+    font-family: "Segoe UI";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 18px;
+    color: rgb(24, 118, 242);
 }

@@ -63,7 +63,30 @@ const FormularioLogin = (props) => {
                 <Form
                     onFinish={onFinish}
                 >
-                    <p onClick={() => console.log(listaPaises)} id="Login-Formulario-Titulo" style={{marginLeft: "-20px"}}>Iniciar sesión</p>
+                    <div
+                        style={{
+                            display: "flex",
+                            justifyContent: "center",
+                            marginLeft:'-15px',
+                            width:'40vh'
+                        }}
+                    >
+                        <img 
+                            src={GrowLogoLogin}
+                            id="Logo-Grow-Blanco-Negro-Login"
+                        />
+                    </div>
+                    {/* <div
+                        style={{
+                            display: "flex",
+                            justifyContent: "center",
+                            // background:'red',
+                            marginLeft:'-15px',
+                            width:'40vh'
+                        }}
+                    >
+                        <p onClick={() => console.log(listaPaises)} id="Login-Formulario-Titulo" >Bienvenido al Futuro</p>
+                    </div> */}
                     {/* <span id="Login-Formulario-Texto" style={{marginLeft: "-15px"}}>Usuario</span> */}
 
                     <Form.Item
@@ -171,10 +194,17 @@ const FormularioLogin = (props) => {
             </div>
 
             <div id="Contenedor-Logo-Grow-Login">
-                <img 
+                <div id="Txt-Bienvenida-Login">
+                    Bienvenido al<br/>Futuro del<br/>
+
+                </div>
+                <div className="Txt-Consumo-Masivo">
+                    Consumo Masivo
+                </div>
+                {/* <img 
                     src={GrowLogoLogin}
                     id="Logo-Grow-Blanco-Negro-Login"
-                />
+                /> */}
             </div>
         </div>
     )

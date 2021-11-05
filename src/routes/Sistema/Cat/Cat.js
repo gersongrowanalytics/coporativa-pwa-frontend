@@ -169,7 +169,7 @@ const Cat = () => {
         },
 
         {
-            catnombre       : "Icentivos Comerciales",
+            catnombre       : "Incentivos Comerciales",
             catimagenfondo  : CatIcentivos,
             caticonohover   : icoIcentivos,
             catcolorhover   : "0, 0, 0, 0.4",
@@ -264,7 +264,9 @@ const Cat = () => {
                         console.log(tamanioHeight)
                     }} 
                 >
-                    <span id="Titulo-Servicio-Categorias">PLATAFORMA Y PRODUCTOS</span>
+                    <div id="Titulo-Servicio-Categorias">GROW PLUS</div>
+                    <div id="SubTitulo-Servicio-Categorias">Somos la Empresa del <span className="Txt-Resaltado-Categorias">Futuro del Consumo Masivo</span> usando Algoritmos de <span className="Txt-Resaltado-Categorias">Inteligencia Artificial, Robotica y Machine Learning</span></div>
+
                     {/* <span id="Titulo-Servicio-Categorias">SERVICIOS DESTACADOS {tamanioHeight}</span> */}
                 </Col>
             </Row>
