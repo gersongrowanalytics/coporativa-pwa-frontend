@@ -12,6 +12,8 @@ import {
 import config from '../../../../config'
 import { estadoRequestReducer } from "../../../../appRedux/actions/EstadoRequest"
 
+let controller = new AbortController()
+let signal = controller.signal
 
 export const ObtenerListaUsuariosReducer = (txtBuscar, tpuid) => async (dispatch, getState) => {
 
@@ -22,6 +24,11 @@ export const ObtenerListaUsuariosReducer = (txtBuscar, tpuid) => async (dispatch
 
     const listaUsuarios = getState().controlesAccesosUsuarios.listaUsuarios
 
+    if (controller.signal.aborted) {
+        controller = new AbortController()
+        signal = controller.signal
+    }  
+
 	await fetch(config.api+'controlAcceso/usuarios/mostrarUsuarios',
 		{
 			mode:'cors',
@@ -31,6 +38,7 @@ export const ObtenerListaUsuariosReducer = (txtBuscar, tpuid) => async (dispatch
                 'txtBuscar'    : txtBuscar,
                 'tpuid'        : tpuid
             }),
+            signal:signal,
 			headers: {
 				'Accept' 	   : 'application/json',
 				'Content-type' : 'application/json',
@@ -46,7 +54,7 @@ export const ObtenerListaUsuariosReducer = (txtBuscar, tpuid) => async (dispatch
 		
 	})
 	.then(data => {
-        console.log(data)
+        // console.log(data)
 		const estadoRequest = getState().estadoRequest.init_request
 		if(estadoRequest == true){
             if(data.respuesta == true){
@@ -77,6 +85,10 @@ export const ObtenerListaUsuariosReducer = (txtBuscar, tpuid) => async (dispatch
         }
 	});
 }
+
+export function cancelarPeticionFetch() {
+    controller.abort();
+  }
 
 export const ArmarColumnasTablaUsuariosReducer = () => async (dispatch, getState) => {
     const columnas = [
@@ -280,6 +292,7 @@ export const CambiarInputUsuarioReducer = (posicion, campo, texto) => (dispatch,
 
 export const EditandoPaisesUsuarioReducer = (posicion, nuevospaises) => (dispatch, getState) => {
 
+    console.log(posicion)
     let listaUsuarios = getState().controlesAccesosUsuarios.listaUsuarios
 
     listaUsuarios[posicion]['nuevospaises'] = nuevospaises
@@ -295,6 +308,7 @@ export const EditandoPaisesUsuarioReducer = (posicion, nuevospaises) => (dispatc
 
 export const EditarUsuarioReducer = (data) => async (dispatch, getState) => {
 
+    console.log(data)
     dispatch({
         type: CONTROLES_ACCESOS_USUARIOS_CARGANDO_TABLA,
         payload: true

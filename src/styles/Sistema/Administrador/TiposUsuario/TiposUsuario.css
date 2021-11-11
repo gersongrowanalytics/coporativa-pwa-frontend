@@ -108,7 +108,7 @@ table tbody td{
     background-color: white !important;
 }
 table tbody tr td:nth-last-child(2){
-    display: flex;
+   
     padding: 17px 0px;  
     justify-content: center;
 }
@@ -122,22 +122,15 @@ table tbody tr td:last-child{
     
 .campos-Filtros{
     position: relative;
-    top: -95px;
+    top: -58px;
 }
 
 .tabla{
     position: relative;
-    top: 60px;
+    top: 30px;
 }
 
-.paginacion{
-    position: relative;
-    margin: 10px 10px 50px 10px;
-    display: flex;
-    justify-content: flex-end;
-}
-
-table thead tr th:last-child{
+table thead tr th{
     padding-bottom: 25px;
 }
 
@@ -146,7 +139,6 @@ table thead tr th:last-child > span{
 }
 
 table thead tr th .campos-Filtros > select{
-    margin-left: 20px;
     width: 153px;
     height: 28px;
     background: #FFFFFF;
@@ -160,6 +152,8 @@ table thead tr th .campos-Filtros > select{
     font-size: 15px;
     line-height: 20px;
     color: #323233;
+    visibility: visible;
+    display: block;
 }
 
 table thead tr th .campos-Filtros > span input{
@@ -192,8 +186,81 @@ table thead tr{
 
 table thead tr th:first-child{
     border-radius: 8px 0 0 8px;
+    padding-bottom: 0px;
 }
 
 table thead tr th:last-child{
     border-radius: 0 8px 8px 0;
+}
+
+table thead{
+    visibility: collapse;
+}
+
+.Botones-Carga-Cancelar-Datos{
+    margin: 10px;
+}
+.Botones-Carga-Cancelar-Datos{
+    display: flex;
+}
+.Botones-Carga-Cancelar-Datos > div{
+    width: 170px;
+    height: 28px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin: 5px;
+    background: #1876F2;
+    box-shadow: 0px 1px 4px rgb(0 0 0 / 25%);
+    border-radius: 8px;
+    font-family: Segoe UI;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 19px;
+    color: #FFFFFF;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+@media screen and (max-width: 375px) {
+    .Botones-Carga-Cancelar-Datos{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media screen and (max-width: 520px) {
+    .responsiveTabla{
+        overflow: auto;
+    }
+    .responsiveTabla::-webkit-scrollbar{
+        display: none;
+    }
+}
+@media screen and (min-width: 769px) {
+    table tbody tr td:nth-last-child(2){
+        display: flex;
+    } 
+}
+@media screen and (min-width:376px) and (max-width: 425px) {
+    .paginacion{
+        position: relative;
+        right: -25%;
+    }
+}
+@media screen and (min-width:321px) and (max-width: 375px) {
+    .paginacion{
+        position: relative;
+        right: -45%;
+    }
+}
+@media screen and (max-width: 320px) {
+    .paginacion{
+        position: relative;
+        right: -80%;
+    }
 }

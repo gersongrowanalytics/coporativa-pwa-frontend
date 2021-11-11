@@ -294,3 +294,11 @@ select:focus{ outline: none;}
         width: 275px !important;
     }
 }
+
+
+#responsiveTabla{
+    overflow-y: auto;
+}
+/* #responsiveTabla::-webkit-scrollbar{
+    display: none;
+} */

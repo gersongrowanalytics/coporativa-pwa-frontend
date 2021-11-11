@@ -13,6 +13,9 @@ import { estadoRequestReducer } from "../../../../appRedux/actions/EstadoRequest
 import React from 'react'
 import {Link} from "react-router-dom"
 
+let controller = new AbortController()
+let signal = controller.signal
+
 export const ObtenerListaTiposUsuariosReducer = () => async (dispatch, getState) => {
 
     dispatch({
@@ -22,6 +25,11 @@ export const ObtenerListaTiposUsuariosReducer = () => async (dispatch, getState)
 
     const listaTiposUsuarios = getState().controlesAccesosTiposUsuarios.listaTiposUsuarios
 
+    if (controller.signal.aborted) {
+        controller = new AbortController()
+        signal = controller.signal
+    }  
+
 	await fetch(config.api+'controlAcceso/tiposUsuarios/mostrarTiposUsuarios',
 		{
 			mode:'cors',
@@ -29,6 +37,7 @@ export const ObtenerListaTiposUsuariosReducer = () => async (dispatch, getState)
 			body: JSON.stringify({
                 'api-token'	   : localStorage.getItem('usutoken')
             }),
+            signal:signal,
 			headers: {
 				'Accept' 	   : 'application/json',
 				'Content-type' : 'application/json',
@@ -75,6 +84,10 @@ export const ObtenerListaTiposUsuariosReducer = () => async (dispatch, getState)
 	});
 }
 
+export function cancelarPeticionFetch() {
+    controller.abort();
+  }
+  
 export const ObtenerPermisosTipoUsuarioReducer = (tpuid, tpunombre) => async (dispatch, getState) => {
 
     if(tpuid == null){
@@ -340,7 +353,7 @@ export const HabilitarEditarTipoUsuarioReducer = (posicion) => async (dispatch, 
     let listaTiposUsuarios = getState().controlesAccesosTiposUsuarios.listaTiposUsuarios
 
     listaTiposUsuarios[posicion]['editando'] = !listaTiposUsuarios[posicion]['editando']
-    console.log('DISPATCH DE EDITAR')
+    
     dispatch({
         type: CONTROLES_ACCESOS_TIPOS_USUARIOS_OBTENER_TIPOS_USUARIOS,
         // payload: JSON.parse(JSON.stringify(listaTiposUsuarios))
