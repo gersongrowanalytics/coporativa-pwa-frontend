@@ -41,10 +41,6 @@ const TablaTiposUsuarios = () => {
     ({ controlesAccesosTiposUsuarios }) => controlesAccesosTiposUsuarios
   );
 
-  // useEffect(() => {
-  //   dispatch(ObtenerListaTiposUsuariosReducer());
-  // }, []);
-
   useEffect(() => {
     setdata(listaTiposUsuarios);
   }, listaTiposUsuarios);
@@ -80,7 +76,6 @@ const TablaTiposUsuarios = () => {
           </>
         );
       },
-      Aggregated: ({ value }) => `${value} Tipos de usuario únicos`,
     },
     {
       Header: "Permisos",
@@ -100,7 +95,6 @@ const TablaTiposUsuarios = () => {
           </>
         );
       },
-      Aggregated: ({ value }) => `${value} Permisos únicos`,
     },
     {
       Header: "Fecha de creación",
@@ -110,7 +104,6 @@ const TablaTiposUsuarios = () => {
       Cell: ({ value }) => {
         return Moment(value).format("D MMM");
       },
-      Aggregated: ({ value }) => `${value} Fechas de creación únicas`,
     },
     {
       Header: "Estado de activacion",
@@ -134,7 +127,6 @@ const TablaTiposUsuarios = () => {
           </>
         );
       },
-      Aggregated: ({ value }) => `${value} Estados únicos`,
     },
     {
       Header: "Opciones",

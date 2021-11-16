@@ -86,7 +86,7 @@ export const ObtenerListaUsuariosReducer = (txtBuscar, tpuid) => async (dispatch
 	});
 }
 
-export function cancelarPeticionFetch() {
+export function CancelarPeticionFetch() {
     controller.abort();
   }
 

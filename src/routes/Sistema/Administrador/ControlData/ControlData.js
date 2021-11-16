@@ -145,7 +145,7 @@ class ControlData extends React.Component {
                             </Col>
                             <Col xl={20}>
                                 <Row>
-                                    <Col xl={24} style={{ display: "flex"}}>
+                                    <Col xl={24} md={24} md={24} sm={24} xs={24} id="Crear-Eliminar" style={{ display: "flex"}}>
                                         <div id="Contenedor-Btn-Crear-Administrador" onClick={this.abrirModalCrear}>
                                             <div id="Texto-Btn-Crear-Administrador">
                                                 + Crear

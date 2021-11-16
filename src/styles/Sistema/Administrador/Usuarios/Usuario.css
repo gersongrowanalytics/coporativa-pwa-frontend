@@ -47,7 +47,7 @@
     border-spacing: 0 5px;
 
     padding: 10px;
-
+    padding-top: 33px;
     transform:rotateX(180deg);
 
     /* height: 200px; */
@@ -152,8 +152,9 @@ table tr:first-child #Texto-Cuerpo-Tabla-Usuario-Administrador:last-child {
     overflow: auto;
     /* height: 500px; */
     transform:rotateX(180deg);
-
+    overflow-y: hidden;
     /* height: 600px; */
+    margin-top: 10px;
 }
 @media screen and (max-width: 1024px){
     #Contenedor-Tabla-Usuario-Administrador::-webkit-scrollbar{
@@ -296,9 +297,9 @@ select:focus{ outline: none;}
 }
 
 
-#responsiveTabla{
+/* #responsiveTabla{
     overflow-y: auto;
-}
+} */
 /* #responsiveTabla::-webkit-scrollbar{
     display: none;
 } */

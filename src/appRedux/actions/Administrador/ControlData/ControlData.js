@@ -14,6 +14,10 @@ import {
     OBTENER_ARCHIVOS_DESCARGAR_DESCARGAR_DATA
 } from "../../../../constants/DescargarData/DescargarDataTypes";
 
+let controller = new AbortController()
+let signal = controller.signal
+
+
 export const CrearDataReducer = (formData) => async (dispatch, getState) => {
 
     dispatch({
@@ -60,6 +64,11 @@ export const ObtenerDataReducer = () => async (dispatch, getState) => {
         payload : {}
     })
 
+    if (controller.signal.aborted) {
+        controller = new AbortController()
+        signal = controller.signal
+    }  
+
 	await fetch(config.api+'administrador/controlData/mostrarArchivoData',
 		{
 			mode:'cors',
@@ -67,6 +76,7 @@ export const ObtenerDataReducer = () => async (dispatch, getState) => {
 			body: JSON.stringify({
                 'api-token'	   : localStorage.getItem('usutoken')
             }),
+            signal:signal,
 			headers: {
 				'Accept' 	   : 'application/json',
 				'Content-type' : 'application/json',
@@ -119,6 +129,10 @@ export const ObtenerDataReducer = () => async (dispatch, getState) => {
         type: CARGANDO_DATA_ARCHIVO_DATA_CONTROL_DATA,
         payload: false
     })
+}
+
+export function CancelarPeticionFetch() {
+    controller.abort();
 }
 
 export const SeleccionarArchivosReducer = (idArchivo, seleccionar, limpiar) => (dispatch, getState) => {

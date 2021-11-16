@@ -99,11 +99,11 @@ class TiposUsuarios extends React.Component {
                                             </div>
                                         </div>
                                         
-                                        <SelecTipoUsuario 
+                                        {/* <SelecTipoUsuario 
                                             txtBuscar         = {this.state.txtBuscar}
                                             tpuidseleccionado = {this.state.tpuidseleccionado}
                                             cambiarTpuidSeleccionado = {this.cambiarTpuidSeleccionado}
-                                        />
+                                        /> */}
                                     </Col>
                                     <Col xl={24} lg={24} md={24} sm={24} xs={24}>
                                     

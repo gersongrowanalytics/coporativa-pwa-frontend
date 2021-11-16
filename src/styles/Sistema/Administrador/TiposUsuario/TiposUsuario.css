@@ -264,3 +264,9 @@ table thead{
         right: -80%;
     }
 }
+
+@media screen and (max-width: 425px) {
+    .Botones-Carga-Cancelar-Datos > div{
+        height: 40px ;
+    }
+}

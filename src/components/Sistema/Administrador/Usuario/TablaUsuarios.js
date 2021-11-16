@@ -9,7 +9,7 @@ import {
   EditarUsuarioReducer,
   CambiarInputUsuarioReducer,
   EditandoPaisesUsuarioReducer,
-  cancelarPeticionFetch
+  CancelarPeticionFetch
 } from "../../../../appRedux/actions/ControlAcceso/Usuarios/Usuarios";
 import iconoAceptar from "../../../../assets/images/iconos/Tabla/aceptar.png";
 import iconoCancelar from "../../../../assets/images/iconos/Tabla/cancelar.png";
@@ -43,19 +43,12 @@ const TablaUsuarios = () => {
 
   const { cargandoTablaUsuarios, columnasTablaUsuarios, listaUsuarios } =
     useSelector(({ controlesAccesosUsuarios }) => controlesAccesosUsuarios);
-  // console.log(listaUsuarios);
+
   const { listaTiposUsuarios } = useSelector(
     ({ controlesAccesosTiposUsuarios }) => controlesAccesosTiposUsuarios
   );
-    // console.log('TIPOS-USUARIOS')
-    // console.log(listaTiposUsuarios)
+
   const { listaPaises } = useSelector(({ auth }) => auth);
-    // console.log('PAISES')
-    // console.log(listaPaises)
-  // useEffect(() => {
-  //   dispatch(ObtenerListaUsuariosReducer());
-  //   dispatch(ObtenerListaTiposUsuariosReducer());
-  // }, []);
 
   Moment.locale("en");
 
@@ -74,10 +67,6 @@ const TablaUsuarios = () => {
     setdata(listaUsuarios)
   },listaUsuarios)
 
-  // useEffect(() => {
-  //   setdata(listaUsuarios);
-  // }, []);
-
   const Columnas = [
     {
       Header: "Tipo de Usuario",
@@ -85,9 +74,9 @@ const TablaUsuarios = () => {
       aggregate: "uniqueCount",
       Filter: SelectColumnFilter,
       Cell: ({ value, row }) => {
-        // console.log(listaTiposUsuarios)
         return (
-          <>
+          <div id="Texto-Cuerpo-Tabla-Usuario-Administrador" style={{}}
+               className={row.original.editando == true ? "Texto-Cuerpo-Tabla-Usuario-Administrador": ""}>
             <div style={{ marginRight: "10px", display: "flex" }}>
               {row.original.editando == true ? (
                 <Select
@@ -110,24 +99,20 @@ const TablaUsuarios = () => {
                 value
               )}
             </div>
-          </>
+          </div>
         );
       },
-      Aggregated: ({ value }) => `${value} Tipos de usuario únicos`,
     },
     {
       Header: "Paises",
       accesor: "paises",
       disableFilters: true,
       Cell: ({ row }) => {
-        console.log('PAISES')
-        console.log(row)
         return (
           <div  className={row.original.editando == true ? "Texto-Cuerpo-Tabla-Usuario-Administrador": "Pais-Texto-Cuerpo-Tabla-Usuario-Administrador"} >
             {row.original.editando == true ? (
               <Select
                 mode="multiple"
-                // id="Input-Crear-Usuario-Administrador"
                 style={{ width: "328px", height: "41px" }}
                 onChange={(e) =>
                   dispatch(EditandoPaisesUsuarioReducer(row.index, e))
@@ -188,18 +173,17 @@ const TablaUsuarios = () => {
       disableFilters: true,
       Filter: SelectColumnFilter,
       Cell: ({ row }) => {
-        // console.log(props)
         return (
-          <>
+          <div id="Texto-Cuerpo-Tabla-Usuario-Administrador"
+                className={row.original.editando == true ? "Texto-Cuerpo-Tabla-Usuario-Administrador": ""}>
             <div>
               {row.original.editando == true
                 ? row.original.pernombrecompleto
                 : row.original.pernombrecompleto}
             </div>
-          </>
+          </div>
         );
       },
-      Aggregated: ({ value }) => `${value} Permisos únicos`,
     },
     {
       Header: "Usuario",
@@ -208,7 +192,8 @@ const TablaUsuarios = () => {
       disableFilters: true,
       Cell: ({ row }) => {
         return (
-          <>
+          <div id="Texto-Cuerpo-Tabla-Usuario-Administrador"
+                 className={row.original.editando == true ? "Texto-Cuerpo-Tabla-Usuario-Administrador": ""}>
             {row.original.editando == true ? (
               <Input
                 onChange={(e) =>
@@ -225,10 +210,9 @@ const TablaUsuarios = () => {
             ) : (
               row.original.usuusuario
             )}
-          </>
+          </div>
         );
       },
-      Aggregated: ({ value }) => `${value} Fechas de creación únicas`,
     },
     {
       Header: "Correo",
@@ -236,7 +220,8 @@ const TablaUsuarios = () => {
       aggregate: "uniqueConunt",
       Cell: ({ row }) => {
         return (
-          <>
+          <div  id="Texto-Cuerpo-Tabla-Usuario-Administrador"
+                className={row.original.editando == true ? "Texto-Cuerpo-Tabla-Usuario-Administrador": ""}>
             {row.original.editando == true ? (
               <Input
                 onChange={(e) =>
@@ -253,7 +238,7 @@ const TablaUsuarios = () => {
             ) : (
               row.original.usucorreo
             )}
-          </>
+          </div>
         );
       },
     },
@@ -262,9 +247,10 @@ const TablaUsuarios = () => {
       accessor: "usucontrasena",
       aggregate: "uniqueCount",
       disableFilters: true,
-      Cell: ({ value, row }) => {
+      Cell: ({row }) => {
         return (
-          <>
+          <div id="Texto-Cuerpo-Tabla-Usuario-Administrador"
+               className={row.original.editando == true ? "Texto-Cuerpo-Tabla-Usuario-Administrador": ""}>
             {row.original.editando == true ? (
               row.original.editarcontrasenia == true ? (
                 <Input.Password
@@ -295,37 +281,33 @@ const TablaUsuarios = () => {
             ) : (
               "**********"
             )}
-          </>
+          </div>
         );
       },
-      Aggregated: ({ value }) => `${value} Estados únicos`,
     },
     {
       Header: "Fecha de Creación",
       accessor: "created_at",
       disableFilters: true,
-      //   defaultCanSort: false,
       Cell: ({ row }) => {
         return <>{Moment(row.original.created_at).format("D MMM")}</>;
       },
     },
     {
       Header: "Fecha de Caducidad",
-      // accessor: 'created_at',
       disableFilters: true,
-      //   defaultCanSort: false,
-      Cell: () => {
-        return <> - </>;
+      Cell: ({row}) => {
+        return <div id="Texto-Cuerpo-Tabla-Usuario-Administrador"
+                className={row.original.editando == true ? "Texto-Cuerpo-Tabla-Usuario-Administrador": ""}> - </div>;
       },
     },
     {
       Header: "Estado",
-      // accessor: 'created_at',
       disableFilters: true,
-      //   defaultCanSort: false,
       Cell: ({ row }) => {
         return (
-          <>
+          <div id="Texto-Cuerpo-Tabla-Usuario-Administrador"
+              className={row.original.editando == true ? "Texto-Cuerpo-Tabla-Usuario-Administrador": ""}>
             <Switch
               onChange={() => dispatch(EditandoEstadoUsuarioReducer(row.index))}
               disabled={row.original.editando == true ? false : true}
@@ -333,20 +315,17 @@ const TablaUsuarios = () => {
             >
               Activado
             </Switch>
-          </>
+          </div>
         );
       },
     },
     {
       Header: "Editar",
-      // accessor: 'created_at',
       disableFilters: true,
-      //   defaultCanSort: false,
       Cell: ({row}) => {
-        // console.log('OPCIONES')
-        // console.log(row)
         return (
-          <>
+          <div id="Texto-Cuerpo-Tabla-Usuario-Administrador"
+                className={row.original.editando == true ? "Texto-Cuerpo-Tabla-Usuario-Administrador": ""}>
             {row.original.editando == true ? (
               <div>
                 <img
@@ -370,7 +349,7 @@ const TablaUsuarios = () => {
                 id="Icono-Fila-Editar-Administrador"
               />
             )}
-          </>
+          </div>
         );
       },
     },
@@ -422,7 +401,7 @@ const TablaUsuarios = () => {
     <Col xl={24} lg={24} md={24} sm={24} xs={24}>
       <div className="Botones-Carga-Cancelar-Datos">
         <div onClick={cargarDatosTabla}>Recargar datos</div>
-        <div onClick={cancelarPeticionFetch}>Cancelar carga de datos</div>
+        <div onClick={CancelarPeticionFetch}>Cancelar carga de datos</div>
       </div>
       <Row>
         <Col xl={4} lg={4} md={12} sm={12} xs={24}>
@@ -443,15 +422,14 @@ const TablaUsuarios = () => {
         ))}
       </Row>
       <Row>
-        <Col xl={24} lg={24} md={24} sm={24} xs={24} id="responsiveTabla">
+        <Col xl={24} lg={24} md={24} sm={24} xs={24} id="Contenedor-Tabla-Usuario-Administrador">
           <Spin
             indicator={<LoadingOutlined style={{ fontSize: 24 }} spin />}
             spinning={cargandoTablaUsuarios}
           >
-            <div className="tabla">
+            <div className="tabla" id="Tabla-Usuario-Administrador">
               <div
-                className="paginacion"
-                style={{ display: "flex", justifyContent: "flex-end" }}
+                style={{ display: "flex", justifyContent: "flex-end", position:"relative" }}
               >
                 <span
                   style={{
@@ -479,7 +457,7 @@ const TablaUsuarios = () => {
                   disabled={!canNextPage}
                 />
               </div>
-              <table {...getTableProps()}>
+              <table {...getTableProps()} >
                 <thead>
                   {headerGroups.map((headerGroup) => (
                     <tr {...headerGroup.getHeaderGroupProps()}>
@@ -555,246 +533,6 @@ const TablaUsuarios = () => {
         </Col>
       </Row>
     </Col>
-
-    // <div id="Contenedor-Tabla-Usuario-Administrador">
-    //     <Spin indicator={<LoadingOutlined style={{ fontSize: 24 }} spin />} spinning={cargandoTablaUsuarios}>
-    //         <table id="Tabla-Usuario-Administrador">
-    //             <thead>
-    //                 <tr id="Fila-Cabecera-Tabla-Usuario-Administrador" >
-    //                     {/* <th id="Texto-Cabecera-Tabla-Usuario-Administrador"></th> */}
-    //                     <th id="Texto-Cabecera-Tabla-Usuario-Administrador">Tipo de Usuario</th>
-    //                     <th id="Texto-Cabecera-Tabla-Usuario-Administrador"></th>
-    //                     <th id="Texto-Cabecera-Tabla-Usuario-Administrador">Nombre Completo</th>
-    //                     <th id="Texto-Cabecera-Tabla-Usuario-Administrador">Usuario</th>
-    //                     <th id="Texto-Cabecera-Tabla-Usuario-Administrador">Correo </th>
-    //                     <th id="Texto-Cabecera-Tabla-Usuario-Administrador">Contraseña</th>
-    //                     <th id="Texto-Cabecera-Tabla-Usuario-Administrador">Fecha de Creación</th>
-    //                     <th id="Texto-Cabecera-Tabla-Usuario-Administrador">Fecha de Caducidad</th>
-    //                     <th id="Texto-Cabecera-Tabla-Usuario-Administrador">Estado</th>
-    //                     <th id="Texto-Cabecera-Tabla-Usuario-Administrador">Editar</th>
-    //                 </tr>
-    //             </thead>
-
-    //             <tbody style={{marginTop: '20px'}}>
-    //                 {
-    //                     listaUsuarios.map((archivo, posicion) => {
-    //                         return(
-    //                             <tr id="Fila-Cuerpo-Tabla-Usuario-Administrador" >
-    //                                 {/* <td id="Texto-Cuerpo-Tabla-Usuario-Administrador"></td> */}
-    //                                 <td
-    //                                     id="Texto-Cuerpo-Tabla-Usuario-Administrador" style={{}}
-    //                                     className={archivo.editando == true ? "Texto-Cuerpo-Tabla-Usuario-Administrador": ""}
-    //                                 >
-
-    // <div style={{marginRight:'10px', display:'flex'}}>
-    //     <div style={{marginRight:'8px'}}>
-    //         <Checkbox ></Checkbox >
-    //     </div>
-    //     {
-    //         archivo.editando == true
-    //         ?<Select
-    //             defaultValue={archivo.tpuid}
-    //             id="Input-Crear-Usuario-Administrador"
-    //             onChange={(e) => dispatch(CambiarInputUsuarioReducer(posicion, "tpuid", e))}
-    //             style={{ width: "100%", }} >
-    //             {
-    //                 listaTiposUsuarios.map((tipousuario) => {
-    //                     return (
-    //                         <Select.Option value={tipousuario.tpuid}>{tipousuario.tpunombre}</Select.Option>
-    //                     )
-    //                 })
-    //             }
-    //         </Select>
-    //         :archivo.tpunombre
-    //     }
-    // </div>
-    //                                 </td>
-
-    //                                 <td
-    //                                     id="Texto-Cuerpo-Tabla-Usuario-Administrador"
-    //                                     // className="Pais-Texto-Cuerpo-Tabla-Usuario-Administrador"
-    //                                     className={archivo.editando == true ? "Texto-Cuerpo-Tabla-Usuario-Administrador": "Pais-Texto-Cuerpo-Tabla-Usuario-Administrador"}
-    //                                 >
-
-    // {
-    //     archivo.editando == true
-    //     ?<Select
-    //         mode="multiple"
-    //         // id="Input-Crear-Usuario-Administrador"
-    //         style={{ width: "328px", height: "41px"}}
-    //         onChange={(e) => dispatch(EditandoPaisesUsuarioReducer(posicion, e))}
-    //         autoComplete={"off"}
-    //         allowClear
-    //         maxTagCount={2}
-    //         defaultValue={
-    //             archivo.paises.length > 0
-    //             ?archivo.paises.map( x => x.paiid)
-    //             :[]
-    //         }
-    //     >
-    //         {
-    //             listaPaises.map((pais) => {
-    //                 return (
-    //                     <Select.Option value={pais.paiid}>{pais.painombre}</Select.Option>
-    //                 )
-    //             })
-    //         }
-    //     </Select>
-    //     :
-    //     <>
-    //         {
-    //             archivo.usupaistodos == 1
-    //                 ?null
-    //                 :archivo.paises.length > 0
-    //                     ?archivo.paises.length > 1
-    //                         ?<div id="Contenedor-Lista-Pais-Fila-Tabla-Usuario-Administrador">
-    //                             {
-    //                                 archivo.paises.map((pais) => {
-    //                                     return (
-    //                                         <img
-    //                                             src={
-    //                                                 pais.paiicono
-    //                                             }
-
-    //                                             style={{width:'40px'}}
-    //                                         />
-    //                                     )
-    //                                 })
-    //                             }
-    //                         </div>
-    //                         :null
-    //                     :null
-    //         }
-    //         <img
-    //             src={
-    //                 archivo.usupaistodos == 1
-    //                 ?IconoMundo
-    //                 :archivo.paises.length > 0
-    //                     ?archivo.paises.length > 1
-    //                         ?archivo.paises[0]['paiiconomas']
-    //                         :archivo.paises[0]['paiicono']
-    //                     :null
-    //             }
-
-    //             style={{width:'40px'}}
-    //         />
-    //     </>
-    // }
-    //                                 </td>
-
-    //                                 <td
-    //                                     id="Texto-Cuerpo-Tabla-Usuario-Administrador"
-    //                                     className={archivo.editando == true ? "Texto-Cuerpo-Tabla-Usuario-Administrador": ""}
-    //                                 >
-    //                                     <div>
-    //                                         {
-    //                                             archivo.editando == true
-    //                                             ?archivo.pernombrecompleto
-    //                                             :archivo.pernombrecompleto
-    //                                         }
-    //                                     </div>
-    //                                 </td>
-    //                                 <td
-    //                                     id="Texto-Cuerpo-Tabla-Usuario-Administrador"
-    //                                     className={archivo.editando == true ? "Texto-Cuerpo-Tabla-Usuario-Administrador": ""}
-    //                                 >
-    //                                     {
-    //                                         archivo.editando == true
-    //                                         ?<Input
-    //                                             onChange={(e) => dispatch(CambiarInputUsuarioReducer(posicion, "usuusuario", e.target.value))}
-    //                                             value={archivo.usuusuario} />
-    //                                         :archivo.usuusuario
-    //                                     }
-    //                                 </td>
-    //                                 <td
-    //                                     id="Texto-Cuerpo-Tabla-Usuario-Administrador"
-    //                                     className={archivo.editando == true ? "Texto-Cuerpo-Tabla-Usuario-Administrador": ""}
-    //                                 >
-    //                                     {
-    //                                         archivo.editando == true
-    //                                         ?<Input
-    //                                             onChange={(e) => dispatch(CambiarInputUsuarioReducer(posicion, "usucorreo", e.target.value))}
-    //                                             value={archivo.usucorreo} />
-    //                                         :archivo.usucorreo
-    //                                     }
-    //                                 </td>
-    //                                 <td
-    //                                     id="Texto-Cuerpo-Tabla-Usuario-Administrador"
-    //                                     className={archivo.editando == true ? "Texto-Cuerpo-Tabla-Usuario-Administrador": ""}
-    //                                 >
-    //                                     {
-    //                                         archivo.editando == true
-    //                                         ?archivo.editarcontrasenia == true
-    //                                             ?<Input.Password
-    //                                                 onChange={(e) => dispatch(CambiarInputUsuarioReducer(posicion, "contrasenia", e.target.value))}
-    //                                                 placeholder="Nueva Contraseña"
-    //                                                 type="password"
-    //                                                 iconRender={visible => (visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />)}
-    //                                             />
-    //                                             :<Switch
-    //                                                 onChange={() => dispatch(EditandoContraseniaUsuarioReducer(posicion))}>
-    //                                                     ¿Editar Contraseña?</Switch>
-    //                                         :"**********"
-    //                                     }
-    //                                 </td>
-
-    //                                 <td
-    //                                     id="Texto-Cuerpo-Tabla-Usuario-Administrador"
-    //                                     className={archivo.editando == true ? "Texto-Cuerpo-Tabla-Usuario-Administrador": ""}
-    //                                 >{Moment(archivo.created_at).format('D MMM')}</td>
-    //                                 <td
-    //                                     id="Texto-Cuerpo-Tabla-Usuario-Administrador"
-    //                                     className={archivo.editando == true ? "Texto-Cuerpo-Tabla-Usuario-Administrador": ""}
-    //                                 > - </td>
-    //                                 <td
-    //                                     id="Texto-Cuerpo-Tabla-Usuario-Administrador"
-    //                                     className={archivo.editando == true ? "Texto-Cuerpo-Tabla-Usuario-Administrador": ""}
-    //                                 >
-    //                                     <Switch
-    //                                         onChange={() => dispatch(EditandoEstadoUsuarioReducer(posicion))}
-    //                                         disabled = {
-    //                                             archivo.editando == true ? false : true}
-    //                                         defaultChecked ={archivo.estid == 1 ? true : false
-
-    //                                     }>Activado</Switch>
-    //                                 </td>
-
-    //                                 <td
-    //                                     id="Texto-Cuerpo-Tabla-Usuario-Administrador"
-    //                                     className={archivo.editando == true ? "Texto-Cuerpo-Tabla-Usuario-Administrador": ""}
-    //                                 >
-    // {
-    //     archivo.editando == true
-    //     ?<div>
-    //         <img
-    //             width={"16px"}
-    //             onClick={() => dispatch(EditandoUsuarioReducer(posicion))}
-    //             src={iconoCancelar}  id="Icono-Fila-Aceptar-Editar-Administrador"
-    //             style={{marginRight:'5px'}}
-    //         />
-    //         <img
-    //             width={"16px"}
-    //             onClick={() => dispatch(EditarUsuarioReducer(archivo))}
-    //             src={iconoAceptar}  id="Icono-Fila-Aceptar-Editar-Administrador"/>
-    //     </div>
-    //     :<img
-    //         onClick={() => dispatch(EditandoUsuarioReducer(posicion))}
-    //         src={IconoEditarLapiz}
-    //         id="Icono-Fila-Editar-Administrador"/>
-    // }
-    //                                 </td>
-    //                             </tr>
-    //                         )
-    //                     })
-    //                 }
-    //             </tbody>
-
-    //             {/* <tfoot> */}
-    //                 {/* <div style={{margin:'28px'}} /> */}
-    //             {/* </tfoot> */}
-    //         </table>
-    //     </Spin>
-    // </div>
   );
 };
 

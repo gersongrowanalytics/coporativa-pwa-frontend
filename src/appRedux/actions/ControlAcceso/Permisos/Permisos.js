@@ -9,6 +9,9 @@ import config from '../../../../config'
 import {message} from "antd"
 import { estadoRequestReducer } from "../../EstadoRequest"
 
+let controller = new AbortController()
+let signal = controller.signal
+
 export const ObtenerListaPermisos = () => async (dispatch, getState) => {
 
     dispatch({
@@ -18,6 +21,12 @@ export const ObtenerListaPermisos = () => async (dispatch, getState) => {
 
     const listaPermisos = getState().controlesAccesosPermisos.listaPermisos
 
+    if (controller.signal.aborted) {
+        controller = new AbortController()
+        signal = controller.signal
+    }  
+
+
 	await fetch(config.api+'controlAcceso/permisos/mostrarPermisos',
 		{
 			mode:'cors',
@@ -25,6 +34,7 @@ export const ObtenerListaPermisos = () => async (dispatch, getState) => {
 			body: JSON.stringify({
                 'api-token'	   : localStorage.getItem('usutoken')
             }),
+            signal:signal,
 			headers: {
 				'Accept' 	   : 'application/json',
 				'Content-type' : 'application/json',
@@ -71,6 +81,10 @@ export const ObtenerListaPermisos = () => async (dispatch, getState) => {
         }
 	});
 }
+
+export function cancelarPeticionFetch() {
+    controller.abort();
+  }
 
 export const ArmarColumnasTablaPermisosReducer = () => async (dispatch, getState) => {
     const columnas = [
