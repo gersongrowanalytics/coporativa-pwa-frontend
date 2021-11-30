@@ -1,5 +1,5 @@
-import React from 'react'
-import {Row, Col, Modal, Button} from 'antd'
+import React, {useState} from 'react'
+import {Row, Col, Modal, Button, Select} from 'antd'
 import iconoCerrarModal from '../../../../assets/images/iconos/Perfil/cerrarModal.png';
 import IconoImagenAzul from '../../../../assets/images/iconos/Administrador/imagenazul.png';
 import {CrearDataReducer} from "../../../../appRedux/actions/Administrador/ControlData/ControlData"
@@ -15,8 +15,11 @@ const ModalCrearData = (props) => {
 
     const crearDataArchivo = async () => {
         const formData = new FormData();
+        formData.append('paiid', paiidSeleccionado)
         formData.append('ardnombre', props.crearNombreArchivo)
         formData.append('ardarchivo', props.crearArchivo)
+        formData.append('slugPermiso', props.slugPermiso)
+        formData.append('descripcionPermiso', props.descripcionPermiso)
         let arrayImagenes = [props.crearImagenUno, props.crearImagenDos, props.crearImagenTres]
         var nuevoArrayImagenes = JSON.stringify(arrayImagenes);
         formData.append('ardimagenes', nuevoArrayImagenes)
@@ -24,6 +27,10 @@ const ModalCrearData = (props) => {
         await dispatch(CrearDataReducer(formData))
         props.limpiarCamposCrear()
     }
+
+    const [paiidSeleccionado, setPaiidSeleccionado] = useState("0");
+
+    const {listaPaises} = useSelector(({auth}) => auth);
 
     return (
         <Modal 
@@ -38,8 +45,30 @@ const ModalCrearData = (props) => {
         >
             
             <div id="Contenedor-Modal-Crear-Usuario-Administrador">
-                <div>
+                <div> 
                     <div
+                        id="Texto-Crear-Permiso-Administrador">País</div>
+                    <Select 
+                        className="Select-Crear-Usuario-Administrador"
+                        onChange={(e) =>{
+                            console.log(e)
+                            setPaiidSeleccionado(e)
+                        }}
+                        autoComplete={"off"}
+                        allowClear
+                        maxTagCount={2}
+                    >
+                        {
+                            listaPaises.map((pais) => {
+                                return ( 
+                                    <Select.Option value={pais.paiid}>{pais.painombre}</Select.Option>
+                                )
+                            })
+                        }
+                    </Select>
+
+                    <div
+                        style={{marginTop:'0px'}}
                         id="Texto-Crear-Permiso-Administrador">Archivo</div>
                     <div
                         onClick={props.seleccionarArchivo} 
@@ -56,7 +85,27 @@ const ModalCrearData = (props) => {
                         autoComplete={"off"}
                         id="Input-Crear-Permiso-Administrador" 
                     />
-                    
+
+
+                    <div id="Texto-Crear-Permiso-Administrador">Slug del Permiso</div>
+                    <input 
+                        name="slugPermiso"
+                        onChange={(e) => props.obtenerCambioInput(e)}
+                        value={props.slugPermiso}
+                        autoComplete={"off"}
+                        id="Input-Crear-Permiso-Administrador" 
+                    />
+
+                    <div id="Texto-Crear-Permiso-Administrador">Descripción del Permiso</div>
+                    <input 
+                        name="descripcionPermiso"
+                        onChange={(e) => props.obtenerCambioInput(e)}
+                        value={props.descripcionPermiso}
+                        autoComplete={"off"}
+                        id="Input-Crear-Permiso-Administrador" 
+                    />
+
+
                     <div id="Texto-Crear-Permiso-Administrador">Imágenes</div>
                     <Row>
                         <Col xl={8} style={{paddingRight:'5px'}}>

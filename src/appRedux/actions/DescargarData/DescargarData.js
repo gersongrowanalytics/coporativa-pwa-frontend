@@ -13,7 +13,7 @@ export const ObtenerDataSeleccionadaReducer = (data, posicion) => async (dispatc
 
     await dispatch(SeleccionarArchivoDescargarDataReducer(posicion))
 
-    let objeto
+    let objeto = {imagenes:[]}
     const dataArchivos = getState().controlData.dataArchivos
     console.log(dataArchivos)
     

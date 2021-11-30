@@ -260,14 +260,16 @@ const Cat = () => {
         <div id="Contenedor-Principal-Margen">
             
             <Row>
-                <Col 
+            <Col 
                     xl={24} style={{paddingLeft:'20px'}} 
                     onClick={() => {
                         console.log(paisSeleccionado)
                         console.log(tamanioHeight)
                     }} 
                 >
-                    <span id="Titulo-Servicio-Categorias">PLATAFORMA Y PRODUCTOS</span>
+                    <div id="Titulo-Servicio-Categorias">GROW PLUS</div>
+                    <div id="SubTitulo-Servicio-Categorias">Somos la Empresa del <span className="Txt-Resaltado-Categorias">Futuro del Consumo Masivo y Professional</span> usando Algoritmos de <span className="Txt-Resaltado-Categorias">Inteligencia Artificial, Robotica y Machine Learning</span></div>
+
                     {/* <span id="Titulo-Servicio-Categorias">SERVICIOS DESTACADOS {tamanioHeight}</span> */}
                 </Col>
             </Row>

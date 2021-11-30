@@ -4,5 +4,5 @@ export default {
     api: 'https://thanos-backend-corporativa.softys-leadcorporate.com/',
     // api: 'https://backend-spider-kimberly-corporativa.grow-corporate.com/',
     basename: '/',
-    nombreSistema : 'Spider'
+    nombreSistema : 'Thanos App'
 };
