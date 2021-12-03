@@ -1,11 +1,19 @@
 import React, {useEffect} from 'react'
 import {Row, Col, Checkbox, Spin, Modal} from 'antd'
 import IconoEliminar from '../../../../assets/images/iconos/Tabla/tacho.png'
+import IconoEditar from '../../../../assets/images/iconos/Tabla/editar.svg'
 // import IconoEditar from 'assets/images/iconos/Tabla/editar.svg'
 import {useDispatch, useSelector} from "react-redux";
-import {ObtenerDataReducer, SeleccionarArchivosReducer} from "../../../../appRedux/actions/Administrador/ControlData/ControlData"
+import {
+    ObtenerDataReducer, 
+    SeleccionarArchivosReducer, 
+    EditarDataReducer, 
+    EditarImagenDataReducer, 
+    EliminarDataUnicoReducer, 
+    EditarArchivoDataReducer
+} from "../../../../appRedux/actions/Administrador/ControlData/ControlData"
 import { ExclamationCircleOutlined, LoadingOutlined } from '@ant-design/icons';
-import {EliminarDataUnicoReducer} from "../../../../appRedux/actions/Administrador/ControlData/ControlData"
+import ModalEditarData from './ModalEditarData';
 
 const TablaData = () => {
 
@@ -15,7 +23,8 @@ const TablaData = () => {
 
     const { 
         cargandoDataArchivos,
-        dataArchivos
+        dataArchivos,
+        cargando_editar_archivo_data
     } = useSelector(({controlData}) => controlData);
 
     useEffect(() => {
@@ -73,12 +82,13 @@ const TablaData = () => {
                                     </a>
                                 </div>
                             </Col>
-                            <Col xl={10} style={{placeSelf: "center"}}>
+                            <Col xl={9} style={{placeSelf: "center"}}>
                                 <Row>
                                     {
                                         dato.imagenes.map((imagen, posicion) => {
                                             return (
-                                                posicion == 0
+                                                imagen.iadid != 0
+                                                ?posicion == 0
                                                     ?<Col xl={8} style={{textAlignLast: "right"}}>
                                                         <img src={imagen.iadimagen} width={"46px"}/>
                                                     </Col>
@@ -91,6 +101,7 @@ const TablaData = () => {
                                                                 <img src={imagen.iadimagen} width={"46px"}/>
                                                             </Col>
                                                             :null
+                                                :null
                                             )
                                         })
                                     }
@@ -102,7 +113,7 @@ const TablaData = () => {
                                     </Col> */}
                                 </Row>
                             </Col>
-                            <Col xl={3} style={{textAlignLast: "right", display:'flex', placeItems: "center"}}>
+                            <Col xl={1} style={{textAlignLast: "right", display:'flex', placeItems: "center"}}>
                                 {/* <img
                                     src={IconoEditar}
                                     id="Icono-Fila-Editar-Administrador"
@@ -112,8 +123,32 @@ const TablaData = () => {
                                     id="Icono-Fila-Editar-Administrador"
                                     onClick={() => mostrarModalEliminar(dato.ardid)}
                                 />
+                                {/* <div id="Texto-fecha-Administrador-ControlData">{dato.fechaEdicion}</div> */}
+                            </Col>
+
+                            <Col xl={3} style={{textAlignLast: "right", display:'flex', placeItems: "center"}}>
+                                <img
+                                    src={IconoEditar}
+                                    id="Icono-Fila-Editar-Administrador"
+                                    onClick={() => {
+                                        dispatch(EditarDataReducer(posicion))
+                                    }}
+                                />
                                 <div id="Texto-fecha-Administrador-ControlData">{dato.fechaEdicion}</div>
                             </Col>
+                            {
+                                dato.editando == true
+                                ?<ModalEditarData 
+                                    mostrarModal = {dato.editando}
+                                    setModal = {() => dispatch(EditarDataReducer(posicion, true))}
+                                    paiid = {dato.paiid}
+                                    datos = {dato}
+                                    EditarImagenData  = {(numeroImagen, imagen) => dispatch(EditarImagenDataReducer(numeroImagen, imagen, posicion))}
+                                    EditarArchivoData = {(data) => dispatch(EditarArchivoDataReducer(data))}
+                                    cargando_editar_archivo_data = {cargando_editar_archivo_data}
+                                />
+                                :null
+                            }
                         </Row>
                     )
                 })
