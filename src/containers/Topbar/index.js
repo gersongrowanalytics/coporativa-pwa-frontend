@@ -16,7 +16,7 @@ import { DownOutlined } from '@ant-design/icons';
 import { mostrarPaisesReducer } from "../../appRedux/actions/Auth";
 import { SeleccionarMenuReducer } from '../../appRedux/actions/Usuarios/Usuarios'
 import {ObtenerSeleccionModuloReducer} from '../../appRedux/actions/Dashboard/Dashboard'
-import LogoGrowImagen from '../../assets/images/logos/LogoSpiderApp.png'
+import LogoGrowImagen from '../../assets/images/logos/logoAlebrijesTexto.png'
 import IconoPerfil from '../../assets/images/iconos/iconoUsuario.png'
 import Icono from '../../assets/images/logo-w.png'
 const {Header} = Layout;

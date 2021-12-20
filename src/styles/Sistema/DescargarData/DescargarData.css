@@ -285,3 +285,24 @@
 #Input-Buscar-Menu-Descargar-Data:focus{
   border: 0;
 }
+
+#Cuerpo-Modal-Info-Usuario-Descargar-Data{
+  margin-top: 30px;
+}
+
+.Letra-Modal-Info-Usuario-Descargar-Data{
+  font-family: Segoe UI;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  color: #4D4D4D;
+}
+
+.Letra-Azul-Modal-Info-Usuario-Descargar-Data{
+  font-family: Segoe UI;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 16px;
+  color: #1876F2;
+}
