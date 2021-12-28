@@ -110,9 +110,9 @@ const Sidebar = () => {
                                     style   = {{
                                         cursor:'pointer', 
                                         position:'absolute', 
-                                        top: "25px",
-                                        left: "45px",
-                                        width: "60px"
+                                        top: "10px",
+                                        left: "27px",
+                                        width: "81px"
                                     }}
                                     alt     = '' src={LogoSidebar} 
                                 />

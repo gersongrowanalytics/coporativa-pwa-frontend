@@ -133,19 +133,6 @@ const Cat = () => {
         // },
 
         {
-            catnombre       : "Canal Retail",
-            // catimagenfondo  : "https://backend-spider-kimberly.grow-corporate.com/Spider/img/Categorias/CanalModerno.png",
-            catimagenfondo  : CatCanalModerno,
-            // caticonohover   : "https://backend-spider-kimberly.grow-corporate.com/Spider/img/Categorias/Iconos/CanalModerno.png",
-            caticonohover   : icoCatCanalModerno,
-            catcolorhover   : "0, 0, 0, 0.4",
-            catcolor        : "#FF3D00",
-            // nombreUrl       : "/Sistema/dashboards/canal-moderno/ytd-si-so"
-            nombreUrl       : "/Sistema/dashboards/canal-moderno/smart-hub",
-            slug : "canalmoderno"
-        },
-
-        {
             catnombre       : "Canal Distribuidores",
             // catimagenfondo  : "https://backend-spider-kimberly.grow-corporate.com/Spider/img/Categorias/CanalTradicional.png",
             catimagenfondo  : catCanalTradicional,
@@ -155,7 +142,20 @@ const Cat = () => {
             catcolor        : "#213DA7",
             // nombreUrl       : "/Sistema/dashboards/canal-tradicional/ytd-radiography-store-so"
             nombreUrl       : "/Sistema/dashboards/canal-tradicional/smart-hub",
-            slug : "canaltradicional"
+            slug : "canaldistribuidores"
+        },
+
+        {
+            catnombre       : "Canal Retail",
+            // catimagenfondo  : "https://backend-spider-kimberly.grow-corporate.com/Spider/img/Categorias/CanalModerno.png",
+            catimagenfondo  : CatCanalModerno,
+            // caticonohover   : "https://backend-spider-kimberly.grow-corporate.com/Spider/img/Categorias/Iconos/CanalModerno.png",
+            caticonohover   : icoCatCanalModerno,
+            catcolorhover   : "0, 0, 0, 0.4",
+            catcolor        : "#FF3D00",
+            // nombreUrl       : "/Sistema/dashboards/canal-moderno/ytd-si-so"
+            nombreUrl       : "/Sistema/dashboards/canal-moderno/smart-hub",
+            slug : "canalretail"
         },
 
         {
