@@ -3,17 +3,17 @@
   "name": "Grow Plus",
   "icons": [
     {
-      "src": "g-n-logo-w.ico",
+      "src": "LogoGrow.ico",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     },
     {
-      "src": "g-n-logo-w.ico",
+      "src": "LogoGrow.ico",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "g-n-logo-w.ico",
+      "src": "LogoGrow.ico",
       "type": "image/png",
       "sizes": "512x512"
     }
