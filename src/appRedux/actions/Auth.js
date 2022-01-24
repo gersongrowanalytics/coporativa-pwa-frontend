@@ -30,6 +30,9 @@ export const userSignUp = (user) => {
   };
 };
 export const userSignIn = (usuario) => async (dispatch, getState) => {
+
+  dispatch(CargandoLoginReducer(true))
+
 	await fetch(config.api+'login',
 		{
 			mode:'cors',
@@ -96,6 +99,8 @@ export const userSignIn = (usuario) => async (dispatch, getState) => {
 		  // dispatch(showAuthMessage(error))
       console.log(error)
     });
+
+    dispatch(CargandoLoginReducer(false))
 };
 
 export const userSignOut = () => {
@@ -308,4 +313,13 @@ export const CambiarPaisReducer = (pais) => (dispatch, getState) => {
     type: SELECCIONAR_PAIS_ESPECIFICO,
     payload: pais
   })
+}
+
+export const CargandoLoginReducer = (accion) => (dispatch, getState) => {
+
+  dispatch({
+    type: "CARGANDO_BTN_LOGIN",
+    payload: accion
+  })
+
 }

@@ -38,7 +38,10 @@ const FormularioLogin = (props) => {
         dispatch(SeleccionarPaisReducer(pais[1]))
     }
 
-    const {listaPaises} = useSelector(({auth}) => auth);
+    const {
+        listaPaises,
+        cargandoLogin
+    } = useSelector(({auth}) => auth);
 
     useEffect(() => {
         dispatch(mostrarPaisesReducer())
@@ -128,6 +131,9 @@ const FormularioLogin = (props) => {
                         initialValue=""
                         name="usuario"
                         rules= {[{required: true, message:"Es necesario un usuario"}]}
+                        style={{
+                            width: "300px"
+                        }}
                     >
                         <Input 
                             autoComplete={"off"}
@@ -142,6 +148,9 @@ const FormularioLogin = (props) => {
                         initialValue=""
                         rules= {[{required: true, message:"Es necesario una contraseña"}]}
                         name="contrasena"
+                        style={{
+                            width: "300px"
+                        }}
                     >
                         
                         <Input.Password 
@@ -172,6 +181,7 @@ const FormularioLogin = (props) => {
                             ?"Login-Formulario-Btn-Desactivado-Iniciar"
                             :"Login-Formulario-Btn-Iniciar"
                         }
+                        loading={cargandoLogin}
                     >Iniciar Sesión</Button>
                 </Form>
             </div>
@@ -199,7 +209,7 @@ const FormularioLogin = (props) => {
 
                 </div>
                 <div className="Txt-Consumo-Masivo">
-                    Consumo Masivo
+                    Consumo Masivo y<br/>Professional
                 </div>
                 {/* <img 
                     src={GrowLogoLogin}

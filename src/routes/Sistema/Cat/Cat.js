@@ -265,7 +265,7 @@ const Cat = () => {
                     }} 
                 >
                     <div id="Titulo-Servicio-Categorias">GROW PLUS</div>
-                    <div id="SubTitulo-Servicio-Categorias">Somos la Empresa del <span className="Txt-Resaltado-Categorias">Futuro del Consumo Masivo</span> usando Algoritmos de <span className="Txt-Resaltado-Categorias">Inteligencia Artificial, Robotica y Machine Learning</span></div>
+                    <div id="SubTitulo-Servicio-Categorias">Somos la Empresa del <span className="Txt-Resaltado-Categorias">Futuro del Consumo Masivo y Professional</span> usando Algoritmos de <span className="Txt-Resaltado-Categorias">Inteligencia Artificial, Robotica y Machine Learning</span></div>
 
                     {/* <span id="Titulo-Servicio-Categorias">SERVICIOS DESTACADOS {tamanioHeight}</span> */}
                 </Col>
@@ -313,18 +313,17 @@ const Cat = () => {
 const ContenedorTarjeta = (props) => {
 
     const [mostrarTxtSinPermiso, setMostrarTxtSinPermiso ] = useState(false)
+    const [tienePermiso, setTienePermiso ] = useState(false)
 
     const tamanioCard = props.tamanioCard
     const categoria = props.categoria
     const tamanioIcono = props.tamanioIcono
 
-    useEffect(() => {
-
-        props.modulos.map((modulo) => {
+    useEffect(async () => {
+        let encontro = false
+        await props.modulos.map(async(modulo) => {
             if(modulo.modslug == categoria.slug){
-                let encontro = false
-
-                modulo.smos.map((submodulo, posicionsmo) => {
+                await modulo.smos.map((submodulo, posicionsmo) => {
                     if(encontro == false){
                         if(funPermisosObtenidosEstado(
                             props.permisos,
@@ -337,7 +336,7 @@ const ContenedorTarjeta = (props) => {
                 })
             }
         })
-
+        setTienePermiso(encontro)
         console.log('cambio')
     },[props.modulos])
 
@@ -431,7 +430,7 @@ const ContenedorTarjeta = (props) => {
                             }}
                         >
                             {
-                                categoria.tienePermiso == false
+                                tienePermiso == false
                                     ?mostrarTxtSinPermiso == true
                                         ?<div>
                                             <div style={{textAlignLast: "center"}}>

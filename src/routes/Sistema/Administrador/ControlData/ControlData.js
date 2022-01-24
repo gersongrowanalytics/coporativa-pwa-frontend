@@ -46,6 +46,8 @@ class ControlData extends React.Component {
 
             mostrarModalCrear  : false,
             crearNombreArchivo : "",
+            slugPermiso        : "",
+            descripcionPermiso : "",
             nombreArchivoSeleccionado : "",
             crearArchivo       : null,
             crearImagenUno     : null,
@@ -118,6 +120,8 @@ class ControlData extends React.Component {
 
     limpiarCamposCrear(){
         this.setState({
+            slugPermiso        : "",
+            descripcionPermiso : "",
             crearNombreArchivo : "",
             nombreArchivoSeleccionado : "",
             crearArchivo       : null,
@@ -169,6 +173,8 @@ class ControlData extends React.Component {
                     abrirModalCrear    = {this.abrirModalCrear}
                     mostrarModalCrear  = {this.state.mostrarModalCrear}
                     crearNombreArchivo = {this.state.crearNombreArchivo}
+                    slugPermiso        = {this.state.slugPermiso}
+                    descripcionPermiso = {this.state.descripcionPermiso}
                     nombreArchivoSeleccionado = {this.state.nombreArchivoSeleccionado}
                     crearArchivo       = {this.state.crearArchivo}
                     crearImagenUno     = {this.state.crearImagenUno}

@@ -26,7 +26,8 @@ const INIT_STATE = {
   permisos     : [],
   listaPaises  : [],
   paisSeleccionado : {},
-  datosUsuarioLogeado : {}
+  datosUsuarioLogeado : {},
+  cargandoLogin : false
 };
 
 
@@ -117,6 +118,12 @@ export default (state = INIT_STATE, action) => {
       return {
         ...state,
         datosUsuarioLogeado : action.payload
+      }
+    }
+    case "CARGANDO_BTN_LOGIN": {
+      return {
+        ...state,
+        cargandoLogin : action.payload
       }
     }
     default:

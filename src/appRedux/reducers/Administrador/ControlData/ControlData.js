@@ -3,13 +3,15 @@ import {
     CARGANDO_DATA_ARCHIVO_DATA_CONTROL_DATA,
     OBTENER_DATA_ARCHIVO_DATA_CONTROL_DATA,
     SELECCIONAR_DATA_ARCHIVO_DATA_CONTROL_DATA,
+    CARGANDO_EDITAR_ARCHIVO_DATA_CONTROL_DATA
 } from "../../../../constants/SistemaTypes";
 
 const INIT_STATE = {
     cargandoNuevaData : false,
     cargandoDataArchivos : false,
     dataArchivos : [],
-    archivosSeleccionados : []
+    archivosSeleccionados : [],
+    cargando_editar_archivo_data : false
 };
 
 
@@ -37,6 +39,12 @@ export default (state = INIT_STATE, action) => {
         return {
             ...state,
             archivosSeleccionados: action.payload
+        }
+    }
+    case CARGANDO_EDITAR_ARCHIVO_DATA_CONTROL_DATA: {
+        return {
+            ...state,
+            cargando_editar_archivo_data : action.payload
         }
     }
     default:

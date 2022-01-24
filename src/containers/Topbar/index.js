@@ -49,7 +49,10 @@ const Topbar = () => {
         <li id="Opcion-Drop-Menu-Top" style={{fontFamily:'Segoe UI', fontWeight:'bold'}}>Mi Perfil</li></Link>
         <li 
           id="Opcion-Drop-Menu-Top" 
-          onClick={() => dispatch(userSignOut())} 
+          onClick={ async () => {
+            await dispatch(userSignOut())
+            window.location.reload(); 
+          }} 
           style={{fontFamily:'Segoe UI', fontWeight:'bold'}}
         >Salir</li>
     </ul>
