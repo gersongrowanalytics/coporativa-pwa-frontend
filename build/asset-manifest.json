@@ -1,23 +1,23 @@
 {
   "files": {
     "main.css": "/static/css/main.7000918f.chunk.css",
-    "main.js": "/static/js/main.9948867a.chunk.js?ver=2",
+    "main.js": "/static/js/main.9948867a.chunk.js?ver=4",
     "main.js.map": "/static/js/main.9948867a.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.27d9e0a3.js?ver=2",
+    "runtime-main.js": "/static/js/runtime-main.27d9e0a3.js?ver=4",
     "runtime-main.js.map": "/static/js/runtime-main.27d9e0a3.js.map",
     "static/css/2.b708e81c.chunk.css": "/static/css/2.b708e81c.chunk.css",
-    "static/js/2.5ea9dfe2.chunk.js": "/static/js/2.5ea9dfe2.chunk.js?ver=2",
+    "static/js/2.5ea9dfe2.chunk.js": "/static/js/2.5ea9dfe2.chunk.js?ver=4",
     "static/js/2.5ea9dfe2.chunk.js.map": "/static/js/2.5ea9dfe2.chunk.js.map",
     "static/css/3.8f979c37.chunk.css": "/static/css/3.8f979c37.chunk.css",
-    "static/js/3.371cb8d5.chunk.js": "/static/js/3.371cb8d5.chunk.js?ver=2",
+    "static/js/3.371cb8d5.chunk.js": "/static/js/3.371cb8d5.chunk.js?ver=4",
     "static/js/3.371cb8d5.chunk.js.map": "/static/js/3.371cb8d5.chunk.js.map",
     "static/css/4.c047bc93.chunk.css": "/static/css/4.c047bc93.chunk.css",
-    "static/js/4.e06e28fa.chunk.js": "/static/js/4.e06e28fa.chunk.js?ver=2",
+    "static/js/4.e06e28fa.chunk.js": "/static/js/4.e06e28fa.chunk.js?ver=4",
     "static/js/4.e06e28fa.chunk.js.map": "/static/js/4.e06e28fa.chunk.js.map",
-    "static/js/5.c95c9442.chunk.js": "/static/js/5.c95c9442.chunk.js?ver=2",
+    "static/js/5.c95c9442.chunk.js": "/static/js/5.c95c9442.chunk.js?ver=4",
     "static/js/5.c95c9442.chunk.js.map": "/static/js/5.c95c9442.chunk.js.map",
     "index.html": "/index.html",
-    "service-worker.js": "/service-worker.js?ver=2",
+    "service-worker.js": "/service-worker.js?ver=4",
     "service-worker.js.map": "/service-worker.js.map",
     "static/css/2.b708e81c.chunk.css.map": "/static/css/2.b708e81c.chunk.css.map",
     "static/css/3.8f979c37.chunk.css.map": "/static/css/3.8f979c37.chunk.css.map",
@@ -75,10 +75,10 @@
     "static/media/wieldy.186ef44e.less": "/static/media/wieldy.186ef44e.less"
   },
   "entrypoints": [
-    "static/js/runtime-main.27d9e0a3.js?ver=2",
+    "static/js/runtime-main.27d9e0a3.js?ver=4",
     "static/css/2.b708e81c.chunk.css",
-    "static/js/2.5ea9dfe2.chunk.js?ver=2",
+    "static/js/2.5ea9dfe2.chunk.js?ver=4",
     "static/css/main.7000918f.chunk.css",
-    "static/js/main.9948867a.chunk.js?ver=2"
+    "static/js/main.9948867a.chunk.js?ver=4"
   ]
 }
