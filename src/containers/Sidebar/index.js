@@ -17,6 +17,11 @@ import IconoSelecAdministrador from '../../assets/images/iconos/Sidebar/Seleccio
 import IconoSelecCargaArchivo from '../../assets/images/iconos/Sidebar/Seleccionado/selecCargaArchivo.png'
 import IconoSelecData from '../../assets/images/iconos/Sidebar/Seleccionado/selecData.png'
 import IconoSelecControlArchivos from '../../assets/images/iconos/Sidebar/Seleccionado/selecControlArchivos.png'
+
+import IconoMarket from '../../assets/images/iconos/market/blanco.png'
+import IconoMarketColor from '../../assets/images/iconos/market/color.png'
+
+
 import {Link} from "react-router-dom"
 import IconoFlechaDerecha from '../../assets/images/iconos/flechaDerecha.png'
 import {toggleCollapsedSideNav} from "../../appRedux/actions/Setting";
@@ -103,6 +108,14 @@ const Sidebar = () => {
                     visible={navCollapsed}
                 >
                 <div id="contenedor">
+                    <div 
+                        style={{
+                            position:'absolute', height:'100vh', width:'300px', background:'white',
+                            boxShadow: "5px 7px 10px rgba(0, 0, 0, .5)"
+                        }}
+                    >
+
+                    </div>
                     <nav>
                         <div id="Cabecera-Sidebar-Principal" style={{position:'relative'}}>
                             <Link to="/sistema/categorias">
@@ -111,9 +124,9 @@ const Sidebar = () => {
                                     style   = {{
                                         cursor:'pointer', 
                                         position:'absolute', 
-                                        top: "-6px",
-                                        left: "19px",
-                                        width: "117px"
+                                        top: "25px",
+                                        left: "45px",
+                                        width: "60px"
                                     }}
                                     alt     = '' src={LogoSidebar} 
                                 />
@@ -165,394 +178,335 @@ const Sidebar = () => {
                                         })
 
                                         return(
-                                            menu.modtienesubmodulos == false
-                                            ?<li
-                                                className="dropdown-sinsubmenu"
-                                                style={
-                                                    menu.seleccionado
-                                                    ?{
-                                                        background: "#E7F3FF",
-                                                        width: "89%"
-                                                    }
-                                                    :{}
-                                                }
-                                            >
-                                                <Link 
-                                                    to={menu.modruta} 
-                                                    onClick={() => SeleccionarMenu(posicion)} 
-                                                    style={
-                                                        menu.seleccionado
-                                                        ?{
-                                                            color: "#1876F2",
-                                                            fontWeight: "bold"
-                                                        }
-                                                        :{
-                                                            color: "#323233"
-                                                        }
-                                                    }
-                                                >
-                                                    <img 
-                                                        className="Imagen-Fila-Cuerpo-Sidebar-Principal" 
-                                                        src={menu.modicono}
-                                                        style={
-                                                            menu.seleccionado 
-                                                            ?{opacity:0, width:'0px'} 
-                                                            :{opacity:1, width:'50px', marginRight:'10px'}
-                                                        }
-                                                    />
-                                                    <img 
-                                                        className="" 
-                                                        src={menu.modiconoseleccionado}
-                                                        style={
-                                                            menu.seleccionado 
-                                                            ?{
-                                                                opacity:1,
-                                                                border: "2px solid #1876F2",
-                                                                width:'50px',
-                                                                marginRight:'10px',
-                                                                borderRadius:'100px',
-                                                                background:'#E4E6EB'
-                                                            } 
-                                                            : {opacity:0, width:'0px'}
-                                                        }
-                                                    />
-                                                    {menu.modnombre}
-                                                </Link>
-                                            </li>
 
-                                            :<li
-                                                style={
-                                                    menu.seleccionado
-                                                    ?{
-                                                        background: "#E7F3FF",
-                                                        width: "89%"
-                                                    }
-                                                    :{}
-                                                }
-                                                className="dropdown"
-                                            >
-                                                <Link
-                                                    className="dropdown_principal"
-                                                    // to={menu.modruta} 
-                                                    to={link} 
-                                                    onClick={() => SeleccionarMenu(posicion)} 
+                                            <>
+                                            {
+                                                
+                                                menu.modtienesubmodulos == false
+                                                ?<li
+                                                    className="dropdown-sinsubmenu"
                                                     style={
                                                         menu.seleccionado
                                                         ?{
-                                                            color: "#1876F2",
-                                                            fontWeight: "bold"
-                                                        }
-                                                        :{
-                                                            color: "#323233"
-                                                        }
-                                                    }
-                                                >
-                                                    <img 
-                                                        className="Imagen-Fila-Cuerpo-Sidebar-Principal" 
-                                                        src={menu.modicono}
-                                                        style={
-                                                            menu.seleccionado 
-                                                            ?{opacity:0, width:'0px'} 
-                                                            :{opacity:1, width:'50px', marginRight:'10px'}
-                                                        }
-                                                    />
-                                                    <img 
-                                                        className="" 
-                                                        src={menu.modiconoseleccionado}
-                                                        style={
-                                                            menu.seleccionado 
-                                                            ?{
-                                                                opacity:1,
-                                                                border: "2px solid #1876F2",
-                                                                width:'50px',
-                                                                marginRight:'10px',
-                                                                borderRadius:'100px',
-                                                                background:'#E4E6EB'
-                                                            } 
-                                                            : {opacity:0, width:'0px'}
-                                                        }
-                                                    />
-                                                    {menu.modnombre}
-                                                    <img 
-                                                        width={"9px"} 
-                                                        src={IconoFlechaDerecha} 
-                                                        className="IconoFlecha"
-                                                        
-                                                    />
-                                                </Link>
-                                                <div
-                                                    className="dropdown_principal_mobile"
-                                                    to={menu.modruta} 
-                                                    onClick={() => SeleccionarMenu(posicion)} 
-                                                    style={
-                                                        menu.seleccionado
-                                                        ?{
-                                                            color: "#1876F2",
-                                                            fontWeight: "bold",
-                                                            padding: "4px",
-                                                            borderRadius: "10px",
                                                             background: "#E7F3FF",
-                                                            marginRight: "15px",
+                                                            width: "89%"
                                                         }
-                                                        :{
-                                                            color: "#323233"
-                                                        }
+                                                        :{}
                                                     }
                                                 >
-                                                    
-                                                    <img 
-                                                        className="Imagen-Fila-Cuerpo-Sidebar-Principal" 
-                                                        src={menu.modicono}
-                                                        style={
-                                                            menu.seleccionado 
-                                                            ?{opacity:0, width:'0px'} 
-                                                            :{opacity:1, width:'50px', marginRight:'10px'}
-                                                        }
-                                                    />
-                                                    <img 
-                                                        className="" 
-                                                        src={menu.modiconoseleccionado}
-                                                        style={
-                                                            menu.seleccionado 
-                                                            ?{
-                                                                opacity:1,
-                                                                border: "2px solid #1876F2",
-                                                                width:'50px',
-                                                                marginRight:'10px',
-                                                                borderRadius:'100px',
-                                                                background:'#E4E6EB'
-                                                            } 
-                                                            : {opacity:0, width:'0px'}
-                                                        }
-                                                    />
-                                                    {menu.modnombre}
-                                                    <img 
-                                                        width={"9px"} 
-                                                        src={IconoFlechaDerecha} 
-                                                        className="IconoFlecha"
+                                                    <Link 
+                                                        to={menu.modruta} 
+                                                        onClick={() => SeleccionarMenu(posicion)} 
                                                         style={
                                                             menu.seleccionado
                                                             ?{
-                                                                marginLeft:'20px'
+                                                                color: "#1876F2",
+                                                                fontWeight: "bold"
                                                             }
-                                                            :{marginLeft:'20px'}
+                                                            :{
+                                                                color: "#323233"
+                                                            }
                                                         }
-                                                    />
-                                                </div>
-                                                
-                                                <ul 
+                                                    >
+                                                        <img 
+                                                            className="Imagen-Fila-Cuerpo-Sidebar-Principal" 
+                                                            src={menu.modicono}
+                                                            style={
+                                                                menu.seleccionado 
+                                                                ?{opacity:0, width:'0px'} 
+                                                                :{opacity:1, width:'50px', marginRight:'10px'}
+                                                            }
+                                                        />
+                                                        <img 
+                                                            className="" 
+                                                            src={menu.modiconoseleccionado}
+                                                            style={
+                                                                menu.seleccionado 
+                                                                ?{
+                                                                    opacity:1,
+                                                                    border: "2px solid #1876F2",
+                                                                    width:'50px',
+                                                                    marginRight:'10px',
+                                                                    borderRadius:'100px',
+                                                                    background:'#E4E6EB'
+                                                                } 
+                                                                : {opacity:0, width:'0px'}
+                                                            }
+                                                        />
+                                                        {menu.modnombre}
+                                                    </Link>
+                                                </li>
+    
+                                                :<li
                                                     style={
-                                                        paisSeleccionado.modulos.length == posicion+1
+                                                        menu.seleccionado
                                                         ?{
-                                                            // marginTop:'-157px',
-                                                            paddingTop:'10px', paddingBottom:'10px', paddingRight:'10px'
+                                                            background: "#E7F3FF",
+                                                            width: "89%"
                                                         }
-                                                        :{
-                                                            paddingTop:'10px', paddingBottom:'10px', paddingRight:'10px'
-                                                        }
+                                                        :{}
                                                     }
+                                                    className="dropdown"
                                                 >
-                                                    {
-                                                        paisSeleccionado.modulos.length == posicion+1
-                                                        ?null
-                                                        :<img 
+                                                    <Link
+                                                        className="dropdown_principal"
+                                                        // to={menu.modruta} 
+                                                        to={link} 
+                                                        onClick={() => SeleccionarMenu(posicion)} 
+                                                        style={
+                                                            menu.seleccionado
+                                                            ?{
+                                                                color: "#1876F2",
+                                                                fontWeight: "bold"
+                                                            }
+                                                            :{
+                                                                color: "#323233"
+                                                            }
+                                                        }
+                                                    >
+                                                        <img 
+                                                            className="Imagen-Fila-Cuerpo-Sidebar-Principal" 
+                                                            src={menu.modicono}
+                                                            style={
+                                                                menu.seleccionado 
+                                                                ?{opacity:0, width:'0px'} 
+                                                                :{opacity:1, width:'50px', marginRight:'10px'}
+                                                            }
+                                                        />
+                                                        <img 
+                                                            className="" 
+                                                            src={menu.modiconoseleccionado}
+                                                            style={
+                                                                menu.seleccionado 
+                                                                ?{
+                                                                    opacity:1,
+                                                                    border: "2px solid #1876F2",
+                                                                    width:'50px',
+                                                                    marginRight:'10px',
+                                                                    borderRadius:'100px',
+                                                                    background:'#E4E6EB'
+                                                                } 
+                                                                : {opacity:0, width:'0px'}
+                                                            }
+                                                        />
+                                                        {menu.modnombre}
+                                                        <img 
                                                             width={"9px"} 
                                                             src={IconoFlechaDerecha} 
-                                                            className="IconoFlechaDerecha"
+                                                            className="IconoFlecha"
+                                                            
                                                         />
-                                                    }
-                                                    {
-                                                        menu.smos.map((submenu, posicionSubMenu) => {
-                                                            return(
-                                                                submenu.smonombre == "default"
-                                                                ?null
-                                                                :
-                                                                <Link
-                                                                    to={submenu.smoruta} 
-                                                                    onClick={() => SeleccionarMenu(posicion, posicionSubMenu )}
-                                                                    style={{
-                                                                        width:'100%'
-                                                                    }}
-                                                                    className="SubMenu-Contenedor-Sidebar"
-                                                                >
-                                                                    
-                                                                    <li
-                                                                        style={
-                                                                            submenu.seleccionado == true
-                                                                            ?{
-                                                                                height:'40px',
-                                                                                display: "flex",
-                                                                                background: '#E7F3FF'
-                                                                            }
-                                                                            :{
-                                                                                height:'40px',
-                                                                                display: "flex"
-                                                                            }
-                                                                        }
-                                                                    >
-                                                                        <Link
-                                                                            to={submenu.smoruta} 
-                                                                            onClick={() => SeleccionarMenu(posicion, posicionSubMenu )}
-                                                                            style={submenu.seleccionado?{
-                                                                                color: "#1876F2",
-                                                                                fontWeight:'bold'
-                                                                            }:{}}
-                                                                        >
-                                                                            {
-                                                                                submenu.smonombre
-                                                                            }
-                                                                            
-                                                                        </Link>
-                                                                        <div className='Lista-separador'></div>
-                                                                    </li>
-                                                                    
-                                                                </Link>
-                                                                
-                                                            )
-                                                        })
-                                                    }
-                                                    {
-                                                        menu.modnombre == "Trade Marketing"
-                                                        ?
-                                                        paisSeleccionado
-                                                        ?paisSeleccionado.paiid == 1
-                                                            ?funPermisosObtenidos(
-                                                                permisos,
-                                                                PERMISO_VER_SMARTVIEW_PERU,
-                                                                <a 
-                                                                    id="txtSidebarItem" 
-                                                                    href="https://leadsmartview.com" 
-                                                                    target="_blank"
-                                                                    className="SubMenu-Contenedor-Sidebar"
-                                                                >
-
-                                                                    <li
+                                                    </Link>
+                                                    <div
+                                                        className="dropdown_principal_mobile"
+                                                        to={menu.modruta} 
+                                                        onClick={() => SeleccionarMenu(posicion)} 
+                                                        style={
+                                                            menu.seleccionado
+                                                            ?{
+                                                                color: "#1876F2",
+                                                                fontWeight: "bold",
+                                                                padding: "4px",
+                                                                borderRadius: "10px",
+                                                                background: "#E7F3FF",
+                                                                marginRight: "15px",
+                                                            }
+                                                            :{
+                                                                color: "#323233"
+                                                            }
+                                                        }
+                                                    >
+                                                        
+                                                        <img 
+                                                            className="Imagen-Fila-Cuerpo-Sidebar-Principal" 
+                                                            src={menu.modicono}
+                                                            style={
+                                                                menu.seleccionado 
+                                                                ?{opacity:0, width:'0px'} 
+                                                                :{opacity:1, width:'50px', marginRight:'10px'}
+                                                            }
+                                                        />
+                                                        <img 
+                                                            className="" 
+                                                            src={menu.modiconoseleccionado}
+                                                            style={
+                                                                menu.seleccionado 
+                                                                ?{
+                                                                    opacity:1,
+                                                                    border: "2px solid #1876F2",
+                                                                    width:'50px',
+                                                                    marginRight:'10px',
+                                                                    borderRadius:'100px',
+                                                                    background:'#E4E6EB'
+                                                                } 
+                                                                : {opacity:0, width:'0px'}
+                                                            }
+                                                        />
+                                                        {menu.modnombre}
+                                                        <img 
+                                                            width={"9px"} 
+                                                            src={IconoFlechaDerecha} 
+                                                            className="IconoFlecha"
+                                                            style={
+                                                                menu.seleccionado
+                                                                ?{
+                                                                    marginLeft:'20px'
+                                                                }
+                                                                :{marginLeft:'20px'}
+                                                            }
+                                                        />
+                                                    </div>
+                                                    
+                                                    <ul 
+                                                        style={
+                                                            paisSeleccionado.modulos.length == posicion+1
+                                                            ?{
+                                                                // marginTop:'-157px',
+                                                                paddingTop:'10px', paddingBottom:'10px', paddingRight:'10px'
+                                                            }
+                                                            :{
+                                                                paddingTop:'10px', paddingBottom:'10px', paddingRight:'10px'
+                                                            }
+                                                        }
+                                                    >
+                                                        {
+                                                            paisSeleccionado.modulos.length == posicion+1
+                                                            ?null
+                                                            :<img 
+                                                                width={"9px"} 
+                                                                src={IconoFlechaDerecha} 
+                                                                className="IconoFlechaDerecha"
+                                                            />
+                                                        }
+                                                        {
+                                                            menu.smos.map((submenu, posicionSubMenu) => {
+                                                                return(
+                                                                    submenu.smonombre == "default"
+                                                                    ?null
+                                                                    :
+                                                                    <Link
+                                                                        to={submenu.smoruta} 
+                                                                        onClick={() => SeleccionarMenu(posicion, posicionSubMenu )}
                                                                         style={{
-                                                                            height:'40px',
-                                                                            display: "flex",
-                                                                            alignItems: "center"
+                                                                            width:'100%'
                                                                         }}
-                                                                    >
-                                                                        Creciendo Juntos
-                                                                    </li>
-                                                                </a>   
-                                                            )
-                                                            :paisSeleccionado.paiid == 2
-                                                                ?funPermisosObtenidos(
-                                                                    permisos,
-                                                                    PERMISO_VER_SMARTVIEW_CHILE,
-                                                                    <a 
-                                                                        id="txtSidebarItem" 
-                                                                        href="https://leadsmartview.com" 
-                                                                        target="_blank"
                                                                         className="SubMenu-Contenedor-Sidebar"
                                                                     >
-    
+                                                                        
                                                                         <li
-                                                                            style={{
-                                                                                height:'40px',
-                                                                                display: "flex",
-                                                                                alignItems: "center"
-                                                                            }}
-                                                                        >
-                                                                            Creciendo Juntos
-                                                                        </li>
-                                                                    </a>   
-                                                                )
-                                                                :paisSeleccionado.paiid == 3
-                                                                    ?funPermisosObtenidos(
-                                                                        permisos,
-                                                                        PERMISO_VER_SMARTVIEW_MEXICO,
-                                                                        <a 
-                                                                            id="txtSidebarItem" 
-                                                                            href="https://leadsmartview.com" 
-                                                                            target="_blank"
-                                                                            className="SubMenu-Contenedor-Sidebar"
-                                                                        >
-        
-                                                                            <li
-                                                                                style={{
+                                                                            style={
+                                                                                submenu.seleccionado == true
+                                                                                ?{
                                                                                     height:'40px',
                                                                                     display: "flex",
-                                                                                    alignItems: "center"
-                                                                                }}
+                                                                                    background: '#E7F3FF'
+                                                                                }
+                                                                                :{
+                                                                                    height:'40px',
+                                                                                    display: "flex"
+                                                                                }
+                                                                            }
+                                                                        >
+                                                                            <Link
+                                                                                to={submenu.smoruta} 
+                                                                                onClick={() => SeleccionarMenu(posicion, posicionSubMenu )}
+                                                                                style={submenu.seleccionado?{
+                                                                                    color: "#1876F2",
+                                                                                    fontWeight:'bold'
+                                                                                }:{}}
                                                                             >
-                                                                                Creciendo Juntos
-                                                                            </li>
-                                                                        </a>   
+                                                                                {
+                                                                                    submenu.smonombre
+                                                                                }
+                                                                                
+                                                                            </Link>
+                                                                            <div className='Lista-separador'></div>
+                                                                        </li>
+                                                                        
+                                                                    </Link>
+                                                                    
+                                                                )
+                                                            })
+                                                        }
+                                                    </ul>
+                                                </li>
+                                            }
+
+                                            {/* MARKETPLACE -> MÓDULO SOLO PARA THE BRAIN */}
+
+                                            {
+                                                paisSeleccionado.paiid = 2
+                                                ?posicion == 2
+                                                ?funPermisosObtenidos(
+                                                    permisos,
+                                                    "modulo.mostrar.pricing",
+                                                    <li
+                                                        className="dropdown-sinsubmenu"
+                                                        style={
+                                                            2 != 2
+                                                            ?{
+                                                                background: "#E7F3FF",
+                                                                width: "89%"
+                                                            }
+                                                            :{}
+                                                        }
+                                                    >
+                                                        <Link 
+                                                            to={"/Sistema/pricing"} 
+                                                            onClick={
+                                                                () => dispatch(
+                                                                    SeleccionarModuloEspecificoReducer(
+                                                                        "Pricing",
+                                                                        IconoMarketColor
                                                                     )
-                                                                    :paisSeleccionado.paiid == 4
-                                                                        ?funPermisosObtenidos(
-                                                                            permisos,
-                                                                            PERMISO_VER_SMARTVIEW_ARGENTINA,
-                                                                            <a 
-                                                                                id="txtSidebarItem" 
-                                                                                href="https://leadsmartview.com" 
-                                                                                target="_blank"
-                                                                                className="SubMenu-Contenedor-Sidebar"
-                                                                            >
-            
-                                                                                <li
-                                                                                    style={{
-                                                                                        height:'40px',
-                                                                                        display: "flex",
-                                                                                        alignItems: "center"
-                                                                                    }}
-                                                                                >
-                                                                                    Creciendo Juntos
-                                                                                </li>
-                                                                            </a>   
-                                                                        )
-                                                                        :paisSeleccionado.paiid == 5
-                                                                            ?funPermisosObtenidos(
-                                                                                permisos,
-                                                                                PERMISO_VER_SMARTVIEW_BOLIVIA,
-                                                                                <a 
-                                                                                    id="txtSidebarItem" 
-                                                                                    href="https://leadsmartview.com" 
-                                                                                    target="_blank"
-                                                                                    className="SubMenu-Contenedor-Sidebar"
-                                                                                >
-                
-                                                                                    <li
-                                                                                        style={{
-                                                                                            height:'40px',
-                                                                                            display: "flex",
-                                                                                            alignItems: "center"
-                                                                                        }}
-                                                                                    >
-                                                                                        Creciendo Juntos
-                                                                                    </li>
-                                                                                </a>   
-                                                                            )
-                                                                            :paisSeleccionado.paiid == 6
-                                                                                ?funPermisosObtenidos(
-                                                                                    permisos,
-                                                                                    PERMISO_VER_SMARTVIEW_EEUU,
-                                                                                    <a 
-                                                                                        id="txtSidebarItem" 
-                                                                                        href="https://leadsmartview.com" 
-                                                                                        target="_blank"
-                                                                                        className="SubMenu-Contenedor-Sidebar"
-                                                                                    >
-                    
-                                                                                        <li
-                                                                                            style={{
-                                                                                                height:'40px',
-                                                                                                display: "flex",
-                                                                                                alignItems: "center"
-                                                                                            }}
-                                                                                        >
-                                                                                            Creciendo Juntos
-                                                                                        </li>
-                                                                                    </a>   
-                                                                                )
-                                                                                :null
-                                                        :null
-                                                        :null
-                                                    }
-                                                </ul>
-                                            </li>
+                                                                )
+                                                            }
+                                                            style={
+                                                                2 != 2
+                                                                ?{
+                                                                    color: "#1876F2",
+                                                                    fontWeight: "bold"
+                                                                }
+                                                                :{
+                                                                    color: "#323233"
+                                                                }
+                                                            }
+                                                        >
+                                                            <img 
+                                                                className="Imagen-Fila-Cuerpo-Sidebar-Principal" 
+                                                                src={IconoMarket}
+                                                                style={
+                                                                    2 != 2
+                                                                    ?{opacity:0, width:'0px'} 
+                                                                    :{opacity:1, width:'50px', marginRight:'10px'}
+                                                                }
+                                                            />
+                                                            <img 
+                                                                className="" 
+                                                                src={IconoMarketColor}
+                                                                style={
+                                                                    2 != 2
+                                                                    ?{
+                                                                        opacity:1,
+                                                                        border: "2px solid #1876F2",
+                                                                        width:'50px',
+                                                                        marginRight:'10px',
+                                                                        borderRadius:'100px',
+                                                                        background:'#E4E6EB'
+                                                                    } 
+                                                                    : {opacity:0, width:'0px'}
+                                                                }
+                                                            />
+                                                            {"Pricing"}
+                                                        </Link>
+                                                    </li>
+                                                )
+                                                :null
+                                                :null
+                                            }
+                                            
+                                            {/* FIN DE MARKETPLACE */}
+                                            </>
                                         )
                                     })
                                     :null

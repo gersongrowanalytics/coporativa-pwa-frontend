@@ -1,7 +1,10 @@
 import React, {useState, useEffect} from 'react'
 import ImagenPeru from '../../assets/images/Login/banderaPeru.png'
+import ImagenMexico from '../../assets/images/Login/banderaMexico.png'
 import ImagenChile from '../../assets/images/Login/banderaChile.png'
+import ImagenArgentina from '../../assets/images/Login/banderaArgentina.png'
 import ImagenBolivia from '../../assets/images/Login/banderaBolivia.png'
+import ImagenEEUU from '../../assets/images/Login/banderaEeuu.png'
 import ImagenAndes from '../../assets/images/Login/banderaAndes.png'
 import VideoIniciarSesion from '../../assets/Videos/Login/videologin.mp4';
 import {Form, Input, Select, Button } from "antd";
@@ -38,7 +41,10 @@ const FormularioLogin = (props) => {
         dispatch(SeleccionarPaisReducer(pais[1]))
     }
 
-    const {listaPaises} = useSelector(({auth}) => auth);
+    const {
+        listaPaises,
+        cargandoLogin
+    } = useSelector(({auth}) => auth);
 
     useEffect(() => {
         dispatch(mostrarPaisesReducer())
@@ -130,10 +136,13 @@ const FormularioLogin = (props) => {
                         rules= {[{required: true, message:"Es necesario un usuario"}]}
                     >
                         <Input 
-                            autoComplete={"off"}
-                            id="Login-Formulario-Input" 
+                            // autoComplete={"off"}
+                            id="email " 
+                            className='Login-Formulario-Input'
                             style={{marginLeft: "-15px"}}
-                            placeholder="Correo" />
+                            placeholder="Correo" 
+                            // type="email"
+                        />
 
                     </Form.Item>
                     {/* <br/> */}
@@ -172,6 +181,7 @@ const FormularioLogin = (props) => {
                             ?"Login-Formulario-Btn-Desactivado-Iniciar"
                             :"Login-Formulario-Btn-Iniciar"
                         }
+                        loading={cargandoLogin}
                     >Iniciar Sesión</Button>
                 </Form>
             </div>
@@ -185,12 +195,19 @@ const FormularioLogin = (props) => {
                 <img
                     id="Bandera-Pais-Login" 
                     src={ImagenChile} />
+
+                <img
+                    id="Bandera-Pais-Login" 
+                    src={ImagenMexico} />
+                <img
+                    id="Bandera-Pais-Login" 
+                    src={ImagenArgentina} />
                 <img
                     id="Bandera-Pais-Login" 
                     src={ImagenBolivia} />
                 <img
                     id="Bandera-Pais-Login" 
-                    src={ImagenAndes} />
+                    src={ImagenEEUU} />
             </div>
 
             <div id="Contenedor-Logo-Grow-Login">
@@ -199,7 +216,7 @@ const FormularioLogin = (props) => {
 
                 </div>
                 <div className="Txt-Consumo-Masivo">
-                    Consumo Masivo
+                    Consumo Masivo y<br/>Professional
                 </div>
                 {/* <img 
                     src={GrowLogoLogin}

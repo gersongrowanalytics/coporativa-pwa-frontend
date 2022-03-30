@@ -13,11 +13,12 @@ import {
   NAV_STYLE_INSIDE_HEADER_HORIZONTAL,
   TAB_SIZE
 } from "../../constants/ThemeSetting";
-import {useRouteMatch} from "react-router-dom";
+import {useRouteMatch, Link, Redirect} from "react-router-dom";
 import {ObtenerPermisosUsuarioReducer, ObtenerModulosUsuarioReducer} from '../../appRedux/actions/Usuarios/Usuarios'
 import {
     SeleccionarPaisReducer,
-    userSignIn
+    userSignIn,
+    userSignOut,
 } from "../../appRedux/actions/Auth";
 import IconoLogo from '../../assets/images/logo-w.png'
 import '../../styles/Sistema/main.css'
@@ -31,7 +32,11 @@ const MainApp = () => {
     const match = useRouteMatch();
     const {listaPaises} = useSelector(({auth}) => auth);
     const [mostrarLogo, setMostrarLogo] = useState(true)
-
+    const [redireccionarTerminos, setRedireccionarTerminos] = useState(false)
+    const { 
+        datosUsuarioLogeado,
+        mostrar_terminos_condiciones_login
+    } = useSelector(({auth}) => auth);
 
     const getContainerClass = (navStyle) => {
         switch (navStyle) {
@@ -100,11 +105,11 @@ const MainApp = () => {
     var fecha = new Date();
     var ano = fecha. getFullYear();
 
-    useEffect(() => {
+    useEffect(async() => {
         dispatch(ObtenerPermisosUsuarioReducer())
         dispatch(ObtenerModulosUsuarioReducer())
 
-        dispatch(
+        let rptaLogin = await dispatch(
             userSignIn(
                 {
                     usuario      : localStorage.getItem('Log-usuario'),
@@ -114,6 +119,10 @@ const MainApp = () => {
                 }
             )
         );
+
+        setRedireccionarTerminos(rptaLogin.redirigirterminos)
+
+
         // console.log('Login otra vez!')
     }, [])
 
@@ -131,6 +140,19 @@ const MainApp = () => {
 
     return (
         <Layout className="gx-app-layout" style={{position:'relative'}}>
+
+            {
+                datosUsuarioLogeado.usuaceptoterminos
+                ?mostrar_terminos_condiciones_login == true
+                    ?<Redirect
+                        to={{
+                            pathname: '/sistema/terminos-condiciones',
+                        }}
+                    />
+                    :null
+                :null
+            }
+
             {getSidebar(navStyle, width)}
             {
                 mostrarLogo == true
@@ -164,34 +186,111 @@ const MainApp = () => {
                             <Col 
                                 xl={8} md={8} sm={8} xs={8} 
                                 style={{
+                                textAlign     : "-webkit-center",
+                                fontFamily    : "Segoe UI",
+                                fontStyle     : "normal",
+                                fontWeight    : "bold",
+                                fontSize      : "14px",
+                                lineHeight    : "19px",
+                                // textTransform : "uppercase",
+                                color         : "#4D4D4D",
+                                paddingTop: "20px",
+                                paddingBottom: "20px"
+                                }}
+                                
+                            >
+                                © {ano} Grow Analytics.Todos los Derechos Reservados
+                            </Col>
+                            {/* <Col 
+                                xl={4} md={4} sm={4} xs={4} 
+                                style={{
                                 textAlign     : "-webkit-right",
                                 fontFamily    : "Segoe UI",
                                 fontStyle     : "normal",
                                 fontWeight    : "bold",
                                 fontSize      : "14px",
                                 lineHeight    : "19px",
-                                textTransform : "uppercase",
+                                // textTransform : "uppercase",
                                 color         : "#4D4D4D"
                                 }}
                             >
-                                © {ano} Grow Analytics
-                            </Col>
+                                
+                            </Col> */}
+                            
+                                <Col 
+                                    xl={4} md={4} sm={4} xs={4}  
+                                    style={{
+                                    fontFamily    : "Segoe UI",
+                                    fontStyle     : "normal",
+                                    fontWeight    : "bold",
+                                    fontSize      : "14px",
+                                    lineHeight    : "19px",
+                                    // textTransform : "uppercase",
+                                    color         : "#4D4D4D",
+                                    cursor:'pointer'
+                                    }}
+                                    className=
+                                    {
+                                        window.location.href.includes('/terminos-condiciones')
+                                        ?"Footer-Texto-Seleccionado"
+                                        :"Footer-Texto"
+                                    }
+                                >
+                                    <Link 
+                                        to="/sistema/terminos-condiciones"
+                                    >
+                                        <div className="Txt-Footer-Normal">Términos & Condiciones</div>
+                                    </Link>
+                                    
+                                </Col>
                             <Col 
-                                xl={8} md={8} sm={8} xs={8}
+                                xl={4} md={4} sm={4} xs={4}  
                                 style={{
                                 fontFamily    : "Segoe UI",
                                 fontStyle     : "normal",
                                 fontWeight    : "bold",
                                 fontSize      : "14px",
                                 lineHeight    : "19px",
-                                textTransform : "uppercase",
+                                // textTransform : "uppercase",
                                 color         : "#4D4D4D"
                                 }}
+                                className="Footer-Texto"
                             >
-                                Todos los derechos reservados
+                                Política de Privacidad
                             </Col>
                             <Col 
-                                xl={8} md={8} sm={8} xs={8} 
+                                xl={4} md={4} sm={4} xs={4}  
+                                style={{
+                                fontFamily    : "Segoe UI",
+                                fontStyle     : "normal",
+                                fontWeight    : "bold",
+                                fontSize      : "14px",
+                                lineHeight    : "19px",
+                                // textTransform : "uppercase",
+                                color         : "#4D4D4D"
+                                }}
+                                className="Footer-Texto"
+                            >
+                                Cookies & Datos
+                            </Col>
+                            <Col 
+                                xl={4} md={4} sm={4} xs={4}  
+                                style={{
+                                textAlign     : "-webkit-center",
+                                fontFamily    : "Segoe UI",
+                                fontStyle     : "normal",
+                                fontWeight    : "bold",
+                                fontSize      : "14px",
+                                lineHeight    : "19px",
+                                // textTransform : "uppercase",
+                                color         : "#4D4D4D"
+                                }}
+                                className="Footer-Texto"
+                            >
+                                Entra en Contacto
+                            </Col>
+                            {/* <Col 
+                                xl={4} md={4} sm={4} xs={4}  
                                 style={{
                                 textAlign     : "-webkit-left",
                                 fontFamily    : "Segoe UI",
@@ -199,12 +298,12 @@ const MainApp = () => {
                                 fontWeight    : "bold",
                                 fontSize      : "14px",
                                 lineHeight    : "19px",
-                                textTransform : "uppercase",
+                                // textTransform : "uppercase",
                                 color         : "#4D4D4D"
                                 }}
                             >
-                                Políticas de privacidad
-                            </Col>
+                                Todos los derechos reservados
+                            </Col> */}
                         </Row>
                     </Footer>
                 </Content>

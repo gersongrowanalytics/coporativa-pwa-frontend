@@ -2,7 +2,8 @@ import {
     CARGANDO_CREAR_ARCHIVO_DATA_CONTROL_DATA,
     CARGANDO_DATA_ARCHIVO_DATA_CONTROL_DATA,
     OBTENER_DATA_ARCHIVO_DATA_CONTROL_DATA,
-    SELECCIONAR_DATA_ARCHIVO_DATA_CONTROL_DATA
+    SELECCIONAR_DATA_ARCHIVO_DATA_CONTROL_DATA,
+    CARGANDO_EDITAR_ARCHIVO_DATA_CONTROL_DATA
 } from "../../../../constants/SistemaTypes";
 import config from '../../../../config'
 import {message} from "antd"
@@ -13,6 +14,7 @@ import {
     OBTENER_DATA_SELECCIONADO_DESCARGAR_DATA,
     OBTENER_ARCHIVOS_DESCARGAR_DESCARGAR_DATA
 } from "../../../../constants/DescargarData/DescargarDataTypes";
+import IconoImagenAzul from '../../../../assets/images/iconos/Administrador/imagenazul.png';
 
 export const CrearDataReducer = (formData) => async (dispatch, getState) => {
 
@@ -272,3 +274,94 @@ export const SeleccionarArchivoDescargarDataReducer = (nuevaposicion) => async (
     return true
 }
 
+export const EditarDataReducer = (posicion, editandoArchivos = false) => async (dispatch, getState) => {
+
+    let dataArchivos = getState().controlData.dataArchivos
+
+    await dataArchivos.map((data, pos) => {
+        dataArchivos[pos]['editando'] = false
+        dataArchivos[pos]['nuevaImagenUno'] = null
+        dataArchivos[pos]['nuevaImagenDos'] = null
+        dataArchivos[pos]['nuevaImagenTres'] = null
+
+        let cantidadImagenesExtras = 3 - dataArchivos[pos]['imagenes'].length
+
+        for(let cont = 0; cont < cantidadImagenesExtras; cont++){
+            dataArchivos[pos]['imagenes'].push({
+                ardid: 0,
+                created_at: null,
+                iadid: 0,
+                iadimagen: IconoImagenAzul,
+                updated_at: null
+            })   
+        }
+    })
+
+    if(editandoArchivos == false){
+        dataArchivos[posicion]['editando'] = true;
+    }
+
+    dispatch({
+        type: OBTENER_DATA_ARCHIVO_DATA_CONTROL_DATA,
+        payload: dataArchivos
+    })
+
+}
+
+export const EditarImagenDataReducer = (numeroImagen, imagen, posicionArchivoData) => (dispatch, getState) => {
+
+    let dataArchivos = getState().controlData.dataArchivos
+
+    if(numeroImagen == "imagenuno"){
+        dataArchivos[posicionArchivoData]["nuevaImagenUno"] = imagen
+        dataArchivos[posicionArchivoData]["imagenes"][0]['nuevoImagen'] = imagen
+    }else if(numeroImagen == "imagendos"){
+        dataArchivos[posicionArchivoData]["nuevaImagenDos"] = imagen
+        dataArchivos[posicionArchivoData]["imagenes"][1]['nuevoImagen'] = imagen
+    }else if(numeroImagen == "imagentres"){
+        dataArchivos[posicionArchivoData]["nuevaImagenTres"] = imagen
+        dataArchivos[posicionArchivoData]["imagenes"][2]['nuevoImagen'] = imagen
+    }
+
+    dispatch({
+        type: OBTENER_DATA_ARCHIVO_DATA_CONTROL_DATA,
+        payload: dataArchivos
+    })
+
+}
+
+export const EditarArchivoDataReducer = (formData) => async (dispatch, getState) => {
+
+    dispatch({
+        type: CARGANDO_EDITAR_ARCHIVO_DATA_CONTROL_DATA,
+        payload: true
+    })
+
+    await axios.post(config.api+'administrador/controlData/editar-archivo-data', formData,{
+        mode:'cors',
+        headers: {
+            'Accept' : 'application/json',
+            'content-type': 'multipart/form-data',
+            'api-token': localStorage.getItem('usutoken'),
+        }
+    })
+    .then(data => {
+        let datos = data.data
+        console.log(datos)
+		if(datos.respuesta == true){
+            message.success(datos.mensaje, 5)
+        }else{
+            message.error(datos.mensaje, 10)
+        }
+	}).catch((error)=> {
+        console.log(error)
+    })
+    
+    dispatch({
+        type: CARGANDO_EDITAR_ARCHIVO_DATA_CONTROL_DATA,
+        payload: false
+    })
+
+    dispatch(ObtenerDataReducer())
+
+}

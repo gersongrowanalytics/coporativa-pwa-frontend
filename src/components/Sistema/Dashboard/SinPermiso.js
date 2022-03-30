@@ -1,5 +1,6 @@
 import React from 'react'
 import {Link} from "react-router-dom";
+import config from '../../../config'
 
 const SinPermiso = () => {
     return (
@@ -29,7 +30,7 @@ const SinPermiso = () => {
                     ¡Estamos en construcción! 
                 </div>
                 <div className="Descripcion-Plataforma-Contruccion">
-                    Spider se encuentra construyendo nuevos móudulos para brindarte el mejor servicio.<br/>
+                    {config.nombreSistema} se encuentra construyendo nuevos móudulos para brindarte el mejor servicio.<br/>
                     Si deseas contactarte con alguien, envía un correo a:<br/>
                     <a href="mailto:soporte@grow-analytics.com.pe" id="Correo-Soporte-Contruccion">soporte@grow-analytics.com.pe</a>
                 </div>

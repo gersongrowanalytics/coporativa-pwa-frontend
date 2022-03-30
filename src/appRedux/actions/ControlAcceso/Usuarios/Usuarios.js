@@ -280,6 +280,9 @@ export const CambiarInputUsuarioReducer = (posicion, campo, texto) => (dispatch,
 
 export const EditandoPaisesUsuarioReducer = (posicion, nuevospaises) => (dispatch, getState) => {
 
+    // console.log(posicion)
+    // console.log(nuevospaises)
+
     let listaUsuarios = getState().controlesAccesosUsuarios.listaUsuarios
 
     listaUsuarios[posicion]['nuevospaises'] = nuevospaises

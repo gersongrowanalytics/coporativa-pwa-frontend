@@ -21,6 +21,7 @@ const DescargarData = () => {
     const [primerMostrarFavoritos, setPrimerMostrarFavoritos] = useState(false);
     const [mostrarMostrarFavoritos, setMostrarMostrarFavoritos] = useState(false);
     const [isModalVisible, setIsModalVisible] = useState(false);
+    const [mostrarCredenciales, setMostrarCredenciales] = useState(false);
 
     const MostrarMostrarFavoritos = () => {
         setMostrarMostrarFavoritos(!mostrarMostrarFavoritos);
@@ -75,7 +76,10 @@ const DescargarData = () => {
                 <Col xl={5} lg={3} md={3} sm={24} xs={24}>
 
 
-                    <div id="Titulo-Menu-Descargar-Data">Data</div><br/>
+                    <div 
+                        id="Titulo-Menu-Descargar-Data"
+                        onClick={() => console.log(paisSeleccionado)}
+                    >Data</div><br/>
                     <Checkbox 
                         // checked={archivo.descargarData}
                     >{"Seleccionar Todo"}</Checkbox><br/>
@@ -95,7 +99,7 @@ const DescargarData = () => {
                             dataArchivos.map((archivo, posicion) => {
                                 return ( 
                                     paisSeleccionado
-                                    ?paisSeleccionado.paiid == archivo.paiid
+                                    ?paisSeleccionado.paiid == archivo.paiid || paisSeleccionado.paiid == null
                                     ?mostrarMostrarFavoritos == false
 
                                     ?<div id="Fila-Menu-Descargar-Data">
@@ -152,7 +156,13 @@ const DescargarData = () => {
                                 <a 
                                     id="Texto-Btn-Descargar-Descargar-Data"
                                     href={dataSeleccionada.archivo} 
-                                    download="">Descargar</a>
+                                    download=""
+                                    onClick={() => {
+                                        if(dataSeleccionada.ardcredenciales == true){
+                                            setMostrarCredenciales(true)
+                                        }
+                                    }}
+                                >Descargar</a>
                                     
                             </div>
 
@@ -181,6 +191,75 @@ const DescargarData = () => {
 
                 </Col>
             </Row>
+
+            <Modal
+                title={null}
+                footer={null}
+                centered
+                visible={mostrarCredenciales}
+                closeIcon={<img onClick={() => setMostrarCredenciales(false)} src={iconoCerrarModal} />}
+                onCancel={() => setMostrarCredenciales(false)}
+                width={"550px"}
+            >
+
+                <div
+                    style={{
+                        display: "flex",
+                        textAlign: "-webkit-center"
+                    }}
+                >
+
+                    <div id="Cuerpo-Modal-Info-Usuario-Descargar-Data" >
+
+                        <div
+                            className="Letra-Azul-Modal-Info-Usuario-Descargar-Data" 
+                            style={{marginBottom:'10px'}}>Hola, {localStorage.getItem('pernombrecompleto')}</div>
+
+                        {/* <div
+                            className="Letra-Modal-Info-Usuario-Descargar-Data"  
+                            style={{marginBottom:'15px'}}>Para una mejor visualización de la Pivot Online, debes ingresar con el siguiente usuario y contraseña:</div> */}
+                        <div
+                            className="Letra-Modal-Info-Usuario-Descargar-Data"  
+                            style={{marginBottom:'15px'}}>Por politicas de seguridad para visualizar esta pivot online debes ingresar con el siguiente usuario y contraseña:</div>
+
+                        {
+                            dataSeleccionada
+                            ?dataSeleccionada.adus
+                            ?dataSeleccionada.adus.map((adu, posicionAdu) => {
+                                return(
+                                    posicionAdu == 0
+                                    ?<>
+                                        <div className="Letra-Modal-Info-Usuario-Descargar-Data">Usuario</div>
+
+                                        <div className="Letra-Azul-Modal-Info-Usuario-Descargar-Data" style={{marginBottom:'10px'}}>{adu.aduusuario}</div>
+
+                                        <div className="Letra-Modal-Info-Usuario-Descargar-Data">Contraseña</div>
+
+                                        <div className="Letra-Azul-Modal-Info-Usuario-Descargar-Data" style={{marginBottom:'10px'}}>{adu.aducontrasenia}</div>
+                                    </>
+                                    :null
+                                )
+                            })
+                            :null
+                            :null
+                        }
+
+                        <div
+                            className="Letra-Modal-Info-Usuario-Descargar-Data"  
+                            // style={{marginBottom:'10px'}}>Les reiteramos nuestro apoyo en este proceso, y recordamos que ante cualquier consulta o requerimiento, durante esta etapa, podrá ser canalizado al correo <a href="mailto:m.soporte@grow-analytics.com.pe">soporte@grow-analytics.com.pe</a></div>
+                            style={{marginBottom:'10px'}}>Ante cualquier apoyo y/o consulta, durante esta etapa, podra ser canalizado al correo <a href="mailto:m.soporte@grow-analytics.com.pe">soporte@grow-analytics.com.pe</a></div>
+
+                        <div className="Letra-Modal-Info-Usuario-Descargar-Data" >¡Que tengan un excelente día!  </div>
+
+                        <div className="Letra-Modal-Info-Usuario-Descargar-Data" >Saludos,</div>
+
+                        {/* <div>Atte. Customer Services Prime</div> */}
+
+                    </div>
+                </div>
+
+            </Modal>
+
             <Modal 
                 title={null} 
                 // visible={true} 

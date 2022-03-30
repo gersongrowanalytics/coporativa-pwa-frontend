@@ -36,8 +36,11 @@ const Cat = () => {
     let tamanioHeight = window.innerHeight
     let tamanioCard = 650
     let tamanioIcono = 80
-
-    if(tamanioHeight == 754){
+    
+    if(tamanioHeight == 722){
+        tamanioCard = 400
+        tamanioIcono = 90
+    }else if(tamanioHeight == 754){
         tamanioCard = 430
         tamanioIcono = 95
     }else if(tamanioHeight == 431){
@@ -123,15 +126,18 @@ const Cat = () => {
     const categoriasPromociones  = [
 
         {
-            catnombre       : "Dashboards Comerciales",
-            catimagenfondo  : CatDashboardsComerciales,
-            caticonohover   : icoDashboardsComerciales,
+            catnombre       : "Canal Moderno",
+            // catimagenfondo  : "https://backend-spider-kimberly.grow-corporate.com/Spider/img/Categorias/CanalModerno.png",
+            catimagenfondo  : CatCanalModerno,
+            // caticonohover   : "https://backend-spider-kimberly.grow-corporate.com/Spider/img/Categorias/Iconos/CanalModerno.png",
+            caticonohover   : icoCatCanalModerno,
             catcolorhover   : "0, 0, 0, 0.4",
-            catcolor        : "#D21044",
-            nombreUrl       : "/Sistema/dashboards/trade-marketing/incentivos-driver-peru-gerenciales",
-            slug : "dashboardscomerciales"
+            catcolor        : "#FF3D00",
+            // nombreUrl       : "/Sistema/dashboards/canal-moderno/ytd-si-so"
+            nombreUrl       : "/Sistema/dashboards/canal-moderno/smart-hub",
+            slug : "canalmoderno"
         },
-
+        
         {
             catnombre       : "Canal Tradicional",
             // catimagenfondo  : "https://backend-spider-kimberly.grow-corporate.com/Spider/img/Categorias/CanalTradicional.png",
@@ -146,38 +152,32 @@ const Cat = () => {
         },
 
         {
-            catnombre       : "Farmacia Tradicional",
-            catimagenfondo  : CatFarmacia,
-            caticonohover   : icoCatFarmacia,
+            catnombre       : "Convenience Store",
+            // catimagenfondo  : "https://backend-spider-kimberly.grow-corporate.com/Spider/img/Categorias/Conveni.png",
+            catimagenfondo  : CatConvenienceStore,
+            // caticonohover   : "https://backend-spider-kimberly.grow-corporate.com/Spider/img/Categorias/Iconos/Convenience.png",
+            caticonohover   : icoCatConvenience,
             catcolorhover   : "0, 0, 0, 0.4",
-            catcolor        : "#D21044",
-            nombreUrl       : "/Sistema/dashboards/peru-farmacias",
-            slug: "farmacia"
+            catcolor        : "#00BE7A",
+            nombreUrl       : "convenienceStore",
+            tienePermiso    : false,
+            slug : "convenience"
         },
 
-        {
-            catnombre       : "Canal Moderno",
-            // catimagenfondo  : "https://backend-spider-kimberly.grow-corporate.com/Spider/img/Categorias/CanalModerno.png",
-            catimagenfondo  : CatCanalModerno,
-            // caticonohover   : "https://backend-spider-kimberly.grow-corporate.com/Spider/img/Categorias/Iconos/CanalModerno.png",
-            caticonohover   : icoCatCanalModerno,
-            catcolorhover   : "0, 0, 0, 0.4",
-            catcolor        : "#FF3D00",
-            // nombreUrl       : "/Sistema/dashboards/canal-moderno/ytd-si-so"
-            nombreUrl       : "/Sistema/dashboards/canal-moderno/smart-hub",
-            slug : "canalmoderno"
-        },
 
         {
-            catnombre       : "Incentivos Comerciales",
-            catimagenfondo  : CatIcentivos,
-            caticonohover   : icoIcentivos,
+            catnombre       : "Ecommerce",
+            // catimagenfondo  : "https://backend-spider-kimberly.grow-corporate.com/Spider/img/Categorias/Ecommerce.png",
+            catimagenfondo  : CatEcommerce,
+            // caticonohover   : "https://backend-spider-kimberly.grow-corporate.com/Spider/img/Categorias/Iconos/Ecommerce.png",
+            caticonohover   : icoCatEcommerce,
             catcolorhover   : "0, 0, 0, 0.4",
-            catcolor        : "#FF3D00",
-            nombreUrl       : "/Sistema/dashboards/canal-moderno/smart-hub",
-            slug : "icentivos"
+            catcolor        : "#41394E",
+            nombreUrl       : "ecommerce",
+            tienePermiso    : false,
+            slug : "ecommerce"
         },
-        
+
         {
             catnombre       : "Trade Marketing",
             // catimagenfondo  : "https://backend-spider-kimberly.grow-corporate.com/Spider/img/Categorias/TradeMarketing.png",
@@ -190,64 +190,89 @@ const Cat = () => {
             slug : "trademarketing"
         },
 
+        {
+            catnombre       : "Marketing",
+            catimagenfondo  : CatMarketing,
+            caticonohover   : icoCatMarketing,
+            catcolorhover   : "0, 0, 0, 0.4",
+            catcolor        : "#D21044",
+            nombreUrl       : "/Sistema/dashboards/marketing",
+            tienePermiso    : false,
+            slug : "marketing"
+        },
+
+        {
+            catnombre       : "Clientes Directos",
+            catimagenfondo  : CatClienteDirecto,
+            caticonohover   : icoCatClientesDirectos,
+            catcolorhover   : "0, 0, 0, 0.4",
+            catcolor        : "#D21044",
+            nombreUrl       : "/Sistema/dashboards/clientes-directos",
+            tienePermiso    : false,
+            slug : "clientedirecto"
+        },  
+
+        {
+            catnombre       : "Farmacia Tradicional",
+            catimagenfondo  : CatFarmacia,
+            caticonohover   : icoCatFarmacia,
+            catcolorhover   : "0, 0, 0, 0.4",
+            catcolor        : "#D21044",
+            nombreUrl       : "/Sistema/dashboards/peru-farmacias",
+            slug: "farmacia"
+        },
+
+        {
+            catnombre       : "Control del PDV",
+            catimagenfondo  : CatControlPdv,
+            caticonohover   : icoCatControlPdv,
+            catcolorhover   : "0, 0, 0, 0.4",
+            catcolor        : "#D21044",
+            nombreUrl       : "/Sistema/dashboards/control-pdv",
+            tienePermiso    : false,
+            slug : "controlpdv"
+        }
+
+
+
+
+
+
+
 
         // {
-        //     catnombre       : "Convenience Store",
-        //     // catimagenfondo  : "https://backend-spider-kimberly.grow-corporate.com/Spider/img/Categorias/Conveni.png",
-        //     catimagenfondo  : CatConvenienceStore,
-        //     // caticonohover   : "https://backend-spider-kimberly.grow-corporate.com/Spider/img/Categorias/Iconos/Convenience.png",
-        //     caticonohover   : icoCatConvenience,
-        //     catcolorhover   : "0, 0, 0, 0.4",
-        //     catcolor        : "#00BE7A",
-        //     nombreUrl       : "convenienceStore",
-        //     tienePermiso    : false,
-        //     slug : "convenience"
-        // },
-        // {
-        //     catnombre       : "Ecommerce",
-        //     // catimagenfondo  : "https://backend-spider-kimberly.grow-corporate.com/Spider/img/Categorias/Ecommerce.png",
-        //     catimagenfondo  : CatEcommerce,
-        //     // caticonohover   : "https://backend-spider-kimberly.grow-corporate.com/Spider/img/Categorias/Iconos/Ecommerce.png",
-        //     caticonohover   : icoCatEcommerce,
-        //     catcolorhover   : "0, 0, 0, 0.4",
-        //     catcolor        : "#41394E",
-        //     nombreUrl       : "ecommerce",
-        //     tienePermiso    : false,
-        //     slug : "ecommerce"
-        // },
-        
-        // {
-        //     catnombre       : "Clientes Directos",
-        //     catimagenfondo  : CatClienteDirecto,
-        //     caticonohover   : icoCatClientesDirectos,
+        //     catnombre       : "Dashboards Comerciales",
+        //     catimagenfondo  : CatDashboardsComerciales,
+        //     caticonohover   : icoDashboardsComerciales,
         //     catcolorhover   : "0, 0, 0, 0.4",
         //     catcolor        : "#D21044",
-        //     nombreUrl       : "/Sistema/dashboards/clientes-directos",
-        //     tienePermiso    : false,
-        //     slug : "clientedirecto"
+        //     nombreUrl       : "/Sistema/dashboards/trade-marketing/incentivos-driver-peru-gerenciales",
+        //     slug : "dashboardscomerciales"
         // },
 
+        
+
         // {
-        //     catnombre       : "Marketing",
-        //     catimagenfondo  : CatMarketing,
-        //     caticonohover   : icoCatMarketing,
+        //     catnombre       : "Incentivos Comerciales",
+        //     catimagenfondo  : CatIcentivos,
+        //     caticonohover   : icoIcentivos,
         //     catcolorhover   : "0, 0, 0, 0.4",
-        //     catcolor        : "#D21044",
-        //     nombreUrl       : "/Sistema/dashboards/marketing",
-        //     tienePermiso    : false,
-        //     slug : "marketing"
+        //     catcolor        : "#FF3D00",
+        //     nombreUrl       : "/Sistema/dashboards/canal-moderno/smart-hub",
+        //     slug : "icentivos"
         // },
         
-        // {
-        //     catnombre       : "Control del PDV",
-        //     catimagenfondo  : CatControlPdv,
-        //     caticonohover   : icoCatControlPdv,
-        //     catcolorhover   : "0, 0, 0, 0.4",
-        //     catcolor        : "#D21044",
-        //     nombreUrl       : "/Sistema/dashboards/control-pdv",
-        //     tienePermiso    : false,
-        //     slug : "controlpdv"
-        // }
+        
+
+
+        
+        
+        
+        
+
+        
+        
+        
     ]
 
     // const [mostrarTxtSinPermiso, setMostrarTxtSinPermiso ] = useState(false)
@@ -313,18 +338,17 @@ const Cat = () => {
 const ContenedorTarjeta = (props) => {
 
     const [mostrarTxtSinPermiso, setMostrarTxtSinPermiso ] = useState(false)
+    const [tienePermiso, setTienePermiso ] = useState(false)
 
     const tamanioCard = props.tamanioCard
     const categoria = props.categoria
     const tamanioIcono = props.tamanioIcono
 
-    useEffect(() => {
-
-        props.modulos.map((modulo) => {
+    useEffect(async () => {
+        let encontro = false
+        await props.modulos.map(async(modulo) => {
             if(modulo.modslug == categoria.slug){
-                let encontro = false
-
-                modulo.smos.map((submodulo, posicionsmo) => {
+                await modulo.smos.map((submodulo, posicionsmo) => {
                     if(encontro == false){
                         if(funPermisosObtenidosEstado(
                             props.permisos,
@@ -337,7 +361,7 @@ const ContenedorTarjeta = (props) => {
                 })
             }
         })
-
+        setTienePermiso(encontro)
         console.log('cambio')
     },[props.modulos])
 
@@ -431,7 +455,7 @@ const ContenedorTarjeta = (props) => {
                             }}
                         >
                             {
-                                categoria.tienePermiso == false
+                                tienePermiso == false
                                     ?mostrarTxtSinPermiso == true
                                         ?<div>
                                             <div style={{textAlignLast: "center"}}>
@@ -452,6 +476,7 @@ const ContenedorTarjeta = (props) => {
         </Link>
     )
 }
+
 
 
 

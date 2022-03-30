@@ -108,7 +108,11 @@ const TablaUsuarios = () => {
                                                     mode="multiple"
                                                     // id="Input-Crear-Usuario-Administrador" 
                                                     style={{ width: "328px", height: "41px"}} 
-                                                    onChange={(e) => dispatch(EditandoPaisesUsuarioReducer(posicion, e))}
+                                                    onChange={(e) => {
+                                                        console.log(listaPaises)
+                                                        console.log(e)
+                                                        dispatch(EditandoPaisesUsuarioReducer(posicion, e))
+                                                    }}
                                                     autoComplete={"off"}
                                                     allowClear
                                                     maxTagCount={2}

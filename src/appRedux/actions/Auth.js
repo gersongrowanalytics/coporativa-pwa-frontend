@@ -11,7 +11,9 @@ import {
   SIGNUP_USER,
   SIGNUP_USER_SUCCESS,
   MOSTRAR_FORMULARIO_LOGIN,
-  OBTENER_DATOS_USUARIO_LOGIN
+  OBTENER_DATOS_USUARIO_LOGIN,
+  MOSTRAR_TERMINOS_CONDICIONES_DATA_LOGIN,
+  ADMINISTRAR_TARJETAS_HOME_DATA_LOGIN
 } from "../../constants/ActionTypes";
 
 import {
@@ -30,6 +32,11 @@ export const userSignUp = (user) => {
   };
 };
 export const userSignIn = (usuario) => async (dispatch, getState) => {
+
+  let redireccionar = false
+
+  dispatch(CargandoLoginReducer(true))
+
 	await fetch(config.api+'login',
 		{
 			mode:'cors',
@@ -79,6 +86,18 @@ export const userSignIn = (usuario) => async (dispatch, getState) => {
             payload: data.datos
           })
 
+          dispatch({
+            type: MOSTRAR_TERMINOS_CONDICIONES_DATA_LOGIN,
+            payload: data.mostrarterminos
+          })
+
+          dispatch({
+            type: ADMINISTRAR_TARJETAS_HOME_DATA_LOGIN,
+            payload: data.tarjetasHome
+          })
+
+          redireccionar = data.mostrarterminos
+
         }else{
           // dispatch(showAuthMessage(data.mensaje))
           if(localStorage.getItem('user_id') > 0){
@@ -96,9 +115,45 @@ export const userSignIn = (usuario) => async (dispatch, getState) => {
 		  // dispatch(showAuthMessage(error))
       console.log(error)
     });
+
+    dispatch(CargandoLoginReducer(false))
+
+    return {
+      "redirigirterminos" : redireccionar
+    }
 };
 
-export const userSignOut = () => {
+export const userSignOut = () => async (dispatch, getState) => {
+
+  await fetch(config.api+'cerrar-session',
+		{
+			mode:'cors',
+			method: 'POST',
+			headers: {
+				'Accept' : 'application/json',
+				'Content-type' : 'application/json',
+        'api-token'	   : localStorage.getItem('usutoken')
+			}
+    }
+  )
+  .then( async res => {
+		await dispatch(estadoRequestReducer(res.status))
+		return res.json()
+  })
+  .then(data => {
+		const estadoRequest = getState().estadoRequest.init_request
+		if(estadoRequest == true){
+			if(data.respuesta == true){
+
+				
+
+			}else{
+				
+			}
+		}
+  }).catch((error)=> {
+    console.log(error)
+  });
 
   localStorage.removeItem('Log-usuario')
   localStorage.removeItem('Log-contrasenia')
@@ -117,6 +172,9 @@ export const userSignOut = () => {
   localStorage.removeItem('posicionPaisSeleccionado')
   localStorage.removeItem('tpunombre')
   localStorage.removeItem('pernombrecompleto')
+
+  localStorage.removeItem('cookiesaceptadas')
+  
   return {
     type: SIGNOUT_USER
   };
@@ -294,11 +352,11 @@ export const SeleccionarPaisReducer = (posicion) => (dispatch, getState) => {
 
   console.log("posicion pais:")
   console.log(posicion)
-  const listaPaises = getState().auth.listaPaises
+  const {...lista} = {...getState().auth.listaPaises}
 
   dispatch({
     type: SELECCIONAR_PAIS_ESPECIFICO,
-    payload: listaPaises[posicion]
+    payload: {...lista[posicion]}
   })
 }
 
@@ -308,4 +366,13 @@ export const CambiarPaisReducer = (pais) => (dispatch, getState) => {
     type: SELECCIONAR_PAIS_ESPECIFICO,
     payload: pais
   })
+}
+
+export const CargandoLoginReducer = (accion) => (dispatch, getState) => {
+
+  dispatch({
+    type: "CARGANDO_BTN_LOGIN",
+    payload: accion
+  })
+
 }
