@@ -76,6 +76,26 @@
     }
 }
 
+
+
+.Login-Formulario-Input{
+    width: 299px;
+    height: 47px;
+    background: #FFFFFF;
+    border: 0;
+    padding-left: 10px;
+
+    font-family: Segoe UI;
+    font-style: normal;
+    font-size: 18px;
+    line-height: 21px;
+}
+
+.Login-Formulario-Input:focus{
+    border: none;
+    outline: none;
+}
+
 #Login-Formulario-Input{
     width: 299px;
     height: 47px;
@@ -165,13 +185,20 @@
     position: absolute;
     top: 50px;
     right: 40px;
+    width: 250px;
 }
+
 @media screen and (max-width: 425px) {
     #Contenedor-Logos-Paises{
         position: absolute;
         top: 70px;
         right: 10px;
     }
+  }
+
+
+  #Bandera-Pais-Mas-Login{
+    width: 80px;
   }
 
 #Bandera-Pais-Login{
@@ -241,12 +268,40 @@
     color: #FFFFFF;
 }
 
+#Txt-Bienvenida-Mobil-Login{
+    text-align: left !important;
+    font-family: Segoe UI;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 20px;
+
+    color: #FFFFFF;
+}
+
 .Txt-Consumo-Masivo{
     font-family: Segoe UI;
     font-style: normal;
     font-weight: bold;
     font-size: 23px;
     line-height: 31px;
+
+    color: #FFFFFF;
+    /* background: #1876F2;
+    mix-blend-mode: multiply; */
+    background: rgba(6, 44, 180, 0.65);
+    padding-left: 5px;
+    padding-right: 5px;
+    /* padding-top: -100px; */
+    width: 250px;
+}
+
+.Txt-Consumo-Mobil-Masivo{
+    font-family: Segoe UI;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 18px;
 
     color: #FFFFFF;
     /* background: #1876F2;

@@ -3,5 +3,7 @@ export default {
     // api: 'https://the-brain-backend.softys-leadcorporate.com/',
     api: 'https://backend-spider-kimberly-corporativa.grow-corporate.com/',
     basename: '/',
-    nombreSistema : 'Spider'
+    nombreSistema : 'Spider',
+    nombreSistemaHo : 'Spider',
+    nombreCliente : 'los países Kimberly Clark Perú, Bolivia y Chile'
 };

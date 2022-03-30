@@ -37,7 +37,10 @@ const Cat = () => {
     let tamanioCard = 650
     let tamanioIcono = 80
 
-    if(tamanioHeight == 754){
+    if(tamanioHeight == 722){
+        tamanioCard = 400
+        tamanioIcono = 87
+    }else if(tamanioHeight == 754){
         tamanioCard = 430
         tamanioIcono = 95
     }else if(tamanioHeight == 431){
@@ -55,7 +58,11 @@ const Cat = () => {
     }else if(tamanioHeight == 646){
         tamanioCard = 350
         tamanioIcono = 85
-    }else if(tamanioHeight == 686){
+    }else if(tamanioHeight == 658){
+        tamanioCard = 350
+        tamanioIcono = 80
+    }
+    else if(tamanioHeight == 686){
         tamanioCard = 375
         tamanioIcono = 85
     }else if(tamanioHeight == 689){
@@ -259,6 +266,7 @@ const Cat = () => {
             <Row>
                 <Col 
                     xl={24} style={{paddingLeft:'20px'}} 
+                    xs={0}
                     onClick={() => {
                         console.log(paisSeleccionado)
                         console.log(tamanioHeight)
@@ -268,6 +276,17 @@ const Cat = () => {
                     <div id="SubTitulo-Servicio-Categorias">Somos la Empresa del <span className="Txt-Resaltado-Categorias">Futuro del Consumo Masivo y Professional</span> usando Algoritmos de <span className="Txt-Resaltado-Categorias">Inteligencia Artificial, Robotica y Machine Learning</span></div>
 
                     {/* <span id="Titulo-Servicio-Categorias">SERVICIOS DESTACADOS {tamanioHeight}</span> */}
+                </Col>
+                <Col 
+                    xl={0} xs={24} style={{paddingLeft:'20px', marginTop:'40px'}} 
+                    onClick={() => {
+                        console.log(paisSeleccionado)
+                        console.log(tamanioHeight)
+                    }} 
+                >
+                    <div id="Titulo-Servicio-Categorias">GROW PLUS</div>
+                    <div id="SubTitulo-Servicio-Categorias">Somos la Empresa del <span className="Txt-Resaltado-Categorias">Futuro del Consumo Masivo y Professional</span> usando Algoritmos de <span className="Txt-Resaltado-Categorias">Inteligencia Artificial, Robotica y Machine Learning</span></div>
+
                 </Col>
             </Row>
             

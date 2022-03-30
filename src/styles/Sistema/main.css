@@ -12,3 +12,29 @@
       transform: rotate(360deg);
     }
   } */
+
+
+  .Footer-Texto:hover{
+    color: #1876F2 !important;
+    background: #E7F3FF;
+  }
+  
+  .Footer-Texto{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    cursor: pointer;
+    color: #4D4D4D !important;
+  }
+  
+  .Footer-Texto-Seleccionado{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    cursor: pointer;
+    text-decoration: underline;
+    color: #1876F2 !important;
+    background: #E7F3FF;
+  }
+  
+  .Footer-Texto .Txt-Footer-Normal{
+    color: #4D4D4D !important;
+  }

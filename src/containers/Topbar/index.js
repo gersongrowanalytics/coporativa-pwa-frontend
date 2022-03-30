@@ -35,18 +35,48 @@ const Topbar = () => {
     seleccionoFavoritos
   } = useSelector(({dashboard}) => dashboard);
 
+  const { 
+    cookiesaceptadas,
+    leyendopoliticas
+  } = useSelector(({settings}) => settings);
+
   const dispatch = useDispatch();
-  const {listaPaises, paisSeleccionado} = useSelector(({auth}) => auth);
+  const {
+    listaPaises, paisSeleccionado,
+    datosUsuarioLogeado,
+    mostrar_terminos_condiciones_login
+  } = useSelector(({auth}) => auth);
   
   const userMenuOptions = (
     <ul className="gx-user-popover">
       {/* <li>My Account</li>
       <li>Connections</li> */}
-      <Link 
-        onClick = {() => SeleccionarMenu()}
-        to="/sistema/perfil"
-      >
-        <li id="Opcion-Drop-Menu-Top" style={{fontFamily:'Segoe UI', fontWeight:'bold'}}>Mi Perfil</li></Link>
+      {/* {
+        cookiesaceptadas == true
+        ?<Link 
+          onClick = {() => SeleccionarMenu()}
+          to="/sistema/perfil"
+        >
+          <li id="Opcion-Drop-Menu-Top" style={{fontFamily:'Segoe UI', fontWeight:'bold'}}>Mi Perfil</li></Link>
+        :localStorage.getItem('cookiesaceptadas') == "ACEPTADO"
+          ?<Link 
+            onClick = {() => SeleccionarMenu()}
+            to="/sistema/perfil"
+          >
+            <li id="Opcion-Drop-Menu-Top" style={{fontFamily:'Segoe UI', fontWeight:'bold'}}>Mi Perfil</li></Link>
+          :null
+      } */}
+      {
+        datosUsuarioLogeado.usuaceptoterminos
+        ?mostrar_terminos_condiciones_login == true
+          ?null
+          :<Link 
+            onClick = {() => SeleccionarMenu()}
+            to="/sistema/perfil"
+          >
+            <li id="Opcion-Drop-Menu-Top" style={{fontFamily:'Segoe UI', fontWeight:'bold'}}>Mi Perfil</li></Link>
+        :null
+      }
         <li 
           id="Opcion-Drop-Menu-Top" 
           onClick={ async () => {
@@ -82,6 +112,8 @@ const Topbar = () => {
     // console.log(agregarFavorito)
   }
 
+
+
   return (
     // <Header style={{boxShadow:' 0 0 0px 0px'}}>
     <Header style={{boxShadow: "0px 4px 4px #E4E3E3" }}>
@@ -91,18 +123,86 @@ const Topbar = () => {
             <div 
               onClick={() => {
                 // console.log(paisSeleccionado)
-                dispatch(toggleCollapsedSideNav(!navCollapsed));
+                // if(cookiesaceptadas == true){
+                //   dispatch(toggleCollapsedSideNav(!navCollapsed));
+                // }else{
+                //   if(localStorage.getItem('cookiesaceptadas') == "ACEPTADO"){
+                //     dispatch(toggleCollapsedSideNav(!navCollapsed));
+                //   }
+                // }
+                if(datosUsuarioLogeado.usuaceptoterminos){
+                  if(mostrar_terminos_condiciones_login == true){
+
+                  }else{
+                    dispatch(toggleCollapsedSideNav(!navCollapsed));
+                  }
+                }else{
+
+                }
+
               }}
               id="Contenedor-Menu-TopBar"
-              style={{
-                marginTop:"1px", 
-                width:'40px', 
-                height:'40px',
-                cursor:'pointer',
-                marginLeft: "-20px",
-                marginTop: "1px",
-                padding: "5px"
-              }}>
+              style={
+                // cookiesaceptadas == true
+                // ?{
+                //   marginTop:"1px", 
+                //   width:'40px', 
+                //   height:'40px',
+                //   cursor:'pointer',
+                //   marginLeft: "-20px",
+                //   marginTop: "1px",
+                //   padding: "5px"
+                // }
+
+                // :localStorage.getItem('cookiesaceptadas') == "ACEPTADO"
+                // ?{
+                //   marginTop:"1px", 
+                //   width:'40px', 
+                //   height:'40px',
+                //   cursor:'pointer',
+                //   marginLeft: "-20px",
+                //   marginTop: "1px",
+                //   padding: "5px"
+                // }
+                // :{
+                //   marginTop:"1px", 
+                //   width:'40px', 
+                //   height:'40px',
+                //   marginLeft: "-20px",
+                //   marginTop: "1px",
+                //   padding: "5px",
+                //   cursor: "not-allowed"
+                // }
+                datosUsuarioLogeado.usuaceptoterminos
+                ?mostrar_terminos_condiciones_login == true
+                  ?{
+                      marginTop:"1px", 
+                      width:'40px', 
+                      height:'40px',
+                      marginLeft: "-20px",
+                      marginTop: "1px",
+                      padding: "5px",
+                      cursor: "not-allowed"
+                    }
+                  :{
+                    marginTop:"1px", 
+                    width:'40px', 
+                    height:'40px',
+                    cursor:'pointer',
+                    marginLeft: "-20px",
+                    marginTop: "1px",
+                    padding: "5px"
+                  }
+                :{
+                  marginTop:"1px", 
+                  width:'40px', 
+                  height:'40px',
+                  marginLeft: "-20px",
+                  marginTop: "1px",
+                  padding: "5px",
+                  cursor: "not-allowed"
+                }
+              }>
               
               <svg focusable="false" viewBox="0 0 24 24"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path></svg>
             </div>
@@ -202,8 +302,9 @@ const Topbar = () => {
                         marginRight:'-20px'
                       }}
                     >
-                      {
-                        listaPaises.map((pais, posicion) => {
+                      {/* {
+                        cookiesaceptadas == true
+                        ?listaPaises.map((pais, posicion) => {
                           return(
                             <Menu.Item 
                               onClick={() => {
@@ -247,6 +348,103 @@ const Topbar = () => {
                             </Menu.Item>
                           )
                         })
+                        :localStorage.getItem('cookiesaceptadas') == "ACEPTADO"
+                        ?listaPaises.map((pais, posicion) => {
+                          return(
+                            <Menu.Item 
+                              onClick={() => {
+                                seleccionarPais(posicion)
+                                history.push('/sistema/categorias');
+                              }}
+                              style={
+                                posicion == 0
+                                ?{
+                                  marginLeft: "10px",
+                                  marginRight: "10px",
+                                  marginTop: "10px",
+                                  marginBottom: "10px",
+                                  borderRadius: "8px"
+                                }
+                                :{
+                                  marginLeft: "10px",
+                                  marginRight: "10px",
+                                  marginBottom: "10px",
+                                  borderRadius: "8px"
+                                }
+                              }
+                              key="0"
+                            >
+                              <div
+                                style={{
+                                  width: "100%",
+                                  textAlign: "-webkit-right"
+                                }}
+                              >
+                                <span
+                                  style={{
+                                    marginRight: "5px",
+                                    fontFamily : 'Segoe UI'
+                                  }}
+                                >{pais.painombre}</span>
+                                <img 
+                                  style={{width:'35px'}}
+                                  src={pais.paiicono} />
+                              </div>
+                            </Menu.Item>
+                          )
+                        })
+                        :null
+                      } */}
+
+                      {
+                        datosUsuarioLogeado.usuaceptoterminos
+                        ?mostrar_terminos_condiciones_login == true
+                          ?null
+                          :listaPaises.map((pais, posicion) => {
+                            return(
+                              <Menu.Item 
+                                onClick={() => {
+                                  seleccionarPais(posicion)
+                                  history.push('/sistema/categorias');
+                                }}
+                                style={
+                                  posicion == 0
+                                  ?{
+                                    marginLeft: "10px",
+                                    marginRight: "10px",
+                                    marginTop: "10px",
+                                    marginBottom: "10px",
+                                    borderRadius: "8px"
+                                  }
+                                  :{
+                                    marginLeft: "10px",
+                                    marginRight: "10px",
+                                    marginBottom: "10px",
+                                    borderRadius: "8px"
+                                  }
+                                }
+                                key="0"
+                              >
+                                <div
+                                  style={{
+                                    width: "100%",
+                                    textAlign: "-webkit-right"
+                                  }}
+                                >
+                                  <span
+                                    style={{
+                                      marginRight: "5px",
+                                      fontFamily : 'Segoe UI'
+                                    }}
+                                  >{pais.painombre}</span>
+                                  <img 
+                                    style={{width:'35px'}}
+                                    src={pais.paiicono} />
+                                </div>
+                              </Menu.Item>
+                            )
+                          })
+                        :null
                       }
                     </Menu>
                   }

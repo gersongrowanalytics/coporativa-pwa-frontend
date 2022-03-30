@@ -9,7 +9,9 @@ import {
   SIGNUP_USER_SUCCESS,
   MOSTRAR_FORMULARIO_LOGIN,
   OBTENER_PERMISOS_USUARIO,
-  OBTENER_DATOS_USUARIO_LOGIN
+  OBTENER_DATOS_USUARIO_LOGIN,
+  MOSTRAR_TERMINOS_CONDICIONES_DATA_LOGIN,
+  ADMINISTRAR_TARJETAS_HOME_DATA_LOGIN
 } from "../../constants/ActionTypes";
 import {
   OBTENER_PAISES_SISTEMA,
@@ -27,7 +29,10 @@ const INIT_STATE = {
   listaPaises  : [],
   paisSeleccionado : {},
   datosUsuarioLogeado : {},
-  cargandoLogin : false
+  cargandoLogin : false,
+
+  mostrar_terminos_condiciones_login : false,
+  administrar_tarjetas_home_data_login : []
 };
 
 
@@ -124,6 +129,18 @@ export default (state = INIT_STATE, action) => {
       return {
         ...state,
         cargandoLogin : action.payload
+      }
+    }
+    case MOSTRAR_TERMINOS_CONDICIONES_DATA_LOGIN: {
+      return {
+        ...state,
+        mostrar_terminos_condiciones_login : action.payload
+      }
+    }
+    case ADMINISTRAR_TARJETAS_HOME_DATA_LOGIN: {
+      return {
+        ...state,
+        administrar_tarjetas_home_data_login : action.payload
       }
     }
     default:

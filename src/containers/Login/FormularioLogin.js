@@ -3,8 +3,9 @@ import ImagenPeru from '../../assets/images/Login/banderaPeru.png'
 import ImagenChile from '../../assets/images/Login/banderaChile.png'
 import ImagenBolivia from '../../assets/images/Login/banderaBolivia.png'
 import ImagenAndes from '../../assets/images/Login/banderaAndes.png'
+import ImagenPeruMas from '../../assets/images/Login/banderaPeruMas.svg'
 import VideoIniciarSesion from '../../assets/Videos/Login/videologin.mp4';
-import {Form, Input, Select, Button } from "antd";
+import {Form, Input, Select, Button, Row, Col } from "antd";
 import {Link} from "react-router-dom";
 import '../../styles/Login/FormularioLogin.css'
 import {
@@ -136,10 +137,12 @@ const FormularioLogin = (props) => {
                         }}
                     >
                         <Input 
-                            autoComplete={"off"}
-                            id="Login-Formulario-Input" 
+                            // autoComplete={"off"}
+                            id="email " 
+                            className='Login-Formulario-Input'
                             style={{marginLeft: "-15px"}}
-                            placeholder="Correo" />
+                            placeholder="Correo" 
+                        />
 
                     </Form.Item>
                     {/* <br/> */}
@@ -189,28 +192,51 @@ const FormularioLogin = (props) => {
             <div
                 id="Contenedor-Logos-Paises"
             >
-                <img
-                    id="Bandera-Pais-Login" 
-                    src={ImagenPeru} />
-                <img
-                    id="Bandera-Pais-Login" 
-                    src={ImagenChile} />
-                <img
-                    id="Bandera-Pais-Login" 
-                    src={ImagenBolivia} />
-                <img
-                    id="Bandera-Pais-Login" 
-                    src={ImagenAndes} />
+                <Row>
+                    <Col xl={24} xs={0} >
+                        <img
+                            id="Bandera-Pais-Login" 
+                            src={ImagenPeru} />
+                        <img
+                            id="Bandera-Pais-Login" 
+                            src={ImagenChile} />
+                        <img
+                            id="Bandera-Pais-Login" 
+                            src={ImagenBolivia} />
+                        <img
+                            id="Bandera-Pais-Login" 
+                            src={ImagenAndes} />
+                    </Col>
+                    <Col xl={0} xs={24}>
+                        <img
+                            id="Bandera-Pais-Mas-Login" 
+                            src={ImagenPeruMas} />
+                    </Col>
+
+                </Row>
             </div>
 
             <div id="Contenedor-Logo-Grow-Login">
-                <div id="Txt-Bienvenida-Login">
-                    Bienvenido al<br/>Futuro del<br/>
+                <Row>
+                    <Col xl={24} xs={0}>
+                        <div id="Txt-Bienvenida-Login">
+                            Bienvenido al<br/>Futuro del<br/>
 
-                </div>
-                <div className="Txt-Consumo-Masivo">
-                    Consumo Masivo y<br/>Professional
-                </div>
+                        </div>
+                        <div className="Txt-Consumo-Masivo">
+                            Consumo Masivo y<br/>Professional
+                        </div>
+                    </Col>
+                    <Col xl={0} xs={24} >
+                        <div id="Txt-Bienvenida-Mobil-Login">
+                            Bienvenido al<br/>Futuro del<br/>
+
+                        </div>
+                        <div className="Txt-Consumo-Mobil-Masivo">
+                            Consumo Masivo<br/>Professional
+                        </div>
+                    </Col>
+                </Row>                
                 {/* <img 
                     src={GrowLogoLogin}
                     id="Logo-Grow-Blanco-Negro-Login"
