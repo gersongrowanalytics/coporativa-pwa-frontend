@@ -4,5 +4,7 @@ export default {
     api: 'https://alebrijes-backend.softys-leadcorporate.com/',
     // api: 'https://backend-spider-kimberly-corporativa.grow-corporate.com/',
     basename: '/',
-    nombreSistema : 'Alebrijes'
+    nombreSistema : 'Alebrijes',
+    nombreSistemaHo : 'Alebrijes',
+    nombreCliente : 'Softys México'
 };

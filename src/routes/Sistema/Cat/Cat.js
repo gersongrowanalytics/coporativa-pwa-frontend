@@ -40,6 +40,9 @@ const Cat = () => {
     if(tamanioHeight == 754){
         tamanioCard = 430
         tamanioIcono = 95
+    }else if(tamanioHeight == 722){
+        tamanioCard = 400
+        tamanioIcono = 90
     }else if(tamanioHeight == 431){
         tamanioCard = 180
         tamanioIcono = 55

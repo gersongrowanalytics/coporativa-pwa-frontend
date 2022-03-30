@@ -22,7 +22,10 @@ const initialSettings = {
     locale: 'en',
     name: 'English',
     icon: 'us'
-  }
+  },
+
+  cookiesaceptadas : false,
+  leyendopoliticas : false
 };
 
 const settings = (state = initialSettings, action) => {
@@ -62,6 +65,17 @@ const settings = (state = initialSettings, action) => {
         locale: action.payload,
 
       };
+
+    case "ACEPTAR_COOKIES_CONFIGURACION":
+      return {
+        ...state,
+        cookiesaceptadas : action.payload
+      }
+    case "LEYENDO_COOKIES_CONFIGURACION":
+      return {
+        ...state,
+        leyendopoliticas : action.payload
+      }
     default:
       return state;
   }

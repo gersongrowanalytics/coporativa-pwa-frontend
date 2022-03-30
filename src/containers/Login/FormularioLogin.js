@@ -122,10 +122,13 @@ const FormularioLogin = (props) => {
                         rules= {[{required: true, message:"Es necesario un usuario"}]}
                     >
                         <Input 
-                            autoComplete={"off"}
-                            id="Login-Formulario-Input" 
+                            // autoComplete={"off"}
+                            id="email " 
+                            className='Login-Formulario-Input'
                             style={{marginLeft: "-15px"}}
-                            placeholder="Correo" />
+                            placeholder="Correo" 
+                            // type="email"
+                        />
 
                     </Form.Item>
                     {/* <br/> */}
