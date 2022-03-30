@@ -76,6 +76,26 @@
     }
 }
 
+
+
+.Login-Formulario-Input{
+    width: 299px;
+    height: 47px;
+    background: #FFFFFF;
+    border: 0;
+    padding-left: 10px;
+
+    font-family: Segoe UI;
+    font-style: normal;
+    font-size: 18px;
+    line-height: 21px;
+}
+
+.Login-Formulario-Input:focus{
+    border: none;
+    outline: none;
+}
+
 #Login-Formulario-Input{
     width: 299px;
     height: 47px;

@@ -103,6 +103,14 @@ const Sidebar = () => {
                     visible={navCollapsed}
                 >
                 <div id="contenedor">
+                    <div 
+                        style={{
+                            position:'absolute', height:'100vh', width:'300px', background:'white',
+                            boxShadow: "5px 7px 10px rgba(0, 0, 0, .5)"
+                        }}
+                    >
+
+                    </div>
                     <nav>
                         <div id="Cabecera-Sidebar-Principal" style={{position:'relative'}}>
                             <Link to="/sistema/categorias">

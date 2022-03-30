@@ -32,6 +32,12 @@
       setTimeout(() => {
         // alert('xd')
       }, 3000)
+      document.addEventListener('keyup', (e) => {
+          if (e.key == 'PrintScreen') {
+              navigator.clipboard.writeText('');
+              alert('Lo sentimos esta opción esta desactivada!');
+          }
+      });
     </script>
 
     <!--
@@ -64,7 +70,7 @@
     <div id="root">
       <div class="loader loading">
         <!-- <img src="/loader.svg" alt="loader"> -->
-        <img src="/LogoGrow.ico" alt="loader">
+        <!-- <img src="/LogoGrow.ico" alt="loader"> -->
       </div>
 
       
