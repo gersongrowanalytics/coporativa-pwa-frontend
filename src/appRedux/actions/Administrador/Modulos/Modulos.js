@@ -5,10 +5,13 @@ import {
     CARGANDO_NUEVO_SUBMODULO_ADMINITRACION
 } from "../../../../constants/SistemaTypes";
 import config from '../../../../config'
-import {message} from "antd"
+import {message, notification } from "antd"
 import { estadoRequestReducer } from "../../../../appRedux/actions/EstadoRequest"
 import axios from 'axios'
 import {ObtenerModulosUsuarioReducer} from '../../../../appRedux/actions/Usuarios/Usuarios'
+import {
+    mostrarPaisesReducer
+} from '../../Auth'
 
 export const ObtenerDataReducer = () => async (dispatch, getState) => {
     dispatch({
@@ -397,4 +400,70 @@ export const EditarOrdenModuloReducer = (moduloAnterior, moduloNuevo) => async (
     })
 
     dispatch(ObtenerDataReducer())
+}
+
+export const CambiarVisualizacionModulosReducer = (modid, smoid, visualizacion) => async (dispatch, getState) => {
+
+    dispatch({
+        type: CARGANDO_DATA_MODULOS_ADMINISTRACION,
+        payload: true
+    })
+
+    await fetch(config.api+'administrador/modulos/editar-visualizacion-modulos',
+		{
+			mode:'cors',
+			method: 'POST',
+			body: JSON.stringify({
+                'api-token' : localStorage.getItem('usutoken'),
+                "modid"     : modid,
+                "smoid"     : smoid,
+                "visualizacion" : visualizacion
+            }),
+			headers: {
+				'Accept' 	   : 'application/json',
+				'Content-type' : 'application/json',
+				'api-token'	   : localStorage.getItem('usutoken')
+			}
+		}
+	)
+    .then( async res => {
+        
+        if(await dispatch(estadoRequestReducer(res.status))){
+            return res.json()
+        }
+		
+	})
+    .then(data => {
+
+		if(data.respuesta == true){
+            
+            notification.success({
+                message: `Notificación`,
+                description: data.mensaje,
+                placement: 'topRight',
+            })
+
+            dispatch(mostrarPaisesReducer())
+
+        }else{
+            
+            notification.info({
+                message: `Notificación`,
+                description: data.mensaje,
+                placement: 'topRight',
+            });
+
+        }
+
+	}).catch((error)=> {
+        console.log(error)
+        notification.info({
+            message: `Notificación`,
+            description: 'Lo sentimos, tuvimos un error con el servidor',
+            placement: 'topRight',
+        });
+    })
+    
+    dispatch(ObtenerDataReducer())
+
 }
