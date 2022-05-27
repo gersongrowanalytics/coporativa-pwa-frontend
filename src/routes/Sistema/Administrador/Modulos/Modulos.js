@@ -33,6 +33,8 @@ class Modulos extends React.Component {
             crearSubModuloSlugPe : "",
             crearSubModuloDescri : "",
 
+            txtBuscar : ""
+
         }
         this.abrirModalCrear = this.abrirModalCrear.bind(this)
         this.obtenerCambioInput = this.obtenerCambioInput.bind(this)
@@ -40,6 +42,7 @@ class Modulos extends React.Component {
         this.seleccionarCrearIconoSeleccionado = this.seleccionarCrearIconoSeleccionado.bind(this)
         this.limpiarCamposCrear = this.limpiarCamposCrear.bind(this)
         this.abrirModalCrearSubModulo = this.abrirModalCrearSubModulo.bind(this)
+        this.cambiarTxtBuscar = this.cambiarTxtBuscar.bind(this)
     }
 
     abrirModalCrear(){
@@ -106,6 +109,12 @@ class Modulos extends React.Component {
             crearDescripcionPermisoModulo : ""
         })
     }
+
+    cambiarTxtBuscar(e){
+        this.setState({
+            txtBuscar : e.target.value
+        })
+    }
   
     render() {
         return (
@@ -125,7 +134,8 @@ class Modulos extends React.Component {
                                 <Row>
                                     <Col xl={24} id="Contenedor-Primera-Fila-Control-Archivos" style={{paddingLeft:'10px', paddingRight:'10px'}}>
                                         <BuscarModulo
-                                            // cambiarTxtBuscar = {(e) => this.cambiarTxtBuscar(e)}
+                                            cambiarTxtBuscar = {(e) => this.cambiarTxtBuscar(e)}
+                                            txtBuscar = {this.state.txtBuscar}
                                             // tpuidseleccionado = {this.state.tpuidseleccionado}
                                         />
 
@@ -173,6 +183,7 @@ class Modulos extends React.Component {
                                         })}
 
                                         editarOrdenModulos = {this.state.editarOrdenModulos}
+                                        txtBuscar = {this.state.txtBuscar}
                                     />
                                 </Row>
                             </Col>
