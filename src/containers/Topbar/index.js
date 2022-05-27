@@ -336,6 +336,8 @@ const Topbar = () => {
                             return(
                               <Menu.Item 
                                 onClick={() => {
+                                  localStorage.setItem('Log-posicionPais', posicion)
+                                  localStorage.setItem('posicionPaisSeleccionado', posicion)
                                   seleccionarPais(posicion)
                                   history.push('/sistema/categorias');
                                 }}

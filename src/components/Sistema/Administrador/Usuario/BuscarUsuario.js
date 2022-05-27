@@ -9,7 +9,7 @@ const BuscarUsuario = (props) => {
 
     const buscarTxtBuscar = (e) => {
         props.cambiarTxtBuscar(e)
-        dispatch(ObtenerListaUsuariosReducer(e, props.tpuidseleccionado))
+        // dispatch(ObtenerListaUsuariosReducer(e, props.tpuidseleccionado))
     }
 
 

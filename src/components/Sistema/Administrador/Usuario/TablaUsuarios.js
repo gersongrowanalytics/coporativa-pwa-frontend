@@ -18,7 +18,7 @@ import { EyeInvisibleOutlined, EyeTwoTone, LoadingOutlined } from '@ant-design/i
 import {ObtenerListaTiposUsuariosReducer} from "../../../../appRedux/actions/ControlAcceso/TiposUsuarios/TiposUsuarios";
 import Moment from 'moment';
 
-const TablaUsuarios = () => {
+const TablaUsuarios = (props) => {
 
     const dispatch = useDispatch();
     
@@ -39,7 +39,9 @@ const TablaUsuarios = () => {
     }, [])
 
     Moment.locale('en');
-    
+
+    const txtBuscar = props.txtBuscar
+
     return (
         <div id="Contenedor-Tabla-Usuario-Administrador">
             <Spin indicator={<LoadingOutlined style={{ fontSize: 24 }} spin />} spinning={cargandoTablaUsuarios}>
@@ -64,7 +66,12 @@ const TablaUsuarios = () => {
                         {
                             listaUsuarios.map((archivo, posicion) => {
                                 return(
-                                    <tr id="Fila-Cuerpo-Tabla-Usuario-Administrador" >
+                                archivo.pernombrecompleto
+                                    ?archivo.pernombrecompleto.toUpperCase().includes(txtBuscar.toUpperCase()) ||
+                                        archivo.usuusuario.toUpperCase().includes(txtBuscar.toUpperCase()) || 
+                                        archivo.usucorreo.toUpperCase().includes(txtBuscar.toUpperCase()) || 
+                                        archivo.tpunombre.toUpperCase().includes(txtBuscar.toUpperCase()) 
+                                    ?<tr id="Fila-Cuerpo-Tabla-Usuario-Administrador" >
                                         {/* <td id="Texto-Cuerpo-Tabla-Usuario-Administrador"></td> */}
                                         <td 
                                             id="Texto-Cuerpo-Tabla-Usuario-Administrador" style={{}} 
@@ -108,11 +115,7 @@ const TablaUsuarios = () => {
                                                     mode="multiple"
                                                     // id="Input-Crear-Usuario-Administrador" 
                                                     style={{ width: "328px", height: "41px"}} 
-                                                    onChange={(e) => {
-                                                        console.log(listaPaises)
-                                                        console.log(e)
-                                                        dispatch(EditandoPaisesUsuarioReducer(posicion, e))
-                                                    }}
+                                                    onChange={(e) => {dispatch(EditandoPaisesUsuarioReducer(posicion, e))}}
                                                     autoComplete={"off"}
                                                     allowClear
                                                     maxTagCount={2}
@@ -275,6 +278,8 @@ const TablaUsuarios = () => {
                                             }
                                         </td>
                                     </tr>
+                                    :null
+                                :null
                                 )
                             })
                         }

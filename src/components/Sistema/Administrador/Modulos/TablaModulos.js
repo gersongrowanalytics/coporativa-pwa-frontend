@@ -1,6 +1,10 @@
 import React, {useEffect, useState} from 'react'
-import {Row, Col, Spin, Modal} from 'antd'
-import { LoadingOutlined, RightOutlined, DownOutlined } from '@ant-design/icons'
+import {Row, Col, Spin, Modal, Tooltip} from 'antd'
+import { 
+    LoadingOutlined, RightOutlined, 
+    DownOutlined,
+    EyeInvisibleTwoTone
+} from '@ant-design/icons'
 import IconoEditar from '../../../../assets/images/iconos/Tabla/editar.svg'
 import IconoEliminar from '../../../../assets/images/iconos/Tabla/tacho.png'
 // import IconoMas from 'assets/images/iconos/Administrador/modulos/mas.png'
@@ -11,7 +15,8 @@ import {
     CargandoSubModulo, 
     EliminarSubModuloReducer, 
     EliminarModuloReducer,
-    CambiarPosicionModulosReducer
+    CambiarPosicionModulosReducer,
+    CambiarVisualizacionModulosReducer
 } from "../../../../appRedux/actions/Administrador/Modulos/Modulos"
 import {useDispatch, useSelector} from "react-redux"
 import { ExclamationCircleOutlined } from '@ant-design/icons';
@@ -19,6 +24,7 @@ import Moment from 'moment';
 import ModalEditarModulo from './ModalEditarModulo'
 import ModalEditarSubModulo from './ModalEditarSubModulo'
 import {SortableContainer, SortableElement} from 'react-sortable-hoc';
+import { EyeTwoTone } from '@ant-design/icons';
 
 const TablaModulos = (props) => {
     Moment.locale('en');
@@ -91,6 +97,8 @@ const TablaModulos = (props) => {
         setModalEditarSubModulo(true)
     }
 
+    const txtBuscar = props.txtBuscar
+
     return (
         <Col xl={24} style={{paddingLeft:'10px', paddingRight:'10px'}}>
             <Spin indicator={<LoadingOutlined style={{ fontSize: 24 }} spin />} spinning={cargandoDataModulos}>
@@ -102,7 +110,10 @@ const TablaModulos = (props) => {
                     />
                     :dataModulos.map((dato, posicion) => {
                         return (
-                            <div>
+                        dato.nombreModulo
+                        ?dato.nombreModulo.toUpperCase().includes(txtBuscar.toUpperCase()) ||
+                            dato.painombre.toUpperCase().includes(txtBuscar.toUpperCase())
+                            ?<div>
                                 <Row 
                                     id="Fila-Tabla-Administrador"
                                     style={
@@ -139,6 +150,44 @@ const TablaModulos = (props) => {
     
                                     <Col xl={12} style={{textAlign: "-webkit-right", paddingRight:'20px'}}>
                                         <div style={{display: "flex", float: "right", alignItems: "center"}}>
+
+                                            <Tooltip
+                                                placement="bottom" 
+                                                title={
+                                                    dato.modvisualizacion == true
+                                                    ?"Ocultar"
+                                                    :"Mostrar"
+                                                }
+                                            >
+                                                {
+                                                    dato.modvisualizacion == true
+                                                    ?<EyeTwoTone 
+                                                        twoToneColor="#52c41a" 
+                                                        style={{
+                                                            fontSize:'24px',
+                                                            marginRight:'5px',
+                                                            cursor:'pointer'
+                                                        }}
+                                                        id="Icono-Fila-Editar-Administrador"
+                                                        onClick={() => {
+                                                            dispatch(CambiarVisualizacionModulosReducer(dato.modid, 0, !dato.modvisualizacion ))
+                                                        }}
+                                                    />
+                                                    :<EyeInvisibleTwoTone 
+                                                        twoToneColor="#eb2f96"
+                                                        style={{
+                                                            fontSize:'24px',
+                                                            marginRight:'5px',
+                                                            cursor:'pointer'
+                                                        }}
+                                                        id="Icono-Fila-Editar-Administrador"
+                                                        onClick={() => {
+                                                            dispatch(CambiarVisualizacionModulosReducer(dato.modid, 0, !dato.modvisualizacion ))
+                                                        }}
+                                                    />
+                                                }
+                                            </Tooltip>
+
                                             <img
                                                 src={IconoMas}
                                                 id="Icono-Fila-Editar-Administrador"
@@ -176,6 +225,44 @@ const TablaModulos = (props) => {
     
                                                     <Col xl={12} style={{textAlign: "-webkit-right", paddingRight:'20px'}}>
                                                         <div style={{display: "flex", float: "right", alignItems: "center"}}>
+
+                                                            <Tooltip
+                                                                placement="bottom" 
+                                                                title={
+                                                                    submodulo.smovisualizacion == true
+                                                                    ?"Ocultar"
+                                                                    :"Mostrar"
+                                                                }
+                                                            >
+                                                                {
+                                                                    submodulo.smovisualizacion == true
+                                                                    ?<EyeTwoTone 
+                                                                        twoToneColor="#52c41a" 
+                                                                        style={{
+                                                                            fontSize:'24px',
+                                                                            marginRight:'5px',
+                                                                            cursor:'pointer'
+                                                                        }}
+                                                                        id="Icono-Fila-Editar-Administrador"
+                                                                        onClick={() => {
+                                                                            dispatch(CambiarVisualizacionModulosReducer(0, submodulo.smoid, !submodulo.smovisualizacion ))
+                                                                        }}
+                                                                    />
+                                                                    :<EyeInvisibleTwoTone 
+                                                                        twoToneColor="#eb2f96"
+                                                                        style={{
+                                                                            fontSize:'24px',
+                                                                            marginRight:'5px',
+                                                                            cursor:'pointer'
+                                                                        }}
+                                                                        id="Icono-Fila-Editar-Administrador"
+                                                                        onClick={() => {
+                                                                            dispatch(CambiarVisualizacionModulosReducer(0, submodulo.smoid, !submodulo.smovisualizacion ))
+                                                                        }}
+                                                                    />
+                                                                }
+                                                            </Tooltip>
+
                                                             <img
                                                                 src={IconoEditar}
                                                                 id="Icono-Fila-Editar-Administrador"
@@ -202,6 +289,9 @@ const TablaModulos = (props) => {
                                     :null
                                 }
                             </div>
+                            :null
+                        :null
+                        
                         )
                     })
                 }

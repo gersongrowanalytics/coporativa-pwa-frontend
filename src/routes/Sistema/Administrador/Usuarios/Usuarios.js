@@ -17,7 +17,7 @@ class TiposUsuarios extends React.Component {
             
             mostrarModalCrearUsuario : false,
 
-            txtBuscar : null,
+            txtBuscar : "",
             tpuidseleccionado : null
         }
 
@@ -108,7 +108,7 @@ class TiposUsuarios extends React.Component {
                                     <Col xl={24} lg={24} md={24} sm={24} xs={24}>
                                     
                                         <TablaUsuarios 
-                                            
+                                            txtBuscar = {this.state.txtBuscar}                                            
                                         />
                                     </Col>
                                 </Row>
