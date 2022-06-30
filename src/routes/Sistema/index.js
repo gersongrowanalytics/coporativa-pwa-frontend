@@ -40,7 +40,8 @@ const Sistema = ({match}) => {
 
     return (
         <div className="gx-main-content-wrapper">
-            {/* <TimeLogout 
+            
+            <TimeLogout 
                 CerrarSesionReducer = {async () => {
                     await dispatch(userSignOut())
                     window.location.reload(); 
@@ -48,7 +49,7 @@ const Sistema = ({match}) => {
                 }}
                 tiempoInactividad = {"900000"}
                 // tiempoInactividad = {"5000"}
-            /> */}
+            />
 
             <TimeLogout 
                 CerrarSesionReducer = {async () => {
@@ -60,6 +61,9 @@ const Sistema = ({match}) => {
                     }
                     
 
+                }}
+                ActivarSessionReducer = {() => {
+                    
                 }}
                 tiempoInactividad = {"500"}
             />

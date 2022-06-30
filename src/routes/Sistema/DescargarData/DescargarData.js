@@ -13,7 +13,10 @@ import '../../../styles/Sistema/DescargarData/DescargarData.css'
 import { Checkbox } from 'antd';
 import {useDispatch, useSelector} from "react-redux";
 import {ObtenerDataReducer} from "../../../appRedux/actions/Administrador/ControlData/ControlData"
-import {ObtenerDataSeleccionadaReducer} from "../../../appRedux/actions/DescargarData/DescargarData"
+import {
+    ObtenerDataSeleccionadaReducer,
+    RegistrarDescargaExcelReducer
+} from "../../../appRedux/actions/DescargarData/DescargarData"
 import { SearchOutlined } from '@ant-design/icons';
 import SliderExcelv2 from '../../../components/Sistema/DescargarData/SliderExcelv2'
 
@@ -51,8 +54,6 @@ const DescargarData = () => {
     }, []);
 
     function downloadAll() {
-        console.log('click descargar')
-        console.log(archivosDescargar)
         var link = document.createElement('a');
       
         link.setAttribute('download', null);
@@ -76,7 +77,9 @@ const DescargarData = () => {
                 <Col xl={5} lg={3} md={3} sm={24} xs={24}>
 
 
-                    <div id="Titulo-Menu-Descargar-Data">Data</div><br/>
+                    <div 
+                        id="Titulo-Menu-Descargar-Data"
+                    >Data</div><br/>
                     <Checkbox 
                         // checked={archivo.descargarData}
                     >{"Seleccionar Todo"}</Checkbox><br/>
@@ -158,6 +161,7 @@ const DescargarData = () => {
                                         if(dataSeleccionada.ardcredenciales == true){
                                             setMostrarCredenciales(true)
                                         }
+                                        dispatch(RegistrarDescargaExcelReducer(dataSeleccionada.ardid))
                                     }}
                                 >Descargar</a>
                                     

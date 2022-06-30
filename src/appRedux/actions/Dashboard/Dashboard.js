@@ -3,7 +3,9 @@ import {
     SELECCIONAR_MODULO_ESPECIFICO,
     OBTENER_SELECCION_MODULO,
     SELECCIONAR_AGREGAR_FAVORITO,
-    SELECCIONAR_FAVORITOS
+    SELECCIONAR_FAVORITOS,
+    SELECCIONAR_REGISTRO_INGRESO_SUBMODULO,
+    SELECCIONAR_DETALLE_INGRESO_SUBMODULO
 } from "../../../constants/Dashboard/DashboardTypes";
 import config from '../../../config'
 import { message } from 'antd'
@@ -228,4 +230,95 @@ export const SeleccionarModuloEspecificoReducer = (nombreModulo, iconoModulo) =>
         type: SELECCIONAR_MODULO_ESPECIFICO,
         payload : modulo
     })
+}
+
+export const RegistrarIngresoSubmoduloReducer = (smoid) => async (dispatch, getState) => {
+
+    let rex_resid_seleccionado = getState().dashboard.rex_resid_seleccionado
+    const rex_smoid_seleccionado = getState().dashboard.rex_smoid_seleccionado
+    const rex_driid_seleccionado = getState().dashboard.rex_driid_seleccionado
+
+    if(rex_smoid_seleccionado != smoid){
+        rex_resid_seleccionado = 0
+    }
+    
+    await fetch(config.api+'registrar-ingreso-submodulo',
+		{
+			mode:'cors',
+			method: 'POST',
+			body: JSON.stringify({
+                'api-token'	: localStorage.getItem('usutoken'),
+                'risid' : rex_resid_seleccionado,
+                'smoid' : smoid,
+                'driid' : rex_driid_seleccionado
+            }),
+			headers: {
+				'Accept' 	   : 'application/json',
+				'Content-type' : 'application/json',
+				'api-token'	   : localStorage.getItem('usutoken')
+			}
+		}
+	)
+	.then( async res => {
+        if(await dispatch(estadoRequestReducer(res.status))){
+            return res.json()
+        }
+	})
+	.then(data => {
+		const estadoRequest = getState().estadoRequest.init_request
+		if(estadoRequest == true){
+            dispatch({
+                type: SELECCIONAR_REGISTRO_INGRESO_SUBMODULO,
+                payload : {
+                    resid : data.risid,
+                    smoid : smoid,
+                    driid : data.driid
+                }
+            })
+		}
+	}).catch((error)=> {
+        
+	});
+}
+
+export const RegistrarDetalleIngresoSubmoduloReducer = (estado) => async (dispatch, getState) => {
+
+    const rex_resid_seleccionado = getState().dashboard.rex_resid_seleccionado
+    const rex_smoid_seleccionado = getState().dashboard.rex_smoid_seleccionado
+
+    await fetch(config.api+'registrar-detalle-ingreso-submodulo',
+		{
+			mode:'cors',
+			method: 'POST',
+			body: JSON.stringify({
+                'api-token'	: localStorage.getItem('usutoken'),
+                'risid'  : rex_resid_seleccionado,
+                'estado' : estado
+            }),
+			headers: {
+				'Accept' 	   : 'application/json',
+				'Content-type' : 'application/json',
+				'api-token'	   : localStorage.getItem('usutoken')
+			}
+		}
+	)
+	.then( async res => {
+        if(await dispatch(estadoRequestReducer(res.status))){
+            return res.json()
+        }
+	})
+	.then(data => {
+		const estadoRequest = getState().estadoRequest.init_request
+		if(estadoRequest == true){
+            
+            dispatch({
+                type: SELECCIONAR_DETALLE_INGRESO_SUBMODULO,
+                payload : data.driid
+            })
+            
+		}
+	}).catch((error)=> {
+        
+	});
+
 }

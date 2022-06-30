@@ -3,6 +3,8 @@ import {
     OBTENER_ARCHIVOS_DESCARGAR_DESCARGAR_DATA
 } from "../../../constants/DescargarData/DescargarDataTypes";
 import {SeleccionarArchivoDescargarDataReducer} from '../Administrador/ControlData/ControlData'
+import config from '../../../config'
+import { estadoRequestReducer } from "../../../appRedux/actions/EstadoRequest"
 
 export const ObtenerDataSeleccionadaReducer = (data, posicion) => async (dispatch, getState) => {    
 
@@ -45,5 +47,40 @@ export const ObtenerDataSeleccionadaReducer = (data, posicion) => async (dispatc
         payload : objeto
     })
 
+
+}
+
+export const RegistrarDescargaExcelReducer = (ardid) => async (dispatch, getState) => {
+
+    await fetch(config.api+'registrar-descarga-excel',
+		{
+			mode:'cors',
+			method: 'POST',
+			body: JSON.stringify({
+                'api-token'	: localStorage.getItem('usutoken'),
+                'ardid'     : ardid,
+            }),
+			headers: {
+				'Accept' 	   : 'application/json',
+				'Content-type' : 'application/json',
+				'api-token'	   : localStorage.getItem('usutoken')
+			}
+		}
+	)
+	.then( async res => {
+        if(await dispatch(estadoRequestReducer(res.status))){
+            return res.json()
+        }
+	})
+	.then(data => {
+		const estadoRequest = getState().estadoRequest.init_request
+		if(estadoRequest == true){
+            
+            
+            
+		}
+	}).catch((error)=> {
+        
+	});
 
 }

@@ -3,7 +3,9 @@ import {
     OBTENER_SELECCION_MODULO,
     SELECCIONAR_AGREGAR_FAVORITO,
     SELECCIONAR_FAVORITOS,
-    SELECCIONAR_MODULO_ESPECIFICO
+    SELECCIONAR_MODULO_ESPECIFICO,
+    SELECCIONAR_REGISTRO_INGRESO_SUBMODULO,
+    SELECCIONAR_DETALLE_INGRESO_SUBMODULO
 } from "../../../constants/Dashboard/DashboardTypes";
 
 const INIT_STATE = {
@@ -15,7 +17,11 @@ const INIT_STATE = {
     seleccionoModulo : false,
     seleccionoFavoritos : false,
 
-    agregarFavorito : false
+    agregarFavorito : false,
+
+    rex_resid_seleccionado : 0,
+    rex_smoid_seleccionado : 0,
+    rex_driid_seleccionado : 0,
 };
 
 
@@ -54,6 +60,20 @@ export default (state = INIT_STATE, action) => {
         return {
             ...state,
             seleccionoFavoritos : action.payload
+        }
+    }
+    case SELECCIONAR_REGISTRO_INGRESO_SUBMODULO: {
+        return {
+            ...state,
+            rex_resid_seleccionado : action.payload.resid,
+            rex_smoid_seleccionado : action.payload.smoid,
+            rex_driid_seleccionado : action.payload.driid,
+        }
+    }
+    case SELECCIONAR_DETALLE_INGRESO_SUBMODULO: {
+        return {
+            ...state,
+            rex_driid_seleccionado : action.payload
         }
     }
     default:
