@@ -34,6 +34,7 @@ export default class TimeLogout extends Component {
   handleOnActive (event) {
     // console.log('user is active', event)
     // console.log('time remaining', this.idleTimer.getRemainingTime())
+    this.props.ActivarSessionReducer()
   }
 
   handleOnIdle (event) {

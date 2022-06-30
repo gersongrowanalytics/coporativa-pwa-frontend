@@ -19,6 +19,7 @@ import DescargarData from "./DescargarData/DescargarData"
 import Perfil from "./Perfil/Perfil"
 import CargaArchivos from "./CargaArchivos/CargaArchivos"
 import ControlArchivos from "./ControlArchivos/ControlArchivos"
+import Auditoria from "./Auditoria/Auditoria"
 
 const createRootReducer = (history) => combineReducers({
   router: connectRouter(history),
@@ -41,6 +42,7 @@ const createRootReducer = (history) => combineReducers({
   perfil : Perfil,
   cargaArchivos : CargaArchivos,
   controlArchivos : ControlArchivos,
+  auditoria : Auditoria,
 });
 
 export default createRootReducer
