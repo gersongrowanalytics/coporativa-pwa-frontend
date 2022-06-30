@@ -23,6 +23,7 @@ import TimeLogout from '../../containers/App/TimeLogout'
 import {
     userSignOut,
 } from "../../appRedux/actions/Auth";
+import Auditoria from "./Auditoria/Auditoria"
 
 const Sistema = ({match}) => {
 
@@ -62,41 +63,11 @@ const Sistema = ({match}) => {
                     
 
                 }}
+                ActivarSessionReducer = {() => {
+                    
+                }}
                 tiempoInactividad = {"500"}
             />
-
-            {/* {
-                cookiesaceptadas == true
-                ?null
-                :localStorage.getItem('cookiesaceptadas') == "ACEPTADO"
-                ?null
-                :window.location.href.includes('/terminos-condiciones')
-                ?null
-                :<div className="Contenedor-Cookies" >
-                    <div className="Mensaje-Cookies">
-                        <div 
-                            style={{
-                                fontSize: "14px",
-                                fontWeight: "600",
-                                color: "black",
-                                marginBottom:'5px'
-                            }}
-                        >
-                            TERMINOS Y CONDICIONES DE USO
-                        </div>
-
-                        El usuario del sitio Web y/o App se compromete a leer detenidamente los términos y condiciones, antes de utilizar los portales y servicios Web ofrecidos. Ello implica que usted acepta expresamente los términos y condiciones. En caso de no aceptarlos, se le solicita que no haga uso, ni acceda, ni manipule la información de los servicios ofrecidos por el sitio Web; ya que usted (usuario) está haciendo un uso inadecuado de éste.<br/><b>Para continuar con el uso de la platforma Ir y Aceptar al Siguiente Link:</b>   
-                        <Link 
-                            to="/sistema/terminos-condiciones"
-                        >
-                            <span
-                                style={{color:'blue', cursor:'pointer', textDecoration:'underline'}}>{" Terminos y Condiciones"}</span>
-                        </Link>
-
-                        
-                    </div>    
-                </div>
-            } */}
 
             {
                 window.location.href.includes('/terminos-condiciones')
@@ -150,10 +121,9 @@ const Sistema = ({match}) => {
                     </div>
             }
             
-
-
-
             <Switch>
+                <Route path={`${match.url}/auditoria`} component={Auditoria}/>
+
                 <Route path={`${match.url}/categorias`} component={Cat}/>
                 <Route path={`${match.url}/cat`} component={Cat}/>
                 <Route path={`${match.url}/dashboards`} component={Dashboard}/>
