@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/static/css/main.b40ddea9.chunk.css",
-    "main.js": "/static/js/main.0dff3707.chunk.js",
-    "main.js.map": "/static/js/main.0dff3707.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.408df0dd.js",
-    "runtime-main.js.map": "/static/js/runtime-main.408df0dd.js.map",
+    "main.js": "/static/js/main.57fe3a4d.chunk.js",
+    "main.js.map": "/static/js/main.57fe3a4d.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.6591c68a.js",
+    "runtime-main.js.map": "/static/js/runtime-main.6591c68a.js.map",
     "static/css/2.b708e81c.chunk.css": "/static/css/2.b708e81c.chunk.css",
-    "static/js/2.cc705fc9.chunk.js": "/static/js/2.cc705fc9.chunk.js",
-    "static/js/2.cc705fc9.chunk.js.map": "/static/js/2.cc705fc9.chunk.js.map",
+    "static/js/2.90423bee.chunk.js": "/static/js/2.90423bee.chunk.js",
+    "static/js/2.90423bee.chunk.js.map": "/static/js/2.90423bee.chunk.js.map",
     "static/css/3.c375cdab.chunk.css": "/static/css/3.c375cdab.chunk.css",
-    "static/js/3.aa76ba27.chunk.js": "/static/js/3.aa76ba27.chunk.js",
-    "static/js/3.aa76ba27.chunk.js.map": "/static/js/3.aa76ba27.chunk.js.map",
+    "static/js/3.199f8b65.chunk.js": "/static/js/3.199f8b65.chunk.js",
+    "static/js/3.199f8b65.chunk.js.map": "/static/js/3.199f8b65.chunk.js.map",
     "static/css/4.c047bc93.chunk.css": "/static/css/4.c047bc93.chunk.css",
     "static/js/4.cf73644a.chunk.js": "/static/js/4.cf73644a.chunk.js",
     "static/js/4.cf73644a.chunk.js.map": "/static/js/4.cf73644a.chunk.js.map",
@@ -23,7 +23,7 @@
     "static/css/3.c375cdab.chunk.css.map": "/static/css/3.c375cdab.chunk.css.map",
     "static/css/4.c047bc93.chunk.css.map": "/static/css/4.c047bc93.chunk.css.map",
     "static/css/main.b40ddea9.chunk.css.map": "/static/css/main.b40ddea9.chunk.css.map",
-    "static/js/2.cc705fc9.chunk.js.LICENSE.txt": "/static/js/2.cc705fc9.chunk.js.LICENSE.txt",
+    "static/js/2.90423bee.chunk.js.LICENSE.txt": "/static/js/2.90423bee.chunk.js.LICENSE.txt",
     "static/media/CanalTradicional.214dc5d3.png": "/static/media/CanalTradicional.214dc5d3.png",
     "static/media/ClienteDirecto.94cc26fe.png": "/static/media/ClienteDirecto.94cc26fe.png",
     "static/media/Comercial.743abd87.png": "/static/media/Comercial.743abd87.png",
@@ -76,10 +76,10 @@
     "static/media/wieldy.186ef44e.less": "/static/media/wieldy.186ef44e.less"
   },
   "entrypoints": [
-    "static/js/runtime-main.408df0dd.js",
+    "static/js/runtime-main.6591c68a.js",
     "static/css/2.b708e81c.chunk.css",
-    "static/js/2.cc705fc9.chunk.js",
+    "static/js/2.90423bee.chunk.js",
     "static/css/main.b40ddea9.chunk.css",
-    "static/js/main.0dff3707.chunk.js"
+    "static/js/main.57fe3a4d.chunk.js"
   ]
 }
