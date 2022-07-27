@@ -1,23 +1,23 @@
 {
   "files": {
     "main.css": "/static/css/main.0cfb6c70.chunk.css",
-    "main.js": "/static/js/main.60a5c9b9.chunk.js?ver=5",
+    "main.js": "/static/js/main.60a5c9b9.chunk.js",
     "main.js.map": "/static/js/main.60a5c9b9.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.6191bbdb.js?ver=5",
+    "runtime-main.js": "/static/js/runtime-main.6191bbdb.js",
     "runtime-main.js.map": "/static/js/runtime-main.6191bbdb.js.map",
     "static/css/2.72b79eec.chunk.css": "/static/css/2.72b79eec.chunk.css",
-    "static/js/2.c783e492.chunk.js": "/static/js/2.c783e492.chunk.js?ver=5",
+    "static/js/2.c783e492.chunk.js": "/static/js/2.c783e492.chunk.js",
     "static/js/2.c783e492.chunk.js.map": "/static/js/2.c783e492.chunk.js.map",
     "static/css/3.c375cdab.chunk.css": "/static/css/3.c375cdab.chunk.css",
-    "static/js/3.f6114f7a.chunk.js": "/static/js/3.f6114f7a.chunk.js?ver=5",
+    "static/js/3.f6114f7a.chunk.js": "/static/js/3.f6114f7a.chunk.js",
     "static/js/3.f6114f7a.chunk.js.map": "/static/js/3.f6114f7a.chunk.js.map",
     "static/css/4.c047bc93.chunk.css": "/static/css/4.c047bc93.chunk.css",
-    "static/js/4.86f6f0ac.chunk.js": "/static/js/4.86f6f0ac.chunk.js?ver=5",
+    "static/js/4.86f6f0ac.chunk.js": "/static/js/4.86f6f0ac.chunk.js",
     "static/js/4.86f6f0ac.chunk.js.map": "/static/js/4.86f6f0ac.chunk.js.map",
-    "static/js/5.59088ead.chunk.js": "/static/js/5.59088ead.chunk.js?ver=5",
+    "static/js/5.59088ead.chunk.js": "/static/js/5.59088ead.chunk.js",
     "static/js/5.59088ead.chunk.js.map": "/static/js/5.59088ead.chunk.js.map",
     "index.html": "/index.html",
-    "service-worker.js": "/service-worker.js?ver=5",
+    "service-worker.js": "/service-worker.js",
     "service-worker.js.map": "/service-worker.js.map",
     "static/css/2.72b79eec.chunk.css.map": "/static/css/2.72b79eec.chunk.css.map",
     "static/css/3.c375cdab.chunk.css.map": "/static/css/3.c375cdab.chunk.css.map",
@@ -78,10 +78,10 @@
     "static/media/wieldy.186ef44e.less": "/static/media/wieldy.186ef44e.less"
   },
   "entrypoints": [
-    "static/js/runtime-main.6191bbdb.js?ver=5",
+    "static/js/runtime-main.6191bbdb.js",
     "static/css/2.72b79eec.chunk.css",
-    "static/js/2.c783e492.chunk.js?ver=5",
+    "static/js/2.c783e492.chunk.js",
     "static/css/main.0cfb6c70.chunk.css",
-    "static/js/main.60a5c9b9.chunk.js?ver=5"
+    "static/js/main.60a5c9b9.chunk.js"
   ]
 }
