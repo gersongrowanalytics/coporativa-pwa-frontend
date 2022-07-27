@@ -8,12 +8,12 @@
       "type": "image/x-icon"
     },
     {
-      "src": "logo-icono.png",
+      "src": "palmas192192.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "logo-icono.png",
+      "src": "palmas512512.png",
       "type": "image/png",
       "sizes": "512x512"
     }
